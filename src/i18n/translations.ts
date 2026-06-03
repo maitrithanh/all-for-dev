@@ -56,7 +56,11 @@ export const translations = {
     tools: "Công cụ & CSDL",
     systems: "Hệ thống & Nền tảng",
     variations: "Biến thể câu lệnh",
-    variationsDesc: "Các tham số và biến thể bổ sung thường dùng"
+    variationsDesc: "Các tham số và biến thể bổ sung thường dùng",
+    masterGuide: "Làm chủ",
+    masterGuideButton: "Làm chủ",
+    masterGuideDesc: "Học từ cơ bản đến nâng cao, xây dựng sản phẩm thực tế.",
+    masterGuideSubtitle: "Hướng dẫn chi tiết từ A-Z"
   },
   en: {
     siteTitle: "Developer Command Handbook",
@@ -113,7 +117,11 @@ export const translations = {
     tools: "Tools & Databases",
     systems: "Systems & Platforms",
     variations: "Command Variations",
-    variationsDesc: "Frequently used alternative arguments and variations"
+    variationsDesc: "Frequently used alternative arguments and variations",
+    masterGuide: "Master",
+    masterGuideButton: "Master",
+    masterGuideDesc: "Learn from basics to advanced, build a real product.",
+    masterGuideSubtitle: "Detailed step-by-step guide"
   },
   ja: {
     siteTitle: "Developer Command Handbook",
@@ -170,6 +178,10 @@ export const translations = {
     tools: "ツール & データベース",
     systems: "システム & プラットフォーム",
     variations: "コマンドバリエーション",
-    variationsDesc: "よく使われる代替引数とバリエーション"
+    variationsDesc: "よく使われる代替引数とバリエーション",
+    masterGuide: "マスター",
+    masterGuideButton: "マスター",
+    masterGuideDesc: "基礎から応用まで学び、実際の製品を構築します。",
+    masterGuideSubtitle: "詳細なステップバイステップガイド"
   }
 } satisfies Record<Locale, Record<string, string>>;

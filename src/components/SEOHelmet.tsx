@@ -27,7 +27,8 @@ const SEOHelmet = ({
   const { locale } = useI18n();
   const ogLocale = LOCALE_MAP[locale] || "en_US";
   const alternateLocales = Object.values(LOCALE_MAP).filter((l) => l !== ogLocale);
-  const defaultImage = `${canonicalUrl.startsWith("http") ? canonicalUrl.split("/").slice(0, 3).join("/") : "https://allfordev.maitrithanh.dev"}/og-image.svg`;
+  const siteUrl = canonicalUrl.startsWith("http") ? canonicalUrl.split("/").slice(0, 3).join("/") : "https://allfordev.maitrithanh.dev";
+  const defaultImage = `${siteUrl}/og-image.png`;
 
   return (
     <Helmet>

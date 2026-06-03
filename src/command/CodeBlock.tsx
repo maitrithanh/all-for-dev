@@ -4,6 +4,7 @@ import bash from "highlight.js/lib/languages/bash";
 import json from "highlight.js/lib/languages/json";
 import typescript from "highlight.js/lib/languages/typescript";
 import sql from "highlight.js/lib/languages/sql";
+import php from "highlight.js/lib/languages/php";
 import { Copy, Check } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -13,10 +14,11 @@ hljs.registerLanguage("bash", bash);
 hljs.registerLanguage("json", json);
 hljs.registerLanguage("typescript", typescript);
 hljs.registerLanguage("sql", sql);
+hljs.registerLanguage("php", php);
 
 type CodeBlockProps = {
   code: string;
-  language?: "bash" | "json" | "typescript" | "sql";
+  language?: "bash" | "json" | "typescript" | "sql" | "php";
 };
 
 // Regex to highlight common developer command utilities differently in bash mode

@@ -8421,5 +8421,1465 @@
       "headers",
       "security"
     ]
+  },
+  {
+    "id": "dotnet-new",
+    "name": "dotnet new",
+    "group": ".NET / C#",
+    "categorySlug": "dotnet",
+    "description": {
+      "vi": "Tạo dự án .NET mới từ template.",
+      "en": "Create a new .NET project from a template.",
+      "ja": "テンプレートから新しい .NET プロジェクトを作成します。"
+    },
+    "detail": {
+      "vi": "Sử dụng lệnh này để khởi tạo dự án .NET với các template có sẵn như console, webapi, mvc, blazor, classlib.",
+      "en": "Use this command to scaffold a .NET project using built-in templates like console, webapi, mvc, blazor, classlib.",
+      "ja": "console、webapi、mvc、blazor、classlib などの組み込みテンプレートを使用して .NET プロジェクトを作成します。"
+    },
+    "syntax": "dotnet new <template> [options]",
+    "example": "dotnet new webapi -n MyApi --use-controllers",
+    "breakdown": [
+      {
+        "vi": "dotnet: CLI chính của .NET SDK",
+        "en": "dotnet: .NET SDK CLI entry point",
+        "ja": "dotnet: .NET SDK CLI エントリポイント"
+      },
+      {
+        "vi": "new: lệnh tạo dự án từ template",
+        "en": "new: command to scaffold a project from a template",
+        "ja": "new: テンプレートからプロジェクトを作成するコマンド"
+      },
+      {
+        "vi": "webapi: tên template (có thể là console, mvc, blazor, classlib...)",
+        "en": "webapi: template name (console, mvc, blazor, classlib, etc.)",
+        "ja": "webapi: テンプレート名（console、mvc、blazor、classlib など）"
+      },
+      {
+        "vi": "-n MyApi: đặt tên dự án",
+        "en": "-n MyApi: set the project name",
+        "ja": "-n MyApi: プロジェクト名を設定"
+      },
+      {
+        "vi": "--use-controllers: sử dụng controllers thay vì minimal API",
+        "en": "--use-controllers: use controllers instead of minimal API",
+        "ja": "--use-controllers: minimal API ではなく controllers を使用"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Template không tồn tại.",
+        "en": "Template does not exist.",
+        "ja": "テンプレートが存在しません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chạy dotnet new list để xem danh sách template có sẵn.",
+        "en": "Run dotnet new list to see available templates.",
+        "ja": "dotnet new list を実行して利用可能なテンプレートを確認します。"
+      }
+    ],
+    "tags": ["dotnet", "new", "scaffold", "template"]
+  },
+  {
+    "id": "dotnet-build",
+    "name": "dotnet build",
+    "group": ".NET / C#",
+    "categorySlug": "dotnet",
+    "description": {
+      "vi": "Biên dịch dự án .NET.",
+      "en": "Build a .NET project.",
+      "ja": ".NET プロジェクトをビルドします。"
+    },
+    "detail": {
+      "vi": "Biên dịch mã nguồn và các dependency thành assembly. Có thể build với cấu hình Release hoặc Debug.",
+      "en": "Compile source code and dependencies into assemblies. Supports Release or Debug configuration.",
+      "ja": "ソースコードと依存関係をアセンブリにコンパイルします。Release または Debug 構成をサポートします。"
+    },
+    "syntax": "dotnet build [project] [options]",
+    "example": "dotnet build -c Release",
+    "breakdown": [
+      {
+        "vi": "dotnet build: biên dịch dự án",
+        "en": "dotnet build: compile the project",
+        "ja": "dotnet build: プロジェクトをコンパイル"
+      },
+      {
+        "vi": "-c Release: sử dụng cấu hình Release (tối ưu hiệu năng)",
+        "en": "-c Release: use Release configuration (optimized)",
+        "ja": "-c Release: Release 構成を使用（最適化済み）"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Lỗi biên dịch do thiếu tham số hoặc sai cú pháp.",
+        "en": "Build errors due to missing parameters or syntax errors.",
+        "ja": "パラメータ不足または構文エラーによるビルドエラー。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra lỗi trong output, sửa mã nguồn và chạy lại dotnet build.",
+        "en": "Check build output for errors, fix source code, and rebuild.",
+        "ja": "ビルド出力でエラーを確認し、ソースコードを修正して再ビルドします。"
+      }
+    ],
+    "tags": ["dotnet", "build", "compile"]
+  },
+  {
+    "id": "dotnet-run",
+    "name": "dotnet run",
+    "group": ".NET / C#",
+    "categorySlug": "dotnet",
+    "description": {
+      "vi": "Chạy dự án .NET trực tiếp.",
+      "en": "Run a .NET project directly.",
+      "ja": ".NET プロジェクトを直接実行します。"
+    },
+    "detail": {
+      "vi": "Biên dịch và chạy ứng dụng .NET ngay lập tức. Hữu ích cho phát triển và debug nhanh.",
+      "en": "Compile and run the .NET application immediately. Useful for quick development and debugging.",
+      "ja": ".NET アプリケーションを即座にコンパイルして実行します。迅速な開発とデバッグに便利です。"
+    },
+    "syntax": "dotnet run [options]",
+    "example": "dotnet run --project src/MyApp",
+    "breakdown": [
+      {
+        "vi": "dotnet run: chạy dự án",
+        "en": "dotnet run: run the project",
+        "ja": "dotnet run: プロジェクトを実行"
+      },
+      {
+        "vi": "--project src/MyApp: chỉ định đường dẫn dự án (mặc định là thư mục hiện tại)",
+        "en": "--project src/MyApp: specify project path (default is current directory)",
+        "ja": "--project src/MyApp: プロジェクトパスを指定（デフォルトはカレントディレクトリ）"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không tìm thấy dự án trong thư mục hiện tại.",
+        "en": "No project found in the current directory.",
+        "ja": "カレントディレクトリにプロジェクトが見つかりません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra đường dẫn hoặc dùng --project để chỉ định file .csproj.",
+        "en": "Check the path or use --project to specify the .csproj file.",
+        "ja": "パスを確認するか、--project を使用して .csproj ファイルを指定します。"
+      }
+    ],
+    "tags": ["dotnet", "run", "execute"]
+  },
+  {
+    "id": "dotnet-test",
+    "name": "dotnet test",
+    "group": ".NET / C#",
+    "categorySlug": "dotnet",
+    "description": {
+      "vi": "Chạy unit test trong dự án .NET.",
+      "en": "Run unit tests in a .NET project.",
+      "ja": ".NET プロジェクトで単体テストを実行します。"
+    },
+    "detail": {
+      "vi": "Chạy tất cả test trong solution sử dụng test runner mặc định. Có thể lọc test theo tên, category.",
+      "en": "Run all tests in the solution using the default test runner. Supports filtering by name or category.",
+      "ja": "デフォルトのテストランナーを使用してソリューション内のすべてのテストを実行します。名前やカテゴリでフィルタリングできます。"
+    },
+    "syntax": "dotnet test [project] [options]",
+    "example": "dotnet test --filter \"Category=Unit\"",
+    "breakdown": [
+      {
+        "vi": "dotnet test: chạy test",
+        "en": "dotnet test: run tests",
+        "ja": "dotnet test: テストを実行"
+      },
+      {
+        "vi": "--filter \"Category=Unit\": chỉ chạy test có category là Unit",
+        "en": "--filter \"Category=Unit\": only run tests with the Unit category",
+        "ja": "--filter \"Category=Unit\": Unit カテゴリのテストのみ実行"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Test project không tìm thấy.",
+        "en": "Test project not found.",
+        "ja": "テストプロジェクトが見つかりません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đảm bảo có test project trong solution. Có thể dùng --project để chỉ định.",
+        "en": "Ensure a test project exists in the solution. Use --project to specify.",
+        "ja": "ソリューションにテストプロジェクトがあることを確認してください。--project で指定できます。"
+      }
+    ],
+    "tags": ["dotnet", "test", "unit-test"]
+  },
+  {
+    "id": "dotnet-publish",
+    "name": "dotnet publish",
+    "group": ".NET / C#",
+    "categorySlug": "dotnet",
+    "description": {
+      "vi": "Xuất bản dự án .NET để deploy.",
+      "en": "Publish a .NET project for deployment.",
+      "ja": ".NET プロジェクトをデプロイ用に公開します。"
+    },
+    "detail": {
+      "vi": "Biên dịch và đóng gói ứng dụng cùng dependency vào thư mục output để sẵn sàng deploy lên server.",
+      "en": "Compile and package the application with dependencies into an output folder, ready for deployment.",
+      "ja": "アプリケーションを依存関係と共にコンパイルし、出力フォルダーにパッケージ化してデプロイ準備を整えます。"
+    },
+    "syntax": "dotnet publish [project] [options]",
+    "example": "dotnet publish -c Release -o ./publish",
+    "breakdown": [
+      {
+        "vi": "dotnet publish: xuất bản ứng dụng",
+        "en": "dotnet publish: publish the application",
+        "ja": "dotnet publish: アプリケーションを公開"
+      },
+      {
+        "vi": "-c Release: build với cấu hình Release",
+        "en": "-c Release: build with Release configuration",
+        "ja": "-c Release: Release 構成でビルド"
+      },
+      {
+        "vi": "-o ./publish: thư mục đầu ra",
+        "en": "-o ./publish: output directory",
+        "ja": "-o ./publish: 出力ディレクトリ"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Thiếu dependency hoặc target runtime không đúng.",
+        "en": "Missing dependencies or incorrect target runtime.",
+        "ja": "依存関係が不足しているか、ターゲットランタイムが正しくありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chạy dotnet restore trước, kiểm tra TargetFramework trong .csproj.",
+        "en": "Run dotnet restore first, check TargetFramework in .csproj.",
+        "ja": "最初に dotnet restore を実行し、.csproj の TargetFramework を確認します。"
+      }
+    ],
+    "tags": ["dotnet", "publish", "deploy"]
+  },
+  {
+    "id": "dotnet-restore",
+    "name": "dotnet restore",
+    "group": ".NET / C#",
+    "categorySlug": "dotnet",
+    "description": {
+      "vi": "Khôi phục các gói NuGet dependency.",
+      "en": "Restore NuGet package dependencies.",
+      "ja": "NuGet パッケージの依存関係を復元します。"
+    },
+    "detail": {
+      "vi": "Tải xuống và cài đặt tất cả các gói NuGet được khai báo trong file .csproj. Cần chạy khi clone dự án mới hoặc thêm package.",
+      "en": "Download and install all NuGet packages declared in the .csproj file. Required when cloning a project or adding packages.",
+      "ja": ".csproj ファイルで宣言されているすべての NuGet パッケージをダウンロードしてインストールします。プロジェクトのクローン時やパッケージ追加時に必要です。"
+    },
+    "syntax": "dotnet restore [project]",
+    "example": "dotnet restore",
+    "breakdown": [
+      {
+        "vi": "dotnet restore: khôi phục gói NuGet",
+        "en": "dotnet restore: restore NuGet packages",
+        "ja": "dotnet restore: NuGet パッケージを復元"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không tìm thấy gói, lỗi network hoặc source NuGet không hợp lệ.",
+        "en": "Package not found, network error, or invalid NuGet source.",
+        "ja": "パッケージが見つからない、ネットワークエラー、または NuGet ソースが無効です。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra kết nối mạng, xóa cache (dotnet nuget locals all --clear) và thử lại.",
+        "en": "Check network, clear cache (dotnet nuget locals all --clear), and retry.",
+        "ja": "ネットワークを確認し、キャッシュをクリア（dotnet nuget locals all --clear）して再試行します。"
+      }
+    ],
+    "tags": ["dotnet", "restore", "nuget"]
+  },
+  {
+    "id": "dotnet-add-package",
+    "name": "dotnet add package",
+    "group": ".NET / C#",
+    "categorySlug": "dotnet",
+    "description": {
+      "vi": "Thêm gói NuGet vào dự án.",
+      "en": "Add a NuGet package to the project.",
+      "ja": "NuGet パッケージをプロジェクトに追加します。"
+    },
+    "detail": {
+      "vi": "Tải và thêm gói NuGet cùng phiên bản cụ thể (nếu chỉ định) vào dự án. Cập nhật file .csproj tự động.",
+      "en": "Download and add a NuGet package (with optional version) to the project. Updates .csproj automatically.",
+      "ja": "NuGet パッケージを（バージョン指定可能）ダウンロードしてプロジェクトに追加します。.csproj を自動更新します。"
+    },
+    "syntax": "dotnet add package <package> [options]",
+    "example": "dotnet add package Newtonsoft.Json --version 13.0.3",
+    "breakdown": [
+      {
+        "vi": "dotnet add package: thêm gói NuGet",
+        "en": "dotnet add package: add a NuGet package",
+        "ja": "dotnet add package: NuGet パッケージを追加"
+      },
+      {
+        "vi": "Newtonsoft.Json: tên gói NuGet cần thêm",
+        "en": "Newtonsoft.Json: name of the NuGet package",
+        "ja": "Newtonsoft.Json: NuGet パッケージ名"
+      },
+      {
+        "vi": "--version 13.0.3: phiên bản cụ thể (nếu không chỉ định sẽ lấy bản mới nhất)",
+        "en": "--version 13.0.3: specific version (defaults to latest if omitted)",
+        "ja": "--version 13.0.3: 特定のバージョン（省略時は最新）"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Gói không tồn tại hoặc xung đột phiên bản.",
+        "en": "Package not found or version conflict.",
+        "ja": "パッケージが見つからないか、バージョンの競合があります。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra tên gói chính xác trên nuget.org, hoặc thử phiên bản khác.",
+        "en": "Verify the package name on nuget.org, or try a different version.",
+        "ja": "nuget.org でパッケージ名を確認するか、別のバージョンを試してください。"
+      }
+    ],
+    "tags": ["dotnet", "nuget", "package"]
+  },
+  {
+    "id": "dotnet-watch",
+    "name": "dotnet watch",
+    "group": ".NET / C#",
+    "categorySlug": "dotnet",
+    "description": {
+      "vi": "Tự động rebuild và reload khi code thay đổi.",
+      "en": "Automatically rebuild and reload on code changes.",
+      "ja": "コード変更時に自動的に再ビルドしてリロードします。"
+    },
+    "detail": {
+      "vi": "Theo dõi thay đổi trong mã nguồn và tự động biên dịch lại, chạy lại ứng dụng. Tăng tốc development.",
+      "en": "Watches source files for changes and automatically recompiles and restarts the app. Speeds up development.",
+      "ja": "ソースファイルの変更を監視し、自動的に再コンパイルしてアプリを再起動します。開発を高速化します。"
+    },
+    "syntax": "dotnet watch [command] [options]",
+    "example": "dotnet watch run",
+    "breakdown": [
+      {
+        "vi": "dotnet watch: chạy với chế độ hot reload",
+        "en": "dotnet watch: run with hot reload",
+        "ja": "dotnet watch: ホットリロードで実行"
+      },
+      {
+        "vi": "run: lệnh cần chạy (có thể thay bằng test, build...)",
+        "en": "run: command to execute (test, build, etc.)",
+        "ja": "run: 実行するコマンド（test、build など）"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Hot reload không hoạt động với một số thay đổi cấu trúc.",
+        "en": "Hot reload does not work with certain structural changes.",
+        "ja": "一部の構造変更ではホットリロードが機能しません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Khởi động lại dotnet watch nếu cần. Một số thay đổi lớn yêu cầu restart thủ công.",
+        "en": "Restart dotnet watch if needed. Major changes may require a manual restart.",
+        "ja": "必要に応じて dotnet watch を再起動します。大きな変更には手動での再起動が必要な場合があります。"
+      }
+    ],
+    "tags": ["dotnet", "watch", "hot-reload"]
+  },
+  {
+    "id": "dotnet-ef-migrations",
+    "name": "dotnet ef migrations add",
+    "group": ".NET / C#",
+    "categorySlug": "dotnet",
+    "description": {
+      "vi": "Tạo migration mới cho Entity Framework Core.",
+      "en": "Create a new migration for Entity Framework Core.",
+      "ja": "Entity Framework Core の新しいマイグレーションを作成します。"
+    },
+    "detail": {
+      "vi": "Phân tích sự thay đổi giữa DbContext và database, tạo file migration để đồng bộ schema.",
+      "en": "Analyzes changes between DbContext and database, generates a migration file to sync the schema.",
+      "ja": "DbContext とデータベース間の変更を分析し、スキーマを同期するためのマイグレーションファイルを生成します。"
+    },
+    "syntax": "dotnet ef migrations add <name> [options]",
+    "example": "dotnet ef migrations add AddProductTable",
+    "breakdown": [
+      {
+        "vi": "dotnet ef: CLI của Entity Framework Core",
+        "en": "dotnet ef: Entity Framework Core CLI",
+        "ja": "dotnet ef: Entity Framework Core CLI"
+      },
+      {
+        "vi": "migrations add: tạo file migration mới",
+        "en": "migrations add: create a new migration file",
+        "ja": "migrations add: 新しいマイグレーションファイルを作成"
+      },
+      {
+        "vi": "AddProductTable: tên migration (mô tả ngắn gọn thay đổi)",
+        "en": "AddProductTable: migration name (brief description of changes)",
+        "ja": "AddProductTable: マイグレーション名（変更内容の簡潔な説明）"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Chưa cài đặt dotnet-ef tool toàn cục.",
+        "en": "dotnet-ef global tool not installed.",
+        "ja": "dotnet-ef グローバルツールがインストールされていません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chạy dotnet tool install --global dotnet-ef để cài đặt.",
+        "en": "Run dotnet tool install --global dotnet-ef to install it.",
+        "ja": "dotnet tool install --global dotnet-ef を実行してインストールします。"
+      }
+    ],
+    "tags": ["dotnet", "ef", "migrations", "entity-framework"]
+  },
+  {
+    "id": "dotnet-ef-dbupdate",
+    "name": "dotnet ef database update",
+    "group": ".NET / C#",
+    "categorySlug": "dotnet",
+    "description": {
+      "vi": "Áp dụng migration vào database.",
+      "en": "Apply migrations to the database.",
+      "ja": "マイグレーションをデータベースに適用します。"
+    },
+    "detail": {
+      "vi": "Chạy tất cả migration chưa được áp dụng để đồng bộ database schema với model. Có thể rollback bằng cách chỉ định tên migration cũ.",
+      "en": "Applies all pending migrations to sync the database schema with the model. Can rollback by specifying a previous migration name.",
+      "ja": "保留中のすべてのマイグレーションを適用して、データベーススキーマをモデルと同期します。以前のマイグレーション名を指定してロールバックできます。"
+    },
+    "syntax": "dotnet ef database update [migration]",
+    "example": "dotnet ef database update",
+    "breakdown": [
+      {
+        "vi": "dotnet ef database update: áp dụng migration vào database",
+        "en": "dotnet ef database update: apply migrations to database",
+        "ja": "dotnet ef database update: マイグレーションをデータベースに適用"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Kết nối database thất bại hoặc connection string sai.",
+        "en": "Database connection failed or invalid connection string.",
+        "ja": "データベース接続に失敗したか、接続文字列が無効です。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra connection string trong appsettings.json và đảm bảo database server đang chạy.",
+        "en": "Check the connection string in appsettings.json and ensure the database server is running.",
+        "ja": "appsettings.json の接続文字列を確認し、データベースサーバーが実行中であることを確認します。"
+      }
+    ],
+    "tags": ["dotnet", "ef", "database", "migrations"]
+  },
+  {
+    "id": "dotnet-format",
+    "name": "dotnet format",
+    "group": ".NET / C#",
+    "categorySlug": "dotnet",
+    "description": {
+      "vi": "Định dạng code theo chuẩn .NET.",
+      "en": "Format code according to .NET standards.",
+      "ja": ".NET 標準に従ってコードをフォーマットします。"
+    },
+    "detail": {
+      "vi": "Tự động sửa lỗi format, whitespace, và style dựa trên file .editorconfig hoặc cài đặt mặc định của .NET.",
+      "en": "Automatically fixes formatting, whitespace, and style issues based on .editorconfig or .NET defaults.",
+      "ja": ".editorconfig または .NET のデフォルト設定に基づいて、フォーマット、空白、スタイルの問題を自動的に修正します。"
+    },
+    "syntax": "dotnet format [project] [options]",
+    "example": "dotnet format --verify-no-changes",
+    "breakdown": [
+      {
+        "vi": "dotnet format: định dạng code",
+        "en": "dotnet format: format code",
+        "ja": "dotnet format: コードをフォーマット"
+      },
+      {
+        "vi": "--verify-no-changes: kiểm tra mà không thay đổi file (dùng trong CI)",
+        "en": "--verify-no-changes: check without modifying files (useful for CI)",
+        "ja": "--verify-no-changes: ファイルを変更せずにチェック（CI で使用）"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không tìm thấy file .editorconfig.",
+        "en": "No .editorconfig file found.",
+        "ja": ".editorconfig ファイルが見つかりません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Tạo file .editorconfig hoặc dùng mặc định của .NET SDK.",
+        "en": "Create an .editorconfig file or use .NET SDK defaults.",
+        "ja": ".editorconfig ファイルを作成するか、.NET SDK のデフォルトを使用します。"
+      }
+    ],
+    "tags": ["dotnet", "format", "lint"]
+  },
+  {
+    "id": "dotnet-clean",
+    "name": "dotnet clean",
+    "group": ".NET / C#",
+    "categorySlug": "dotnet",
+    "description": {
+      "vi": "Dọn dẹp output của quá trình build.",
+      "en": "Clean build output artifacts.",
+      "ja": "ビルド出力アーティファクトをクリーンアップします。"
+    },
+    "detail": {
+      "vi": "Xóa các thư mục bin/ và obj/ để đảm bảo lần build tiếp theo hoàn toàn sạch sẽ.",
+      "en": "Deletes bin/ and obj/ directories to ensure the next build is completely fresh.",
+      "ja": "bin/ および obj/ ディレクトリを削除し、次回のビルドを完全にクリーンな状態にします。"
+    },
+    "syntax": "dotnet clean [project] [options]",
+    "example": "dotnet clean",
+    "breakdown": [
+      {
+        "vi": "dotnet clean: dọn dẹp build artifacts",
+        "en": "dotnet clean: clean build artifacts",
+        "ja": "dotnet clean: ビルドアーティファクトをクリーン"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có quyền xóa file.",
+        "en": "No permission to delete files.",
+        "ja": "ファイルを削除する権限がありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chạy terminal với quyền admin/sudo hoặc đóng các process đang giữ file.",
+        "en": "Run terminal as admin/sudo or close processes holding the files.",
+        "ja": "管理者/sudo としてターミナルを実行するか、ファイルを保持しているプロセスを閉じます。"
+      }
+    ],
+    "tags": ["dotnet", "clean", "build"]
+  },
+  {
+    "id": "dotnet-nuget-push",
+    "name": "dotnet nuget push",
+    "group": ".NET / C#",
+    "categorySlug": "dotnet",
+    "description": {
+      "vi": "Đẩy gói NuGet lên registry.",
+      "en": "Push a NuGet package to a registry.",
+      "ja": "NuGet パッケージをレジストリにプッシュします。"
+    },
+    "detail": {
+      "vi": "Upload file .nupkg lên NuGet server (nuget.org, GitHub Packages, hoặc private feed). Cần API key để xác thực.",
+      "en": "Upload a .nupkg file to a NuGet server (nuget.org, GitHub Packages, or private feed). Requires an API key.",
+      "ja": ".nupkg ファイルを NuGet サーバー（nuget.org、GitHub Packages、プライベートフィード）にアップロードします。API キーが必要です。"
+    },
+    "syntax": "dotnet nuget push <nupkg> --api-key <key> --source <url>",
+    "example": "dotnet nuget push bin/Release/MyPackage.1.0.0.nupkg --api-key abc123 --source https://api.nuget.org/v3/index.json",
+    "breakdown": [
+      {
+        "vi": "dotnet nuget push: đẩy gói lên server",
+        "en": "dotnet nuget push: push package to server",
+        "ja": "dotnet nuget push: パッケージをサーバーにプッシュ"
+      },
+      {
+        "vi": "bin/Release/...nupkg: đường dẫn file .nupkg đã build",
+        "en": "bin/Release/...nupkg: path to the .nupkg file",
+        "ja": "bin/Release/...nupkg: .nupkg ファイルのパス"
+      },
+      {
+        "vi": "--api-key abc123: API key để xác thực",
+        "en": "--api-key abc123: API key for authentication",
+        "ja": "--api-key abc123: 認証用の API キー"
+      },
+      {
+        "vi": "--source: URL của NuGet server",
+        "en": "--source: NuGet server URL",
+        "ja": "--source: NuGet サーバーの URL"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "API key không hợp lệ hoặc đã hết hạn.",
+        "en": "Invalid or expired API key.",
+        "ja": "API キーが無効であるか、期限切れです。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Tạo API key mới trên nuget.org hoặc dùng dotnet nuget setapikey.",
+        "en": "Generate a new API key on nuget.org or use dotnet nuget setapikey.",
+        "ja": "nuget.org で新しい API キーを生成するか、dotnet nuget setapikey を使用します。"
+      }
+    ],
+    "tags": ["dotnet", "nuget", "push", "publish"]
+  },
+  {
+    "id": "dotnet-global-tool",
+    "name": "dotnet tool install",
+    "group": ".NET / C#",
+    "categorySlug": "dotnet",
+    "description": {
+      "vi": "Cài đặt công cụ .NET toàn cục.",
+      "en": "Install a .NET global tool.",
+      "ja": ".NET グローバルツールをインストールします。"
+    },
+    "detail": {
+      "vi": "Cài đặt công cụ CLI từ NuGet để sử dụng ở bất kỳ đâu. Các tool phổ biến: dotnet-ef, dotnet-aspnet-codegenerator.",
+      "en": "Install a CLI tool from NuGet for system-wide use. Popular tools: dotnet-ef, dotnet-aspnet-codegenerator.",
+      "ja": "NuGet から CLI ツールをシステム全体で使用できるようにインストールします。代表的なツール: dotnet-ef、dotnet-aspnet-codegenerator。"
+    },
+    "syntax": "dotnet tool install --global <package> [options]",
+    "example": "dotnet tool install --global dotnet-ef",
+    "breakdown": [
+      {
+        "vi": "dotnet tool install: cài đặt tool .NET",
+        "en": "dotnet tool install: install a .NET tool",
+        "ja": "dotnet tool install: .NET ツールをインストール"
+      },
+      {
+        "vi": "--global: cài đặt cho toàn bộ hệ thống",
+        "en": "--global: install system-wide",
+        "ja": "--global: システム全体にインストール"
+      },
+      {
+        "vi": "dotnet-ef: tên gói tool (có thể thay bằng tool khác)",
+        "en": "dotnet-ef: tool package name (replace with any tool)",
+        "ja": "dotnet-ef: ツールパッケージ名（任意のツールに置き換え可能）"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Tool đã được cài đặt hoặc xung đột phiên bản.",
+        "en": "Tool already installed or version conflict.",
+        "ja": "ツールが既にインストールされているか、バージョンの競合があります。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng dotnet tool update --global để cập nhật, hoặc dotnet tool uninstall --global để gỡ.",
+        "en": "Use dotnet tool update --global to update, or dotnet tool uninstall --global to remove.",
+        "ja": "dotnet tool update --global で更新するか、dotnet tool uninstall --global で削除します。"
+      }
+    ],
+    "tags": ["dotnet", "tool", "global-tool"]
+  },
+  {
+    "id": "dotnet-list",
+    "name": "dotnet list",
+    "group": ".NET / C#",
+    "categorySlug": "dotnet",
+    "description": {
+      "vi": "Liệt kê package hoặc tham chiếu trong dự án.",
+      "en": "List packages or references in a project.",
+      "ja": "プロジェクト内のパッケージまたは参照を一覧表示します。"
+    },
+    "detail": {
+      "vi": "Hiển thị danh sách các gói NuGet đã cài, các tham chiếu dự án. Rất hữu ích để kiểm tra dependency.",
+      "en": "Shows installed NuGet packages or project references. Useful for inspecting dependencies.",
+      "ja": "インストールされている NuGet パッケージまたはプロジェクト参照を表示します。依存関係の確認に便利です。"
+    },
+    "syntax": "dotnet list [project] <reference|package>",
+    "example": "dotnet list package --outdated",
+    "breakdown": [
+      {
+        "vi": "dotnet list package: liệt kê gói NuGet",
+        "en": "dotnet list package: list NuGet packages",
+        "ja": "dotnet list package: NuGet パッケージを一覧表示"
+      },
+      {
+        "vi": "--outdated: chỉ hiển thị gói có phiên bản mới hơn",
+        "en": "--outdated: only show packages with newer versions",
+        "ja": "--outdated: 新しいバージョンがあるパッケージのみ表示"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không tìm thấy dự án.",
+        "en": "Project not found.",
+        "ja": "プロジェクトが見つかりません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chạy lệnh trong thư mục chứa file .csproj hoặc dùng --project.",
+        "en": "Run the command in the project directory or use --project.",
+        "ja": "プロジェクトディレクトリでコマンドを実行するか、--project を使用します。"
+      }
+    ],
+    "tags": ["dotnet", "list", "nuget", "package"]
+  },
+  {
+    "id": "redux-install",
+    "name": "Cài đặt Redux Toolkit",
+    "group": "Redux (RTK)",
+    "categorySlug": "redux",
+    "description": {
+      "vi": "Cài đặt Redux Toolkit và React-Redux cho dự án.",
+      "en": "Install Redux Toolkit and React-Redux for your project.",
+      "ja": "プロジェクトに Redux Toolkit と React-Redux をインストールします。"
+    },
+    "detail": {
+      "vi": "Redux Toolkit (@reduxjs/toolkit) là cách hiện đại để viết Redux, bao gồm configureStore, createSlice, createAsyncThunk. react-redux cung cấp hooks useSelector và useDispatch.",
+      "en": "Redux Toolkit (@reduxjs/toolkit) is the modern way to write Redux, including configureStore, createSlice, createAsyncThunk. react-redux provides useSelector and useDispatch hooks.",
+      "ja": "Redux Toolkit（@reduxjs/toolkit）は、configureStore、createSlice、createAsyncThunk を含む最新の Redux 記述方法です。react-redux は useSelector と useDispatch フックを提供します。"
+    },
+    "syntax": "npm install @reduxjs/toolkit react-redux",
+    "example": "npm install @reduxjs/toolkit react-redux",
+    "breakdown": [
+      {
+        "vi": "@reduxjs/toolkit: thư viện chính thức của Redux team, gồm configureStore, createSlice, createAsyncThunk, RTK Query",
+        "en": "@reduxjs/toolkit: official Redux library with configureStore, createSlice, createAsyncThunk, RTK Query",
+        "ja": "@reduxjs/toolkit: configureStore、createSlice、createAsyncThunk、RTK Query を含む公式 Redux ライブラリ"
+      },
+      {
+        "vi": "react-redux: kết nối Redux store với React component, cung cấp Provider, useSelector, useDispatch",
+        "en": "react-redux: connects Redux store to React components, provides Provider, useSelector, useDispatch",
+        "ja": "react-redux: Redux ストアを React コンポーネントに接続し、Provider、useSelector、useDispatch を提供"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Xung đột phiên bản giữa redux và @reduxjs/toolkit.",
+        "en": "Version conflict between redux and @reduxjs/toolkit.",
+        "ja": "redux と @reduxjs/toolkit のバージョン競合。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng npm install @reduxjs/toolkit@latest react-redux@latest để lấy bản mới nhất.",
+        "en": "Use npm install @reduxjs/toolkit@latest react-redux@latest for the latest versions.",
+        "ja": "npm install @reduxjs/toolkit@latest react-redux@latest で最新バージョンをインストールします。"
+      }
+    ],
+    "tags": ["redux", "install", "toolkit", "setup"]
+  },
+  {
+    "id": "redux-folder-structure",
+    "name": "Cấu trúc thư mục Redux chuẩn",
+    "group": "Redux (RTK)",
+    "categorySlug": "redux",
+    "description": {
+      "vi": "Cấu trúc thư mục Redux Toolkit chuẩn theo feature-based (tính năng).",
+      "en": "Standard Redux Toolkit folder structure using feature-based organization.",
+      "ja": "機能ベースの標準的な Redux Toolkit フォルダ構造。"
+    },
+    "detail": {
+      "vi": "Thay vì chia theo loại file (actions, reducers, constants), Redux Toolkit khuyến khích gom theo tính năng (feature). Mỗi feature là một folder chứa slice, component, style riêng.",
+      "en": "Instead of dividing by file type (actions, reducers, constants), Redux Toolkit encourages feature-based organization. Each feature folder contains its own slice, component, styles.",
+      "ja": "ファイルタイプ（actions、reducers、constants）で分割する代わりに、Redux Toolkit は機能ベースの構成を推奨します。各機能フォルダーには、独自のスライス、コンポーネント、スタイルが含まれます。"
+    },
+    "syntax": "src/app/  +  src/features/  +  src/lib/",
+    "example": "src/\n├── app/\n│   ├── store.ts          # configureStore\n│   └── hooks.ts           # typed hooks\n├── features/\n│   ├── tasks/\n│   │   ├── tasksSlice.ts  # createSlice\n│   │   ├── TasksList.tsx  # component\n│   │   └── taskTypes.ts   # types\n│   └── auth/\n│       ├── authSlice.ts\n│       ├── LoginForm.tsx\n│       └── authTypes.ts\n└── lib/\n    └── api.ts             # RTK Query / axios",
+    "breakdown": [
+      {
+        "vi": "app/store.ts: nơi configureStore, setup middleware, kết nối các slices",
+        "en": "app/store.ts: configureStore, middleware setup, combine slices",
+        "ja": "app/store.ts: configureStore、ミドルウェア設定、スライスの結合"
+      },
+      {
+        "vi": "app/hooks.ts: export useSelector và useDispatch đã typed (useAppDispatch, useAppSelector)",
+        "en": "app/hooks.ts: export typed useSelector and useDispatch (useAppDispatch, useAppSelector)",
+        "ja": "app/hooks.ts: 型付けされた useSelector と useDispatch をエクスポート（useAppDispatch、useAppSelector）"
+      },
+      {
+        "vi": "features/: mỗi feature là một folder riêng, chứa slice + component + types",
+        "en": "features/: each feature is a separate folder containing slice + component + types",
+        "ja": "features/: 各機能は独立したフォルダーで、スライス＋コンポーネント＋型を含む"
+      },
+      {
+        "vi": "lib/: các utility chung như API client, helpers",
+        "en": "lib/: shared utilities like API client, helpers",
+        "ja": "lib/: API クライアント、ヘルパーなどの共有ユーティリティ"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Đặt tất cả logic Redux vào một file duy nhất.",
+        "en": "Putting all Redux logic into a single file.",
+        "ja": "すべての Redux ロジックを 1 つのファイルにまとめる。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Tách mỗi feature thành folder riêng. Mỗi slice chỉ quản lý một phần state.",
+        "en": "Split each feature into its own folder. Each slice manages one piece of state.",
+        "ja": "各機能を独自のフォルダーに分割します。各スライスは 1 つの状態を管理します。"
+      }
+    ],
+    "tags": ["redux", "structure", "folder", "architecture"]
+  },
+  {
+    "id": "redux-store",
+    "name": "configureStore",
+    "group": "Redux (RTK)",
+    "categorySlug": "redux",
+    "description": {
+      "vi": "Tạo Redux store với configureStore từ Redux Toolkit.",
+      "en": "Create a Redux store using configureStore from Redux Toolkit.",
+      "ja": "Redux Toolkit の configureStore を使用して Redux ストアを作成します。"
+    },
+    "detail": {
+      "vi": "configureStore tự động thiết lập Redux DevTools, middleware mặc định (redux-thunk), và combine reducers từ object reducer.",
+      "en": "configureStore automatically sets up Redux DevTools, default middleware (redux-thunk), and combines reducers from the reducer object.",
+      "ja": "configureStore は Redux DevTools、デフォルトミドルウェア（redux-thunk）を自動設定し、reducer オブジェクトから reducers を結合します。"
+    },
+    "syntax": "configureStore({ reducer, middleware, devTools })",
+    "example": "import { configureStore } from '@reduxjs/toolkit';\nimport tasksReducer from '@/features/tasks/tasksSlice';\nimport authReducer from '@/features/auth/authSlice';\n\nexport const store = configureStore({\n  reducer: {\n    tasks: tasksReducer,\n    auth: authReducer,\n  },\n});\n\nexport type RootState = ReturnType<typeof store.getState>;\nexport type AppDispatch = typeof store.dispatch;",
+    "breakdown": [
+      {
+        "vi": "reducer: object chứa các slice reducer, key là tên state, value là reducer",
+        "en": "reducer: an object of slice reducers, key is state name, value is reducer",
+        "ja": "reducer: スライス reducer のオブジェクト、キーは状態名、値は reducer"
+      },
+      {
+        "vi": "RootState: type inferred từ store.getState, dùng cho useSelector",
+        "en": "RootState: type inferred from store.getState, used by useSelector",
+        "ja": "RootState: store.getState から推論される型で、useSelector で使用"
+      },
+      {
+        "vi": "AppDispatch: type inferred từ store.dispatch",
+        "en": "AppDispatch: type inferred from store.dispatch",
+        "ja": "AppDispatch: store.dispatch から推論される型"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Quên export RootState và AppDispatch dẫn đến type any.",
+        "en": "Forgot to export RootState and AppDispatch, resulting in 'any' types.",
+        "ja": "RootState と AppDispatch のエクスポートを忘れて、型が any になる。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng ReturnType<typeof store.getState> và typeof store.dispatch để infer type tự động.",
+        "en": "Use ReturnType<typeof store.getState> and typeof store.dispatch for automatic type inference.",
+        "ja": "ReturnType<typeof store.getState> と typeof store.dispatch を使用して自動型推論を行います。"
+      }
+    ],
+    "tags": ["redux", "store", "configurestore"]
+  },
+  {
+    "id": "redux-slice",
+    "name": "createSlice",
+    "group": "Redux (RTK)",
+    "categorySlug": "redux",
+    "description": {
+      "vi": "Tạo Redux slice với createSlice – reducer + actions trong một lần khai báo.",
+      "en": "Create a Redux slice with createSlice – reducers and actions declared together.",
+      "ja": "createSlice で Redux スライスを作成 – reducer と actions を一度に宣言。"
+    },
+    "detail": {
+      "vi": "createSlice tự động sinh action creators và action types từ tên reducer functions. Giảm boilerplate code đáng kể so với Redux cổ điển.",
+      "en": "createSlice auto-generates action creators and action types from reducer function names. Significantly reduces boilerplate compared to classic Redux.",
+      "ja": "createSlice は reducer 関数名からアクションクリエイターとアクションタイプを自動生成します。従来の Redux と比較してボイラープレートを大幅に削減します。"
+    },
+    "syntax": "createSlice({ name, initialState, reducers, extraReducers })",
+    "example": "import { createSlice, PayloadAction } from '@reduxjs/toolkit';\n\ninterface TasksState {\n  items: Task[];\n  loading: boolean;\n}\n\nconst initialState: TasksState = {\n  items: [],\n  loading: false,\n};\n\nconst tasksSlice = createSlice({\n  name: 'tasks',\n  initialState,\n  reducers: {\n    addTask: (state, action: PayloadAction<Task>) => {\n      state.items.push(action.payload);\n    },\n    removeTask: (state, action: PayloadAction<string>) => {\n      state.items = state.items.filter(t => t.id !== action.payload);\n    },\n    toggleTask: (state, action: PayloadAction<string>) => {\n      const task = state.items.find(t => t.id === action.payload);\n      if (task) task.completed = !task.completed;\n    },\n  },\n});\n\nexport const { addTask, removeTask, toggleTask } = tasksSlice.actions;\nexport default tasksSlice.reducer;",
+    "breakdown": [
+      {
+        "vi": "name: tên slice, dùng làm prefix cho action type (VD: 'tasks/addTask')",
+        "en": "name: slice name, used as prefix for action types (e.g. 'tasks/addTask')",
+        "ja": "name: スライス名、アクションタイプのプレフィックスとして使用（例：'tasks/addTask'）"
+      },
+      {
+        "vi": "initialState: state ban đầu khi store khởi tạo",
+        "en": "initialState: initial state when store is created",
+        "ja": "initialState: ストア作成時の初期状態"
+      },
+      {
+        "vi": "reducers: object chứa các function, mỗi function là một reducer + action tự động",
+        "en": "reducers: an object of functions, each function becomes a reducer + auto-generated action",
+        "ja": "reducers: 関数のオブジェクト。各関数は reducer になり、アクションが自動生成される"
+      },
+      {
+        "vi": "Có thể mutate state trực tiếp nhờ immer.js (Redux Toolkit built-in)",
+        "en": "You can mutate state directly thanks to immer.js (built into Redux Toolkit)",
+        "ja": "immer.js（Redux Toolkit に組み込み）により、状態を直接変更可能"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Return state mới trong reducer thay vì mutate (với RTK không cần).",
+        "en": "Returning new state instead of mutating (not needed with RTK).",
+        "ja": "変更する代わりに新しい状態を返す（RTK では不要）。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Redux Toolkit dùng immer.js, bạn có thể push, filter, map trực tiếp trên state.",
+        "en": "Redux Toolkit uses immer.js, you can push, filter, map directly on state.",
+        "ja": "Redux Toolkit は immer.js を使用するため、状態に対して直接 push、filter、map が可能。"
+      }
+    ],
+    "tags": ["redux", "slice", "createslice", "reducer"]
+  },
+  {
+    "id": "redux-hooks",
+    "name": "Typed Hooks (useSelector & useDispatch)",
+    "group": "Redux (RTK)",
+    "categorySlug": "redux",
+    "description": {
+      "vi": "Tạo typed hooks useAppDispatch và useAppSelector để dùng TypeScript an toàn.",
+      "en": "Create typed useAppDispatch and useAppSelector hooks for safe TypeScript usage.",
+      "ja": "安全な TypeScript 使用のために型付けされた useAppDispatch と useAppSelector フックを作成します。"
+    },
+    "detail": {
+      "vi": "Thay vì dùng useSelector và useDispatch từ react-redux trực tiếp, nên tạo typed version để tự động infer kiểu RootState và AppDispatch từ store.",
+      "en": "Instead of using raw useSelector and useDispatch from react-redux, create typed versions to automatically infer RootState and AppDispatch types from the store.",
+      "ja": "react-redux の useSelector と useDispatch を直接使用する代わりに、ストアから RootState と AppDispatch の型を自動推論する型付けバージョンを作成します。"
+    },
+    "syntax": "useAppDispatch()  /  useAppSelector(selector)",
+    "example": "// app/hooks.ts\nimport { useDispatch, useSelector } from 'react-redux';\nimport type { RootState, AppDispatch } from './store';\n\nexport const useAppDispatch = useDispatch.withTypes<AppDispatch>();\nexport const useAppSelector = useSelector.withTypes<RootState>();\n\n// Sử dụng trong component:\nconst dispatch = useAppDispatch();\nconst tasks = useAppSelector((state) => state.tasks.items);\nconst loading = useAppSelector((state) => state.tasks.loading);",
+    "breakdown": [
+      {
+        "vi": "useAppDispatch: dispatch với kiểu AppDispatch, tự động gợi ý action",
+        "en": "useAppDispatch: dispatch typed as AppDispatch, auto-suggests actions",
+        "ja": "useAppDispatch: AppDispatch 型の dispatch、アクションの自動提案"
+      },
+      {
+        "vi": "useAppSelector: selector với kiểu RootState, kiểm tra state tồn tại",
+        "en": "useAppSelector: selector typed as RootState, checks state existence",
+        "ja": "useAppSelector: RootState 型のセレクター、状態の存在をチェック"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Dùng useSelector không type dẫn đến mất autocomplete.",
+        "en": "Using untyped useSelector leads to missing autocomplete.",
+        "ja": "型指定なしの useSelector を使用するとオートコンプリートが機能しない。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Luôn dùng useAppSelector và useAppDispatch từ app/hooks.ts.",
+        "en": "Always use useAppSelector and useAppDispatch from app/hooks.ts.",
+        "ja": "常に app/hooks.ts の useAppSelector と useAppDispatch を使用します。"
+      }
+    ],
+    "tags": ["redux", "hooks", "typescript", "typed"]
+  },
+  {
+    "id": "redux-provider",
+    "name": "Provider setup",
+    "group": "Redux (RTK)",
+    "categorySlug": "redux",
+    "description": {
+      "vi": "Bọc ứng dụng trong Provider để kết nối Redux store với React.",
+      "en": "Wrap your app in Provider to connect the Redux store to React.",
+      "ja": "アプリを Provider でラップして Redux ストアを React に接続します。"
+    },
+    "detail": {
+      "vi": "Provider từ react-redux nhận store làm prop và giúp mọi component con truy cập được Redux store qua hooks.",
+      "en": "Provider from react-redux takes the store as a prop and makes the Redux store accessible to all child components via hooks.",
+      "ja": "react-redux の Provider はストアを props として受け取り、すべての子コンポーネントがフック経由で Redux ストアにアクセスできるようにします。"
+    },
+    "syntax": "<Provider store={store}><App /></Provider>",
+    "example": "// main.tsx\nimport { Provider } from 'react-redux';\nimport { store } from './app/store';\nimport App from './App';\n\nReactDOM.createRoot(document.getElementById('root')!).render(\n  <Provider store={store}>\n    <App />\n  </Provider>\n);",
+    "breakdown": [
+      {
+        "vi": "Provider bọc toàn bộ App, store được tạo từ configureStore",
+        "en": "Provider wraps the entire App, store created from configureStore",
+        "ja": "Provider はアプリ全体をラップし、ストアは configureStore から作成"
+      },
+      {
+        "vi": "Chỉ cần một Provider duy nhất ở root component",
+        "en": "Only one Provider at the root component is needed",
+        "ja": "ルートコンポーネントに 1 つの Provider のみ必要"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Quên bọc Provider hoặc import sai store.",
+        "en": "Forgot to wrap with Provider or imported the wrong store.",
+        "ja": "Provider でのラップを忘れるか、間違ったストアをインポート。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đảm bảo main.tsx có <Provider store={store}> bao App.",
+        "en": "Ensure main.tsx has <Provider store={store}> wrapping the App.",
+        "ja": "main.tsx が <Provider store={store}> で App をラップしていることを確認。"
+      }
+    ],
+    "tags": ["redux", "provider", "setup"]
+  },
+  {
+    "id": "redux-async-thunk",
+    "name": "createAsyncThunk",
+    "group": "Redux (RTK)",
+    "categorySlug": "redux",
+    "description": {
+      "vi": "Xử lý async logic (API calls) với createAsyncThunk.",
+      "en": "Handle async logic (API calls) with createAsyncThunk.",
+      "ja": "createAsyncThunk で非同期ロジック（API 呼び出し）を処理します。"
+    },
+    "detail": {
+      "vi": "createAsyncThunk tự động sinh 3 action types: pending, fulfilled, rejected. Bạn xử lý từng trạng thái trong extraReducers của slice.",
+      "en": "createAsyncThunk auto-generates 3 action types: pending, fulfilled, rejected. Handle each status in the slice's extraReducers.",
+      "ja": "createAsyncThunk は pending、fulfilled、rejected の 3 つのアクションタイプを自動生成します。各ステータスをスライスの extraReducers で処理します。"
+    },
+    "syntax": "createAsyncThunk<ReturnType, ArgType>('prefix', asyncFn)",
+    "example": "import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';\nimport type { RootState } from '@/app/store';\n\nexport const fetchTasks = createAsyncThunk<Task[], void>(\n  'tasks/fetchTasks',\n  async (_, { rejectWithValue }) => {\n    const res = await fetch('/api/tasks');\n    if (!res.ok) return rejectWithValue('Failed to fetch');\n    return res.json();\n  }\n);\n\nexport const addTaskAsync = createAsyncThunk<Task, string>(\n  'tasks/addTask',\n  async (title, thunkAPI) => {\n    const res = await fetch('/api/tasks', {\n      method: 'POST',\n      headers: { 'Content-Type': 'application/json' },\n      body: JSON.stringify({ title }),\n    });\n    return res.json();\n  }\n);\n\n// Trong slice:\nconst tasksSlice = createSlice({\n  name: 'tasks',\n  initialState,\n  reducers: {},\n  extraReducers: (builder) => {\n    builder\n      .addCase(fetchTasks.pending, (state) => { state.loading = true; })\n      .addCase(fetchTasks.fulfilled, (state, action) => {\n        state.loading = false;\n        state.items = action.payload;\n      })\n      .addCase(fetchTasks.rejected, (state, action) => {\n        state.loading = false;\n        state.error = action.payload as string;\n      });\n  },\n});",
+    "breakdown": [
+      {
+        "vi": "pending: set loading=true, có thể show spinner",
+        "en": "pending: set loading=true, can show a spinner",
+        "ja": "pending: loading=true を設定、スピナー表示可能"
+      },
+      {
+        "vi": "fulfilled: loading=false, lưu dữ liệu từ action.payload",
+        "en": "fulfilled: loading=false, save data from action.payload",
+        "ja": "fulfilled: loading=false、action.payload からデータを保存"
+      },
+      {
+        "vi": "rejected: loading=false, lưu error message",
+        "en": "rejected: loading=false, save error message",
+        "ja": "rejected: loading=false、エラーメッセージを保存"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không xử lý rejected state, dẫn đến UI không hiển thị lỗi.",
+        "en": "Not handling the rejected state, causing UI to not show errors.",
+        "ja": "rejected 状態を処理しないと、UI にエラーが表示されない。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Luôn thêm .addCase(thunk.rejected) để hiển thị lỗi cho người dùng.",
+        "en": "Always add .addCase(thunk.rejected) to display errors to the user.",
+        "ja": "常に .addCase(thunk.rejected) を追加してエラーをユーザーに表示します。"
+      }
+    ],
+    "tags": ["redux", "async", "thunk", "api"]
+  },
+  {
+    "id": "redux-rtk-query",
+    "name": "RTK Query",
+    "group": "Redux (RTK)",
+    "categorySlug": "redux",
+    "description": {
+      "vi": "RTK Query – giải pháp data fetching và caching built-in của Redux Toolkit.",
+      "en": "RTK Query – built-in data fetching and caching solution from Redux Toolkit.",
+      "ja": "RTK Query – Redux Toolkit の組み込みデータ取得・キャッシングソリューション。"
+    },
+    "detail": {
+      "vi": "RTK Query thay thế createAsyncThunk cho hầu hết trường hợp. Tự động quản lý cache, loading state, và background refetch.",
+      "en": "RTK Query replaces createAsyncThunk for most cases. Automatically manages cache, loading state, and background refetch.",
+      "ja": "RTK Query はほとんどのケースで createAsyncThunk を置き換えます。キャッシュ、ローディング状態、バックグラウンド再取得を自動管理します。"
+    },
+    "syntax": "createApi({ reducerPath, baseQuery, endpoints })",
+    "example": "import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';\n\nexport const taskApi = createApi({\n  reducerPath: 'taskApi',\n  baseQuery: fetchBaseQuery({ baseUrl: '/api' }),\n  tagTypes: ['Task'],\n  endpoints: (builder) => ({\n    getTasks: builder.query<Task[], void>({\n      query: () => '/tasks',\n      providesTags: ['Task'],\n    }),\n    getTask: builder.query<Task, string>({\n      query: (id) => '/tasks/${id}',\n      providesTags: (_, __, id) => [{ type: 'Task', id }],\n    }),\n    createTask: builder.mutation<Task, Partial<Task>>({\n      query: (body) => ({\n        url: '/tasks',\n        method: 'POST',\n        body,\n      }),\n      invalidatesTags: ['Task'],\n    }),\n    deleteTask: builder.mutation<void, string>({\n      query: (id) => ({ url: '/tasks/' + id, method: 'DELETE' }),\n      invalidatesTags: ['Task'],\n    }),\n  }),\n});\n\nexport const { useGetTasksQuery, useGetTaskQuery, useCreateTaskMutation, useDeleteTaskMutation } = taskApi;",
+    "breakdown": [
+      {
+        "vi": "baseQuery: fetchBaseQuery là default, có thể thay bằng axios hoặc custom",
+        "en": "baseQuery: fetchBaseQuery is the default, can be replaced with axios or custom",
+        "ja": "baseQuery: fetchBaseQuery がデフォルト、axios やカスタムに置き換え可能"
+      },
+      {
+        "vi": "builder.query: cho GET request, tự động cache dữ liệu",
+        "en": "builder.query: for GET requests, automatically caches data",
+        "ja": "builder.query: GET リクエスト用、データを自動キャッシュ"
+      },
+      {
+        "vi": "builder.mutation: cho POST/PUT/DELETE, invalidatesTags để refresh cache",
+        "en": "builder.mutation: for POST/PUT/DELETE, invalidatesTags to refresh cache",
+        "ja": "builder.mutation: POST/PUT/DELETE 用、invalidatesTags でキャッシュを更新"
+      },
+      {
+        "vi": "providesTags / invalidatesTags: đánh dấu và refresh cache tự động",
+        "en": "providesTags / invalidatesTags: tag and auto-refresh cache",
+        "ja": "providesTags / invalidatesTags: キャッシュのタグ付けと自動更新"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không thêm api reducer vào store dẫn đến error.",
+        "en": "Not adding the API reducer to the store causes errors.",
+        "ja": "API reducer をストアに追加しないとエラーが発生します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm [taskApi.reducerPath]: taskApi.reducer vào reducer object trong configureStore.",
+        "en": "Add [taskApi.reducerPath]: taskApi.reducer to the reducer object in configureStore.",
+        "ja": "configureStore の reducer オブジェクトに [taskApi.reducerPath]: taskApi.reducer を追加。"
+      }
+    ],
+    "tags": ["redux", "rtk-query", "api", "cache"]
+  },
+  {
+    "id": "redux-middleware",
+    "name": "Custom Middleware",
+    "group": "Redux (RTK)",
+    "categorySlug": "redux",
+    "description": {
+      "vi": "Tạo custom middleware để log action hoặc xử lý side effects.",
+      "en": "Create custom middleware to log actions or handle side effects.",
+      "ja": "アクションのログ記録や副作用処理のためのカスタムミドルウェアを作成します。"
+    },
+    "detail": {
+      "vi": "Middleware là hàm nhận store API, trả về hàm nhận next dispatch, trả về hàm nhận action. Có thể log, delay, modify action.",
+      "en": "Middleware is a function that receives the store API, returns a function that receives next dispatch, returns a function that receives the action. Can log, delay, or modify actions.",
+      "ja": "ミドルウェアはストア API を受け取り、次の dispatch を受け取る関数を返し、アクションを受け取る関数を返します。アクションのログ記録、遅延、変更が可能です。"
+    },
+    "syntax": "(storeAPI) => (next) => (action) => { ... }",
+    "example": "// loggerMiddleware.ts\nimport type { Middleware } from '@reduxjs/toolkit';\n\nexport const loggerMiddleware: Middleware =\n  (store) => (next) => (action) => {\n    console.group('Action:', action.type);\n    console.log('Prev State:', store.getState());\n    const result = next(action);\n    console.log('Next State:', store.getState());\n    console.groupEnd();\n    return result;\n  };\n\n// store.ts\nimport { configureStore } from '@reduxjs/toolkit';\nimport { loggerMiddleware } from './middleware/logger';\n\nexport const store = configureStore({\n  reducer: { tasks: tasksReducer },\n  middleware: (getDefaultMiddleware) =>\n    getDefaultMiddleware().concat(loggerMiddleware),\n});",
+    "breakdown": [
+      {
+        "vi": "store: getState và dispatch",
+        "en": "store: getState and dispatch",
+        "ja": "store: getState と dispatch"
+      },
+      {
+        "vi": "next: dispatch function tiếp theo trong chuỗi middleware",
+        "en": "next: the next dispatch function in the middleware chain",
+        "ja": "next: ミドルウェアチェーン内の次の dispatch 関数"
+      },
+      {
+        "vi": "action: action object đang được dispatch",
+        "en": "action: the action object being dispatched",
+        "ja": "action: 現在 dispatch されているアクションオブジェクト"
+      },
+      {
+        "vi": "middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(yourMiddleware)",
+        "en": "middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(yourMiddleware)",
+        "ja": "middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(yourMiddleware)"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Quên gọi next(action) dẫn đến action không đến được reducer.",
+        "en": "Forgetting to call next(action) prevents the action from reaching the reducer.",
+        "ja": "next(action) を呼び忘れると、アクションが reducer に到達しません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Luôn return next(action) ở cuối middleware function.",
+        "en": "Always return next(action) at the end of the middleware function.",
+        "ja": "常にミドルウェア関数の最後で next(action) を return します。"
+      }
+    ],
+    "tags": ["redux", "middleware", "custom"]
+  },
+  {
+    "id": "redux-persist",
+    "name": "Redux Persist",
+    "group": "Redux (RTK)",
+    "categorySlug": "redux",
+    "description": {
+      "vi": "Lưu Redux state vào localStorage để giữ dữ liệu khi reload trang.",
+      "en": "Persist Redux state to localStorage to keep data across page reloads.",
+      "ja": "Redux 状態を localStorage に保存し、ページリロード後もデータを保持します。"
+    },
+    "detail": {
+      "vi": "redux-persist tự động lưu state vào storage và khôi phục khi app khởi động. Có thể cấu hình whitelist/blacklist cho từng slice.",
+      "en": "redux-persist automatically saves state to storage and restores it on app startup. Whitelist/blacklist specific slices.",
+      "ja": "redux-persist は状態をストレージに自動保存し、アプリ起動時に復元します。スライスごとにホワイトリスト/ブラックリストを設定できます。"
+    },
+    "syntax": "persistStore(store) + PersistGate",
+    "example": "import { persistStore, persistReducer } from 'redux-persist';\nimport storage from 'redux-persist/lib/storage';\nimport { PersistGate } from 'redux-persist/integration/react';\n\nconst persistConfig = {\n  key: 'root',\n  storage,\n  whitelist: ['tasks'], // chỉ persist slice tasks\n  blacklist: ['auth'],   // không persist slice auth\n};\n\nconst persistedReducer = persistReducer(persistConfig, rootReducer);\n\nexport const store = configureStore({\n  reducer: persistedReducer,\n  middleware: (getDefaultMiddleware) =>\n    getDefaultMiddleware({\n      serializableCheck: {\n        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],\n      },\n    }),\n});\n\nexport const persistor = persistStore(store);\n\n// main.tsx\n<Provider store={store}>\n  <PersistGate loading={null} persistor={persistor}>\n    <App />\n  </PersistGate>\n</Provider>",
+    "breakdown": [
+      {
+        "vi": "persistConfig: cấu hình key lưu storage, whitelist/blacklist slice",
+        "en": "persistConfig: configure storage key, whitelist/blacklist slices",
+        "ja": "persistConfig: ストレージキー、ホワイトリスト/ブラックリストスライスを設定"
+      },
+      {
+        "vi": "persistReducer: bọc rootReducer để tự động persist",
+        "en": "persistReducer: wrap rootReducer for auto-persist",
+        "ja": "persistReducer: 自動保存のために rootReducer をラップ"
+      },
+      {
+        "vi": "PersistGate: delay rendering UI đến khi state được khôi phục",
+        "en": "PersistGate: delay rendering UI until state is restored",
+        "ja": "PersistGate: 状態が復元されるまで UI レンダリングを遅延"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Lỗi serializableCheck do action của redux-persist không phải plain object.",
+        "en": "SerializableCheck error because redux-persist actions are not plain objects.",
+        "ja": "redux-persist アクションがプレーンオブジェクトではないため、serializableCheck エラーが発生。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm ignoredActions vào middleware serializableCheck như ví dụ trên.",
+        "en": "Add ignoredActions to middleware serializableCheck as shown in the example.",
+        "ja": "例のように serializableCheck に ignoredActions を追加します。"
+      }
+    ],
+    "tags": ["redux", "persist", "localstorage"]
+  },
+  {
+    "id": "redux-devtools",
+    "name": "Redux DevTools",
+    "group": "Redux (RTK)",
+    "categorySlug": "redux",
+    "description": {
+      "vi": "Debug Redux app với DevTools – time-travel debugging.",
+      "en": "Debug Redux apps with DevTools – time-travel debugging.",
+      "ja": "DevTools で Redux アプリをデバッグ – タイムトラベルデバッグ。"
+    },
+    "detail": {
+      "vi": "configureStore tự động bật Redux DevTools khi không phải production. Bạn có thể inspect state, xem action history, time-travel giữa các action.",
+      "en": "configureStore automatically enables Redux DevTools in non-production. Inspect state, view action history, time-travel between actions.",
+      "ja": "configureStore は本番環境以外で自動的に Redux DevTools を有効にします。状態の検査、アクション履歴の表示、アクション間のタイムトラベルが可能です。"
+    },
+    "syntax": "Redux DevTools Extension (trình duyệt)",
+    "example": "// configureStore tự động bật DevTools:\nexport const store = configureStore({\n  reducer: { tasks: tasksReducer },\n  devTools: import.meta.env.DEV, // chỉ bật khi dev\n});\n\n// Cấu hình nâng cao:\nexport const store = configureStore({\n  reducer: { tasks: tasksReducer },\n  devTools: {\n    name: 'Task Manager',\n    maxAge: 50, // chỉ giữ 50 action gần nhất\n    trace: true, // trace stack cho mỗi action\n  },\n});",
+    "breakdown": [
+      {
+        "vi": "Cài Redux DevTools extension trên Chrome/Firefox/Edge",
+        "en": "Install Redux DevTools extension on Chrome/Firefox/Edge",
+        "ja": "Chrome/Firefox/Edge に Redux DevTools 拡張機能をインストール"
+      },
+      {
+        "vi": "Mở DevTools → tab Redux để inspect actions, state, diff",
+        "en": "Open DevTools → Redux tab to inspect actions, state, diff",
+        "ja": "DevTools → Redux タブを開いて actions、state、diff を確認"
+      },
+      {
+        "vi": "Time-travel: click action cũ để quay lại state tại thời điểm đó",
+        "en": "Time-travel: click a past action to jump back to that state",
+        "ja": "タイムトラベル: 過去のアクションをクリックしてその時点の状態に戻る"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không thấy tab Redux trong DevTools.",
+        "en": "Redux tab not appearing in DevTools.",
+        "ja": "DevTools に Redux タブが表示されない。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Cài extension Redux DevTools, đảm bảo devTools: true trong configureStore.",
+        "en": "Install Redux DevTools extension, ensure devTools: true in configureStore.",
+        "ja": "Redux DevTools 拡張機能をインストールし、configureStore で devTools: true を確認。"
+      }
+    ],
+    "tags": ["redux", "devtools", "debug"]
+  },
+  {
+    "id": "redux-selectors",
+    "name": "Selectors & Memoization",
+    "group": "Redux (RTK)",
+    "categorySlug": "redux",
+    "description": {
+      "vi": "Tạo selectors với createSelector để truy vấn state và memoize kết quả.",
+      "en": "Create selectors with createSelector to query state and memoize results.",
+      "ja": "createSelector でセレクターを作成し、状態をクエリして結果をメモ化します。"
+    },
+    "detail": {
+      "vi": "createSelector tạo derived data từ state, tự động cache kết quả cho đến khi input thay đổi. Giúp tránh tính toán lại không cần thiết.",
+      "en": "createSelector creates derived data from state, automatically caches results until inputs change. Avoids unnecessary recalculations.",
+      "ja": "createSelector は状態から派生データを作成し、入力が変更されるまで結果を自動キャッシュします。不要な再計算を防ぎます。"
+    },
+    "syntax": "createSelector([inputSelectors], resultFn)",
+    "example": "import { createSelector } from '@reduxjs/toolkit';\nimport type { RootState } from '@/app/store';\n\n// Base selector\nconst selectTasks = (state: RootState) => state.tasks.items;\nconst selectFilter = (state: RootState) => state.tasks.filter;\n\n// Memoized selector: chỉ tính lại khi tasks hoặc filter thay đổi\nexport const selectFilteredTasks = createSelector(\n  [selectTasks, selectFilter],\n  (tasks, filter) => {\n    switch (filter) {\n      case 'active': return tasks.filter(t => !t.completed);\n      case 'completed': return tasks.filter(t => t.completed);\n      default: return tasks;\n    }\n  }\n);\n\nexport const selectTaskStats = createSelector(\n  [selectTasks],\n  (tasks) => ({\n    total: tasks.length,\n    completed: tasks.filter(t => t.completed).length,\n    active: tasks.filter(t => !t.completed).length,\n    progress: tasks.length > 0\n      ? Math.round((tasks.filter(t => t.completed).length / tasks.length) * 100)\n      : 0,\n  })\n);\n\n// Usage trong component:\nconst filteredTasks = useAppSelector(selectFilteredTasks);\nconst stats = useAppSelector(selectTaskStats);",
+    "breakdown": [
+      {
+        "vi": "Input selectors: lấy dữ liệu gốc từ state (không memoized)",
+        "en": "Input selectors: get raw data from state (not memoized)",
+        "ja": "入力セレクター: 状態から生データを取得（メモ化なし）"
+      },
+      {
+        "vi": "Result function: nhận kết quả từ input selectors, tính toán derived data",
+        "en": "Result function: receives input selector results, computes derived data",
+        "ja": "結果関数: 入力セレクターの結果を受け取り、派生データを計算"
+      },
+      {
+        "vi": "Chỉ tính lại khi input selectors trả về giá trị mới (reference check)",
+        "en": "Only recalculates when input selectors return new values (reference check)",
+        "ja": "入力セレクターが新しい値を返したときのみ再計算（参照チェック）"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Tạo selector mới trong component mỗi lần render, mất memoization.",
+        "en": "Creating a new selector inside the component on every render, losing memoization.",
+        "ja": "コンポーネント内で毎回新しいセレクターを作成し、メモ化が機能しない。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Định nghĩa selectors ở ngoài component (cùng file slice hoặc file selectors riêng).",
+        "en": "Define selectors outside the component (in the slice file or a separate selectors file).",
+        "ja": "セレクターはコンポーネントの外部で定義（スライスファイルまたは別のセレクターファイルに）。"
+      }
+    ],
+    "tags": ["redux", "selector", "memoization", "performance"]
+  },
+  {
+    "id": "redux-normalizr",
+    "name": "Normalize State Shape",
+    "group": "Redux (RTK)",
+    "categorySlug": "redux",
+    "description": {
+      "vi": "Thiết kế state shape chuẩn để dễ dàng cập nhật và truy vấn.",
+      "en": "Design a normalized state shape for easy updates and queries.",
+      "ja": "更新とクエリが容易な正規化された状態設計。"
+    },
+    "detail": {
+      "vi": "State nên được tổ chức như database: dùng object (entities) thay vì array để O(1) lookup. Dùng ids array để giữ thứ tự.",
+      "en": "Organize state like a database: use objects (entities) instead of arrays for O(1) lookup. Use an ids array to maintain order.",
+      "ja": "状態はデータベースのように整理します：配列の代わりにオブジェクト（エンティティ）を使用して O(1) ルックアップを実現。順序維持には ids 配列を使用します。"
+    },
+    "syntax": "{ entities: Record<id, T>, ids: id[] }",
+    "example": "// Không chuẩn (dùng array):\ninterface BadState { tasks: Task[]; }\n// Cập nhật: .find() O(n)\n\n// Chuẩn (dùng entity):\ninterface NormalizedState {\n  tasks: {\n    entities: Record<string, Task>;\n    ids: string[];\n  };\n}\n\n// Cập nhật O(1):\nupdateTask: (state, action: PayloadAction<Task>) => {\n  state.tasks.entities[action.payload.id] = action.payload;\n}\n\n// Selectors:\nexport const selectAllTasks = createSelector(\n  [(state: RootState) => state.tasks],\n  (tasks) => tasks.ids.map((id) => tasks.entities[id])\n);\n\n// Cập nhật trạng thái nhanh:\nexport const selectTaskById = (id: string) =>\n  (state: RootState) => state.tasks.entities[id];",
+    "breakdown": [
+      {
+        "vi": "entities: Record<id, T> lưu data, truy cập O(1) qua id",
+        "en": "entities: Record<id, T> stores data, O(1) access by id",
+        "ja": "entities: Record<id, T> でデータを保存、id で O(1) アクセス"
+      },
+      {
+        "vi": "ids: array giữ thứ tự các item, dùng để render danh sách",
+        "en": "ids: array maintains item order, used to render lists",
+        "ja": "ids: アイテムの順序を維持する配列、リストレンダリングに使用"
+      },
+      {
+        "vi": "Reducer chỉ cần spread 1 entity thay vì map/filter toàn bộ array",
+        "en": "Reducers only need to spread one entity instead of map/filtering the entire array",
+        "ja": "Reducer は配列全体を map/filter する代わりに 1 つのエンティティを spread するだけで済む"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Dùng array cho mọi thứ dẫn đến O(n) lookup và reducer phức tạp.",
+        "en": "Using arrays for everything leads to O(n) lookups and complex reducers.",
+        "ja": "すべてに配列を使用すると O(n) ルックアップと複雑な reducer になる。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chuyển sang entity pattern: entities + ids. Có thể dùng thư viện normalizr.",
+        "en": "Switch to entity pattern: entities + ids. Can use the normalizr library.",
+        "ja": "エンティティパターン（entities + ids）に移行。normalizr ライブラリも使用可能。"
+      }
+    ],
+    "tags": ["redux", "normalize", "entity", "architecture"]
+  },
+  {
+    "id": "redux-testing",
+    "name": "Testing Redux Logic",
+    "group": "Redux (RTK)",
+    "categorySlug": "redux",
+    "description": {
+      "vi": "Viết test cho slice reducer, async thunk, và selectors.",
+      "en": "Write tests for slice reducers, async thunks, and selectors.",
+      "ja": "スライス reducer、非同期 thunk、セレクターのテストを記述します。"
+    },
+    "detail": {
+      "vi": "Redux logic dễ test vì pure function. Dùng vitest + @testing-library/react để test component kết nối store.",
+      "en": "Redux logic is easy to test because it's pure functions. Use vitest + @testing-library/react to test components connected to the store.",
+      "ja": "Redux ロジックは純粋関数なのでテストが容易です。vitest + @testing-library/react を使用してストアに接続されたコンポーネントをテストします。"
+    },
+    "syntax": "test reducer / test thunk / test component with store",
+    "example": "// Test slice reducer (pure function):\nimport tasksReducer, { addTask, toggleTask } from './tasksSlice';\n\ndescribe('tasksSlice', () => {\n  const initialState = { items: [], loading: false, error: null };\n\n  it('should add a task', () => {\n    const task = { id: '1', title: 'Test', completed: false };\n    const state = tasksReducer(initialState, addTask(task));\n    expect(state.items).toHaveLength(1);\n    expect(state.items[0].title).toBe('Test');\n  });\n\n  it('should toggle a task', () => {\n    const stateWithTask = { ...initialState, items: [{ id: '1', title: 'Test', completed: false }] };\n    const state = tasksReducer(stateWithTask, toggleTask('1'));\n    expect(state.items[0].completed).toBe(true);\n  });\n});\n\n// Test component với store mock:\nimport { render, screen } from '@testing-library/react';\nimport { Provider } from 'react-redux';\nimport { configureStore } from '@reduxjs/toolkit';\nimport tasksReducer from './tasksSlice';\n\nconst renderWithStore = (component: React.ReactNode) => {\n  const store = configureStore({ reducer: { tasks: tasksReducer } });\n  return render(<Provider store={store}>{component}</Provider>);\n};\n\nit('renders task list from store', () => {\n  const store = configureStore({\n    reducer: { tasks: tasksReducer },\n    preloadedState: { tasks: { items: [{ id: '1', title: 'Learn Redux', completed: false }], loading: false, error: null } },\n  });\n  render(<Provider store={store}><TaskList /></Provider>);\n  expect(screen.getByText('Learn Redux')).toBeDefined();\n});",
+    "breakdown": [
+      {
+        "vi": "Test reducer: gọi reducer function với state + action, assert kết quả",
+        "en": "Test reducer: call reducer function with state + action, assert result",
+        "ja": "reducer のテスト: reducer 関数を state + action で呼び出し、結果をアサート"
+      },
+      {
+        "vi": "Test component: tạo store với preloadedState, bọc Provider, render",
+        "en": "Test component: create store with preloadedState, wrap Provider, render",
+        "ja": "コンポーネントのテスト: preloadedState でストアを作成、Provider でラップ、レンダリング"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không mock store dẫn đến test phụ thuộc vào global state.",
+        "en": "Not mocking the store leads to tests depending on global state.",
+        "ja": "ストアをモックしないと、テストがグローバル状態に依存する。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Tạo hàm renderWithStore như ví dụ trên, mỗi test có store riêng biệt.",
+        "en": "Create a renderWithStore helper as shown above, each test has its own store.",
+        "ja": "上記の例のように renderWithStore ヘルパーを作成し、各テストが独自のストアを持つようにします。"
+      }
+    ],
+    "tags": ["redux", "test", "vitest", "slice"]
+  },
+  {
+    "id": "redux-migration",
+    "name": "Migrate từ Redux cổ điển sang RTK",
+    "group": "Redux (RTK)",
+    "categorySlug": "redux",
+    "description": {
+      "vi": "Các bước migrate từ Redux cũ (action types, switch/case reducer) sang Redux Toolkit.",
+      "en": "Steps to migrate from classic Redux (action types, switch/case reducers) to Redux Toolkit.",
+      "ja": "従来の Redux（アクションタイプ、switch/case reducer）から Redux Toolkit への移行手順。"
+    },
+    "detail": {
+      "vi": "Redux Toolkit giảm ~50% boilerplate. Quy trình migrate: (1) thay createStore bằng configureStore, (2) thay switch/case bằng createSlice, (3) thay redux-thunk bằng createAsyncThunk, (4) thay useSelector/useDispatch raw bằng typed hooks.",
+      "en": "Redux Toolkit reduces ~50% boilerplate. Migration steps: (1) replace createStore with configureStore, (2) replace switch/case with createSlice, (3) replace redux-thunk with createAsyncThunk, (4) replace raw useSelector/useDispatch with typed hooks.",
+      "ja": "Redux Toolkit はボイラープレートを約 50% 削減します。移行手順：(1) createStore を configureStore に置き換え、(2) switch/case を createSlice に置き換え、(3) redux-thunk を createAsyncThunk に置き換え、(4) 生の useSelector/useDispatch を型付けフックに置き換え。"
+    },
+    "syntax": "createStore -> configureStore | switch/case -> createSlice",
+    "example": "// TRƯỚC (classic Redux):\n// actions.js\nconst ADD_TODO = 'ADD_TODO';\nexport const addTodo = (text) => ({ type: ADD_TODO, payload: text });\n\n// reducer.js\nconst todosReducer = (state = [], action) => {\n  switch (action.type) {\n    case ADD_TODO: return [...state, { text: action.payload, completed: false }];\n    default: return state;\n  }\n};\n\n// store.js\nimport { createStore, combineReducers } from 'redux';\nconst rootReducer = combineReducers({ todos: todosReducer });\nconst store = createStore(rootReducer);\n\n// SAU (Redux Toolkit):\n// todosSlice.ts\nimport { createSlice } from '@reduxjs/toolkit';\n\nconst todosSlice = createSlice({\n  name: 'todos',\n  initialState: [],\n  reducers: {\n    addTodo: (state, action) => {\n      state.push({ text: action.payload, completed: false });\n    },\n  },\n});\n\nexport const { addTodo } = todosSlice.actions;\nexport default todosSlice.reducer;\n\n// store.ts\nimport { configureStore } from '@reduxjs/toolkit';\nimport todosReducer from './features/todos/todosSlice';\n\nexport const store = configureStore({\n  reducer: { todos: todosReducer },\n});",
+    "breakdown": [
+      {
+        "vi": "Bước 1: Thay createStore + combineReducers bằng configureStore",
+        "en": "Step 1: Replace createStore + combineReducers with configureStore",
+        "ja": "ステップ 1: createStore + combineReducers を configureStore に置き換え"
+      },
+      {
+        "vi": "Bước 2: Thay action types constants + switch/case reducer bằng createSlice",
+        "en": "Step 2: Replace action type constants + switch/case reducer with createSlice",
+        "ja": "ステップ 2: アクションタイプ定数 + switch/case reducer を createSlice に置き換え"
+      },
+      {
+        "vi": "Bước 3: Thay manual async actions bằng createAsyncThunk",
+        "en": "Step 3: Replace manual async actions with createAsyncThunk",
+        "ja": "ステップ 3: 手動の非同期アクションを createAsyncThunk に置き換え"
+      },
+      {
+        "vi": "Bước 4: Tạo typed hooks trong app/hooks.ts",
+        "en": "Step 4: Create typed hooks in app/hooks.ts",
+        "ja": "ステップ 4: app/hooks.ts に型付けフックを作成"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Cố gắng migrate tất cả cùng lúc gây lỗi khó debug.",
+        "en": "Trying to migrate everything at once causes hard-to-debug errors.",
+        "ja": "一度にすべてを移行しようとすると、デバッグが困難なエラーが発生します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Migrate từng slice một, giữ nguyên action types cho các slice chưa migrate.",
+        "en": "Migrate one slice at a time, keep old action types for unmigrated slices.",
+        "ja": "スライスごとに移行し、未移行のスライスは古いアクションタイプを維持。"
+      }
+    ],
+    "tags": ["redux", "migration", "rtk", "toolkit"]
   }
 ]

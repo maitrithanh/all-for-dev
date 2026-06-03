@@ -4,6 +4,7 @@ import { categoryList, commandList } from "@/lib/data";
 import { getCategoryIcon } from "@/lib/category-icons";
 import { useI18n } from "@/i18n/I18nProvider";
 import { resolveText } from "@/lib/i18n";
+import { masterGuides } from "@/data/master-guides";
 
 const SITE_URL = "https://allfordev.maitrithanh.dev";
 
@@ -31,6 +32,26 @@ const Breadcrumbs = () => {
     }
 
     if (segment === "command") {
+      continue;
+    }
+
+    if (segment === "master") {
+      continue;
+    }
+
+    const master = masterGuides.find((g) => g.slug === segment);
+    if (master) {
+      const masterCategory = categoryList.find((c) => c.slug === master.categorySlug);
+      if (masterCategory && !items.find((it) => it.path === `/category/${master.categorySlug}`)) {
+        items.push({
+          label: resolveText(masterCategory.name, locale),
+          path: `/category/${master.categorySlug}`,
+          linkable: true,
+        });
+      }
+      if (!isLast) {
+        items.push({ label: resolveText(master.title, locale), path, linkable: false });
+      }
       continue;
     }
 

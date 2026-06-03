@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import {
   AlertTriangle, CheckCircle2, HelpCircle, Tag, Waypoints,
   Terminal, BookOpen, ArrowLeft, ChevronRight, Layers,
+  GraduationCap, ArrowUpRight,
   type LucideIcon
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +15,7 @@ import { useI18n } from "@/i18n/I18nProvider";
 import { commandList, findCategoryBySlug } from "@/lib/data";
 import { resolveText } from "@/lib/i18n";
 import { commandCombos } from "@/data/combos";
+import { masterGuides } from "@/data/master-guides";
 
 const SITE_URL = "https://allfordev.maitrithanh.dev";
 
@@ -104,6 +106,14 @@ const CommandDetailPage = () => {
               #{tag}
             </Badge>
           ))}
+          {category ? (
+            <Button asChild variant="ghost" size="sm" className="rounded-full h-6 text-[10px] font-medium text-zinc-400 gap-1 ml-auto">
+              <a href={category.docsUrl} target="_blank" rel="noreferrer">
+                <ArrowUpRight className="h-3 w-3" />
+                {t("officialDocs")}
+              </a>
+            </Button>
+          ) : null}
         </div>
         <h1 className="text-2xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50 md:text-3xl">
           {commandName}
@@ -258,17 +268,30 @@ const CommandDetailPage = () => {
                 </Badge>
               ))}
             </div>
-            <Button
-              asChild
-              variant="outline"
-              size="sm"
-              className="ml-auto rounded-full border-zinc-200 dark:border-zinc-700 text-[11px] font-medium h-7"
-            >
-              <Link to={`/category/${command.categorySlug}`}>
-                <ChevronRight className="h-3 w-3 mr-0.5 rotate-180" />
-                {t("viewAllInCategory")}
-              </Link>
-            </Button>
+            <div className="flex items-center gap-2 ml-auto">
+              {category ? (
+                <Button asChild variant="ghost" size="sm" className="rounded-full h-7 text-[11px] font-medium text-zinc-500 gap-1">
+                  <a href={category.docsUrl} target="_blank" rel="noreferrer">
+                    <ArrowUpRight className="h-3 w-3" />
+                    {t("officialDocs")}
+                  </a>
+                </Button>
+              ) : null}
+              {masterGuides.find((g) => g.categorySlug === command.categorySlug) ? (
+                <Button asChild variant="outline" size="sm" className="rounded-full border-zinc-200 dark:border-zinc-700 text-[11px] font-medium h-7 gap-1">
+                  <Link to={`/master/${command.categorySlug}`}>
+                    <GraduationCap className="h-3 w-3" />
+                    {t("masterGuideButton")} {categoryName}
+                  </Link>
+                </Button>
+              ) : null}
+              <Button asChild variant="outline" size="sm" className="rounded-full border-zinc-200 dark:border-zinc-700 text-[11px] font-medium h-7">
+                <Link to={`/category/${command.categorySlug}`}>
+                  <ChevronRight className="h-3 w-3 mr-0.5 rotate-180" />
+                  {t("viewAllInCategory")}
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

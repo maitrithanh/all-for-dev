@@ -435,5 +435,134 @@ export const commandCombos: Record<string, ComboWorkflow[]> = {
         }
       ]
     }
+  ],
+  "dotnet-new": [
+    {
+      title: {
+        vi: "Quy trình tạo Web API mới với Entity Framework Core",
+        en: "Create a new Web API with Entity Framework Core",
+        ja: "Entity Framework Core を使用して新しい Web API を作成する"
+      },
+      steps: [
+        {
+          command: "dotnet new webapi -n MyApi --use-controllers",
+          desc: {
+            vi: "Tạo dự án Web API mới sử dụng controllers",
+            en: "Create a new Web API project using controllers",
+            ja: "コントローラーを使用して新しい Web API プロジェクトを作成する"
+          }
+        },
+        {
+          command: "cd MyApi",
+          desc: {
+            vi: "Di chuyển vào thư mục dự án",
+            en: "Navigate into the project directory",
+            ja: "プロジェクトディレクトリに移動する"
+          }
+        },
+        {
+          command: "dotnet add package Microsoft.EntityFrameworkCore.SqlServer",
+          desc: {
+            vi: "Thêm gói EF Core SQL Server để kết nối CSDL",
+            en: "Add EF Core SQL Server package for database connectivity",
+            ja: "データベース接続用の EF Core SQL Server パッケージを追加する"
+          }
+        },
+        {
+          command: "dotnet tool install --global dotnet-ef",
+          desc: {
+            vi: "Cài đặt EF Core CLI tool để chạy migration",
+            en: "Install EF Core CLI tool for running migrations",
+            ja: "マイグレーション実行用の EF Core CLI ツールをインストールする"
+          }
+        },
+        {
+          command: "dotnet ef migrations add InitialCreate",
+          desc: {
+            vi: "Tạo migration đầu tiên từ DbContext",
+            en: "Generate initial migration from DbContext",
+            ja: "DbContext から初期マイグレーションを生成する"
+          }
+        },
+        {
+          command: "dotnet ef database update",
+          desc: {
+            vi: "Áp dụng migration để tạo database schema",
+            en: "Apply migration to create the database schema",
+            ja: "マイグレーションを適用してデータベーススキーマを作成する"
+          }
+        },
+        {
+          command: "dotnet run",
+          desc: {
+            vi: "Chạy ứng dụng Web API",
+            en: "Run the Web API application",
+            ja: "Web API アプリケーションを実行する"
+          }
+        }
+      ]
+    }
+  ],
+  "redux-store": [
+    {
+      title: {
+        vi: "Quy trình thiết lập Redux từ đầu cho dự án React",
+        en: "Setup Redux from scratch for a React project",
+        ja: "React プロジェクトに Redux をゼロから設定する"
+      },
+      steps: [
+        {
+          command: "npm install @reduxjs/toolkit react-redux",
+          desc: {
+            vi: "Cài đặt Redux Toolkit và React-Redux",
+            en: "Install Redux Toolkit and React-Redux",
+            ja: "Redux Toolkit と React-Redux をインストールする"
+          }
+        },
+        {
+          command: "mkdir -p src/app src/features",
+          desc: {
+            vi: "Tạo cấu trúc thư mục: app/ chứa store, features/ chứa slice",
+            en: "Create folder structure: app/ for store, features/ for slices",
+            ja: "フォルダ構造を作成：app/ はストア、features/ はスライス用"
+          }
+        },
+        {
+          desc: {
+            vi: "Tạo store.ts với configureStore, export RootState và AppDispatch",
+            en: "Create store.ts with configureStore, export RootState and AppDispatch",
+            ja: "configureStore で store.ts を作成し、RootState と AppDispatch をエクスポート"
+          }
+        },
+        {
+          desc: {
+            vi: "Tạo hooks.ts với useAppDispatch và useAppSelector typed",
+            en: "Create hooks.ts with typed useAppDispatch and useAppSelector",
+            ja: "型付けされた useAppDispatch と useAppSelector で hooks.ts を作成"
+          }
+        },
+        {
+          desc: {
+            vi: "Tạo slice cho từng feature bằng createSlice (state, reducers, actions)",
+            en: "Create a slice per feature with createSlice (state, reducers, actions)",
+            ja: "createSlice で機能ごとにスライスを作成（state、reducers、actions）"
+          }
+        },
+        {
+          desc: {
+            vi: "Bọc <Provider store={store}> trong main.tsx",
+            en: "Wrap <Provider store={store}> in main.tsx",
+            ja: "main.tsx で <Provider store={store}> でラップ"
+          }
+        },
+        {
+          desc: {
+            vi: "Sử dụng useAppSelector và useAppDispatch trong component",
+            en: "Use useAppSelector and useAppDispatch in components",
+            ja: "コンポーネントで useAppSelector と useAppDispatch を使用"
+          }
+        }
+      ]
+    }
   ]
 };

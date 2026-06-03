@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from "react";
-import { useParams } from "react-router-dom";
-import { ArrowUpRight, Waypoints } from "lucide-react";
+import { Link, useParams } from "react-router-dom";
+import { ArrowUpRight, GraduationCap, Waypoints } from "lucide-react";
 import CommandList from "@/command/CommandList";
 import SearchInput from "@/command/SearchInput";
 import CodeBlock from "@/command/CodeBlock";
@@ -12,6 +12,7 @@ import { resolveText } from "@/lib/i18n";
 import { useCommands } from "@/hooks/useCommands";
 import { useSearchStore } from "@/store/useSearchStore";
 import { commandCombos, type ComboWorkflow, type ComboStep } from "@/data/combos";
+import { masterGuides } from "@/data/master-guides";
 
 const SITE_URL = "https://allfordev.maitrithanh.dev";
 
@@ -89,17 +90,32 @@ const CategoryPage = () => {
             </div>
           </div>
           {category ? (
-            <Button 
-              asChild 
-              variant="outline" 
-              size="sm" 
-              className="gap-1.5 self-start sm:self-auto rounded-lg border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800 font-semibold"
-            >
-              <a href={category.docsUrl} target="_blank" rel="noreferrer">
-                {t("officialDocs")}
-                <ArrowUpRight className="h-3.5 w-3.5 text-zinc-550" />
-              </a>
-            </Button>
+            <>
+              <Button 
+                asChild 
+                variant="outline" 
+                size="sm" 
+                className="gap-1.5 self-start sm:self-auto rounded-lg border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800 font-semibold"
+              >
+                <a href={category.docsUrl} target="_blank" rel="noreferrer">
+                  {t("officialDocs")}
+                  <ArrowUpRight className="h-3.5 w-3.5 text-zinc-550" />
+                </a>
+              </Button>
+              {masterGuides.find((g) => g.categorySlug === category.slug) ? (
+                <Button 
+                  asChild 
+                  variant="outline" 
+                  size="sm" 
+                  className="gap-1.5 self-start sm:self-auto rounded-lg border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800 font-semibold"
+                >
+                  <Link to={`/master/${category.slug}`}>
+                    <GraduationCap className="h-3.5 w-3.5" />
+                    {t("masterGuideButton")} {resolveText(category.name, locale)}
+                  </Link>
+                </Button>
+              ) : null}
+            </>
           ) : null}
         </div>
         <div className="mt-6 border-t border-zinc-200/50 pt-6 dark:border-zinc-800/40">
