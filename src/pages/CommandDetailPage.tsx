@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   AlertTriangle, CheckCircle2, HelpCircle, Tag, Waypoints,
-  Terminal, BookOpen, ArrowLeft, ChevronRight, Layers, AlertCircle,
+  Terminal, BookOpen, ArrowLeft, ChevronRight, Layers,
   type LucideIcon
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
