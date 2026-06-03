@@ -5,12 +5,15 @@ import CommandList from "@/command/CommandList";
 import SearchInput from "@/command/SearchInput";
 import CodeBlock from "@/command/CodeBlock";
 import { Button } from "@/components/ui/button";
+import { SEOHelmet } from "@/components/SEOHelmet";
 import { useI18n } from "@/i18n/I18nProvider";
 import { categoryList, commandList } from "@/lib/data";
 import { resolveText } from "@/lib/i18n";
 import { useCommands } from "@/hooks/useCommands";
 import { useSearchStore } from "@/store/useSearchStore";
 import { commandCombos, type ComboWorkflow, type ComboStep } from "@/data/combos";
+
+const SITE_URL = "https://allfordev.maitrithanh.dev";
 
 const CategoryPage = () => {
   const { slug } = useParams();
@@ -41,8 +44,26 @@ const CategoryPage = () => {
     return list;
   }, [slug]);
 
+  const categoryName = category ? resolveText(category.name, locale) : "";
+  const categoryDesc = category ? resolveText(category.description, locale) : "";
+  const pageTitle = `${categoryName} | Developer Command Handbook`;
+  const canonicalUrl = `${SITE_URL}/category/${slug}`;
+
   return (
     <div className="space-y-8">
+      <SEOHelmet
+        title={pageTitle}
+        description={categoryDesc}
+        canonicalUrl={canonicalUrl}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": categoryName,
+          "description": categoryDesc,
+          "url": canonicalUrl,
+          "about": categoryName
+        }}
+      />
       <section className="relative overflow-hidden rounded-xl border border-zinc-200 bg-zinc-50 p-6 md:p-8 dark:border-zinc-800 dark:bg-zinc-900 shadow-none">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between relative z-10">
           <div className="min-w-0 flex-1">

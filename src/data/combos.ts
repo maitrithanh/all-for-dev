@@ -315,6 +315,100 @@ export const commandCombos: Record<string, ComboWorkflow[]> = {
       ]
     }
   ],
+  "vue-create": [
+    {
+      title: {
+        vi: "Quy trình khởi tạo và chạy dự án Vue 3 + TypeScript mới",
+        en: "Create and run a new Vue 3 + TypeScript project",
+        ja: "新しい Vue 3 + TypeScript プロジェクトを作成して実行する"
+      },
+      steps: [
+        {
+          command: "npm create vue@latest my-vue-app",
+          desc: {
+            vi: "Khởi tạo dự án Vue 3 với tương tác chọn tính năng (TypeScript, Router, Pinia...)",
+            en: "Scaffold a Vue 3 project with interactive feature selection (TypeScript, Router, Pinia...)",
+            ja: "対話形式で機能を選択して Vue 3 プロジェクトを作成する（TypeScript、Router、Pinia...）"
+          }
+        },
+        {
+          command: "cd my-vue-app",
+          desc: {
+            vi: "Di chuyển vào thư mục dự án vừa tạo",
+            en: "Navigate into the newly created project directory",
+            ja: "作成したばかりのプロジェクトディレクトリに移動する"
+          }
+        },
+        {
+          command: "npm install",
+          desc: {
+            vi: "Cài đặt tất cả dependencies của dự án",
+            en: "Install all project dependencies",
+            ja: "すべてのプロジェクト依存関係をインストールする"
+          }
+        },
+        {
+          command: "npm run dev",
+          desc: {
+            vi: "Khởi chạy dev server với HMR để bắt đầu phát triển",
+            en: "Start the dev server with HMR to begin development",
+            ja: "HMR 対応の開発サーバーを起動して開発を始める"
+          }
+        }
+      ]
+    }
+  ],
+  "vue-component": [
+    {
+      title: {
+        vi: "Quy trình tạo component Vue 3 với Composition API",
+        en: "Create a Vue 3 component with Composition API",
+        ja: "Composition API を使用して Vue 3 コンポーネントを作成する"
+      },
+      steps: [
+        {
+          command: "const props = defineProps<{ title: string }>()",
+          desc: {
+            vi: "Khai báo props với TypeScript để nhận dữ liệu từ component cha",
+            en: "Declare props with TypeScript to receive data from parent component",
+            ja: "TypeScript で props を宣言し、親コンポーネントからデータを受け取る"
+          }
+        },
+        {
+          command: "const emit = defineEmits<{ (e: 'close'): void }>()",
+          desc: {
+            vi: "Khai báo events để gửi dữ liệu lên component cha",
+            en: "Declare events to send data back to parent component",
+            ja: "親コンポーネントにデータを送信するイベントを宣言する"
+          }
+        },
+        {
+          command: "const count = ref(0)",
+          desc: {
+            vi: "Tạo state phản ứng với ref",
+            en: "Create reactive state with ref",
+            ja: "ref でリアクティブな状態を作成する"
+          }
+        },
+        {
+          command: "const doubled = computed(() => count.value * 2)",
+          desc: {
+            vi: "Tạo computed value phụ thuộc vào state",
+            en: "Create a computed value derived from state",
+            ja: "状態から派生する算出プロパティを作成する"
+          }
+        },
+        {
+          command: "onMounted(() => { fetchData() })",
+          desc: {
+            vi: "Gọi side effect khi component được mount (fetch API, init)",
+            en: "Run side effects when component mounts (fetch API, init)",
+            ja: "コンポーネントマウント時に副作用を実行する（API 取得、初期化）"
+          }
+        }
+      ]
+    }
+  ],
   "docker-run": [
     {
       title: {

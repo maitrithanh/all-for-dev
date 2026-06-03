@@ -6,6 +6,9 @@ import { useCommands } from "@/hooks/useCommands";
 import { useI18n } from "@/i18n/I18nProvider";
 import { categoryList } from "@/lib/data";
 import { useSearchStore } from "@/store/useSearchStore";
+import { SEOHelmet } from "@/components/SEOHelmet";
+
+const SITE_URL = "https://allfordev.maitrithanh.dev";
 
 const HomePage = () => {
   const { keyword, setKeyword, setActiveCategory } = useSearchStore();
@@ -16,8 +19,31 @@ const HomePage = () => {
     setActiveCategory(undefined);
   }, [setActiveCategory]);
 
+  const title = "Developer Command Handbook";
+  const description = t("heroDescription");
+
   return (
     <div className="space-y-12">
+      <SEOHelmet
+        title={title}
+        description={description}
+        canonicalUrl={SITE_URL}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Developer Command Handbook",
+          "url": SITE_URL,
+          "description": description,
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": `${SITE_URL}/?q={search_term_string}`
+            },
+            "query-input": "required name=search_term_string"
+          }
+        }}
+      />
       {/* Flat Hero section */}
       <section className="relative overflow-hidden rounded-xl border border-zinc-200 bg-zinc-50 p-8 md:p-10 dark:border-zinc-800 dark:bg-zinc-900 shadow-none">
         <div className="relative z-10 max-w-3xl">

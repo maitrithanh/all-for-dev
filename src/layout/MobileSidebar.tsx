@@ -97,7 +97,7 @@ const MobileSidebar = () => {
                   </div>
                   <div className="flex flex-col gap-1.5">
                     {groupCategories.map((category) => {
-                      const isActive = location.pathname.includes(category.slug);
+                      const isActive = location.pathname.includes(`/category/${category.slug}`);
 
                       return (
                         <Link

@@ -5,6 +5,7 @@ import HomePage from "@/pages/HomePage";
 import CategoryIndexPage from "@/pages/CategoryIndexPage";
 import CategoryPage from "@/pages/CategoryPage";
 import CommandDetailPage from "@/pages/CommandDetailPage";
+import NotFoundPage from "@/pages/NotFoundPage";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/category" element={<CategoryIndexPage />} />
         <Route path="/category/:slug" element={<CategoryPage />} />
         <Route path="/command/:id" element={<CommandDetailPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Toaster richColors position="bottom-right" />
     </RootLayout>

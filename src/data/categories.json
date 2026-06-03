@@ -36,6 +36,24 @@
     "group": "frameworks"
   },
   {
+    "id": "vuejs",
+    "name": {
+      "vi": "Vue.js",
+      "en": "Vue.js",
+      "ja": "Vue.js"
+    },
+    "slug": "vuejs",
+    "description": {
+      "vi": "Composition API, components và routing cho frontend hiện đại.",
+      "en": "Composition API, components, and routing for modern frontends.",
+      "ja": "モダンなフロントエンド向けの Composition API、コンポーネント、ルーティング。"
+    },
+    "accent": "from-green-500/20 via-green-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/vuedotjs/4FC08D",
+    "docsUrl": "https://vuejs.org/guide/introduction.html",
+    "group": "frameworks"
+  },
+  {
     "id": "vite",
     "name": {
       "vi": "Vite",
@@ -198,6 +216,24 @@
     "group": "systems"
   },
   {
+    "id": "nginx",
+    "name": {
+      "vi": "Nginx",
+      "en": "Nginx",
+      "ja": "Nginx"
+    },
+    "slug": "nginx",
+    "description": {
+      "vi": "Cấu hình web server, reverse proxy và load balancing.",
+      "en": "Web server configuration, reverse proxy, and load balancing.",
+      "ja": "Webサーバー設定、リバースプロキシ、ロードバランシング。"
+    },
+    "accent": "from-emerald-500/20 via-emerald-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/nginx/009639",
+    "docsUrl": "https://nginx.org/en/docs/",
+    "group": "systems"
+  },
+  {
     "id": "composer",
     "name": {
       "vi": "Composer",
@@ -232,5 +268,41 @@
     "image": "https://cdn.simpleicons.org/postman/FF6C37",
     "docsUrl": "https://curl.se/docs/",
     "group": "tools"
+  },
+  {
+    "id": "python",
+    "name": {
+      "vi": "Python",
+      "en": "Python",
+      "ja": "Python"
+    },
+    "slug": "python",
+    "description": {
+      "vi": "Quản lý virtual env, cài đặt thư viện pip và chạy script.",
+      "en": "Virtual environment setup, pip package installation, and script execution.",
+      "ja": "仮想環境の設定、pip パッケージのインストール、およびスクリプトの実行。"
+    },
+    "accent": "from-blue-500/20 via-yellow-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/python/3776AB",
+    "docsUrl": "https://docs.python.org/3/",
+    "group": "languages"
+  },
+  {
+    "id": "go",
+    "name": {
+      "vi": "Go (Golang)",
+      "en": "Go (Golang)",
+      "ja": "Go (Golang)"
+    },
+    "slug": "go",
+    "description": {
+      "vi": "Quản lý module, biên dịch và chạy ứng dụng Go.",
+      "en": "Go module management, compilation, and execution.",
+      "ja": "Go モジュールの管理、コンパイル、および実行。"
+    },
+    "accent": "from-cyan-500/20 via-blue-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/go/00ADD8",
+    "docsUrl": "https://go.dev/doc/",
+    "group": "languages"
   }
 ]

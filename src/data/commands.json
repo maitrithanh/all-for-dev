@@ -6359,5 +6359,2067 @@
       "upload",
       "multipart"
     ]
+  },
+  {
+    "id": "python-venv",
+    "name": "python -m venv",
+    "group": "Python",
+    "categorySlug": "python",
+    "description": {
+      "vi": "Khởi tạo môi trường ảo (Virtual Environment) cho Python.",
+      "en": "Create a virtual environment for Python.",
+      "ja": "Pythonの仮想環境を作成します。"
+    },
+    "detail": {
+      "vi": "Môi trường ảo giúp cách ly các package của từng dự án độc lập, tránh xung đột phiên bản thư viện hệ thống.",
+      "en": "Virtual environment isolates package dependencies for independent projects, avoiding global conflicts.",
+      "ja": "仮想環境はプロジェクトごとの依存パッケージを分離し、グローバルなバージョンの競合を防ぎます。"
+    },
+    "syntax": "python -m venv <dir_name>",
+    "example": "python -m venv venv",
+    "breakdown": [
+      {
+        "vi": "python: trình thông dịch Python",
+        "en": "python: the Python interpreter",
+        "ja": "python: Python インタプリタ"
+      },
+      {
+        "vi": "-m venv: chạy module venv tích hợp sẵn",
+        "en": "-m venv: run the built-in venv module",
+        "ja": "-m venv: 組み込みの venv モジュールを実行する"
+      },
+      {
+        "vi": "<dir_name>: tên thư mục chứa môi trường ảo (thường đặt là venv hoặc .venv)",
+        "en": "<dir_name>: folder name for the virtual env (often venv or .venv)",
+        "ja": "<dir_name>: 仮想環境フォルダーの名前（通常は venv または .venv）"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Chưa cài đặt python3-venv trên Linux/Ubuntu.",
+        "en": "python3-venv package is not installed on Linux/Ubuntu.",
+        "ja": "Linux/Ubuntu に python3-venv がインストールされていません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chạy sudo apt install python3-venv để cài đặt thư viện hệ thống.",
+        "en": "Run sudo apt install python3-venv to install the required system library.",
+        "ja": "sudo apt install python3-venv を実行してシステムライブラリをインストールします。"
+      }
+    ],
+    "tags": [
+      "python",
+      "venv",
+      "environment"
+    ],
+    "variations": [
+      {
+        "syntax": "python3 -m venv .venv",
+        "description": {
+          "vi": "Tạo môi trường ảo với thư mục ẩn .venv (thường dùng trên Linux/macOS).",
+          "en": "Create a virtual environment with hidden folder .venv (common on Linux/macOS).",
+          "ja": "非表示フォルダー .venv を使用して仮想環境を作成します（Linux/macOS で一般的）。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "python-pip-install",
+    "name": "pip install",
+    "group": "Python",
+    "categorySlug": "python",
+    "description": {
+      "vi": "Cài đặt thư viện Python từ PyPI.",
+      "en": "Install Python packages from PyPI.",
+      "ja": "PyPIからPythonパッケージをインストールします。"
+    },
+    "detail": {
+      "vi": "Sử dụng pip để tải xuống và quản lý các thư viện bên thứ ba cho dự án.",
+      "en": "Use pip to download and manage third-party packages for your project.",
+      "ja": "pip を使用して、プロジェクト用のサードパーティ製パッケージをダウンロードおよび管理します。"
+    },
+    "syntax": "pip install -r <file_path>",
+    "example": "pip install -r requirements.txt",
+    "breakdown": [
+      {
+        "vi": "pip: trình quản lý package của Python",
+        "en": "pip: Python package installer",
+        "ja": "pip: Python パッケージインストーラー"
+      },
+      {
+        "vi": "install: lệnh cài đặt",
+        "en": "install: the installation command",
+        "ja": "install: インストールコマンド"
+      },
+      {
+        "vi": "-r: đọc danh sách thư viện từ một file cấu hình",
+        "en": "-r: read package names from a requirements file",
+        "ja": "-r: 要件ファイルからパッケージ名を読み取る"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không tìm thấy file requirements.txt.",
+        "en": "requirements.txt file not found.",
+        "ja": "requirements.txt ファイルが見つかりません。"
+      },
+      {
+        "vi": "Lỗi quyền hạn khi cài đặt global.",
+        "en": "Permission denied error when installing globally.",
+        "ja": "グローバルインストール時の権限エラー。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đảm bảo bạn đang đứng đúng thư mục chứa file, hoặc chạy pip install <name>.",
+        "en": "Ensure you are in the correct directory, or run pip install <name> directly.",
+        "ja": "正しいディレクトリにいることを確認するか、直接 pip install <name> を実行します。"
+      },
+      {
+        "vi": "Hãy kích hoạt môi trường ảo (venv) trước khi cài đặt, tránh cài đặt global.",
+        "en": "Activate a virtual environment (venv) before installing to avoid global pollution.",
+        "ja": "グローバル汚染を避けるために、インストール前に仮想環境 (venv) を有効にします。"
+      }
+    ],
+    "tags": [
+      "python",
+      "pip",
+      "install",
+      "dependency"
+    ],
+    "variations": [
+      {
+        "syntax": "pip install <package_name>",
+        "description": {
+          "vi": "Cài đặt một thư viện cụ thể từ PyPI.",
+          "en": "Install a specific package from PyPI.",
+          "ja": "PyPIから特定のパッケージをインストールします。"
+        }
+      },
+      {
+        "syntax": "pip install --upgrade <package_name>",
+        "description": {
+          "vi": "Nâng cấp một thư viện có sẵn lên phiên bản mới nhất.",
+          "en": "Upgrade an existing package to its latest version.",
+          "ja": "既存のパッケージを最新バージョンにアップグレードします。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "python-pip-freeze",
+    "name": "pip freeze",
+    "group": "Python",
+    "categorySlug": "python",
+    "description": {
+      "vi": "Xuất danh sách thư viện đã cài đặt trong môi trường hiện tại.",
+      "en": "Export all installed packages in the current environment.",
+      "ja": "現在の環境にインストールされているすべてのパッケージを書き出します。"
+    },
+    "detail": {
+      "vi": "Dùng để tạo file requirements.txt giúp người khác dễ dàng cài đặt lại chính xác các phiên bản thư viện tương tự.",
+      "en": "Used to generate a requirements.txt file so others can replicate your exact environment.",
+      "ja": "他のユーザーが同じ環境を正確に再現できるように、requirements.txt ファイルを生成するために使用します。"
+    },
+    "syntax": "pip freeze > requirements.txt",
+    "example": "pip freeze > requirements.txt",
+    "breakdown": [
+      {
+        "vi": "freeze: liệt kê các package kèm phiên bản chi tiết",
+        "en": "freeze: list packages with exact versions",
+        "ja": "freeze: 正確なバージョンでパッケージを一覧表示する"
+      },
+      {
+        "vi": ">: ghi đè luồng output vào tệp tin",
+        "en": ">: redirect output stream to a file",
+        "ja": ">: 出力ストリームをファイルにリダイレクトする"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có quyền ghi đè tệp tin trong thư mục hiện tại.",
+        "en": "Permission denied when writing output file.",
+        "ja": "現在のディレクトリで書き込み権限がありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra quyền hạn thư mục hoặc chạy terminal dưới quyền Admin/sudo.",
+        "en": "Check folder permissions or run the terminal with Admin/sudo privileges.",
+        "ja": "フォルダーの権限を確認するか、管理者/sudo 権限でターミナルを実行します。"
+      }
+    ],
+    "tags": [
+      "python",
+      "pip",
+      "freeze",
+      "requirements"
+    ]
+  },
+  {
+    "id": "python-run",
+    "name": "python script.py",
+    "group": "Python",
+    "categorySlug": "python",
+    "description": {
+      "vi": "Khởi chạy một tệp script Python.",
+      "en": "Execute a Python script file.",
+      "ja": "Python スクリプトファイルを実行します。"
+    },
+    "detail": {
+      "vi": "Chạy chương trình Python thông qua tệp mã nguồn đầu vào.",
+      "en": "Run a Python program using the source code file.",
+      "ja": "ソースコードファイルを使用して Python プログラムを実行します。"
+    },
+    "syntax": "python <file_path>",
+    "example": "python main.py",
+    "breakdown": [
+      {
+        "vi": "python: lệnh gọi trình dịch",
+        "en": "python: call the compiler/interpreter",
+        "ja": "python: コンパイラ/インタプリタを呼び出す"
+      },
+      {
+        "vi": "<file_path>: đường dẫn tới tệp python cần chạy",
+        "en": "<file_path>: path to the target python script",
+        "ja": "<file_path>: 実行する Python ファイルへのパス"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Lỗi ModuleNotFoundError khi thiếu thư viện phụ thuộc.",
+        "en": "ModuleNotFoundError due to missing dependency packages.",
+        "ja": "依存パッケージが見つからないため ModuleNotFoundError が発生しました。"
+      },
+      {
+        "vi": "Lỗi cú pháp SyntaxError do không tương thích phiên bản Python.",
+        "en": "SyntaxError due to Python version mismatch.",
+        "ja": "Python のバージョン不一致による SyntaxError。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng pip install để cài đặt thư viện còn thiếu.",
+        "en": "Use pip install to install the missing package.",
+        "ja": "pip install を使用して不足しているパッケージをインストールします。"
+      },
+      {
+        "vi": "Đảm bảo bạn đang chạy đúng phiên bản python (ví dụ python3 thay vì python).",
+        "en": "Ensure you are running the correct python interpreter (e.g. python3 instead of python).",
+        "ja": "正しい python インタプリタを実行していることを確認します（例: python の代わりに python3）。"
+      }
+    ],
+    "tags": [
+      "python",
+      "run",
+      "script",
+      "execute"
+    ],
+    "variations": [
+      {
+        "syntax": "python -m pytest",
+        "description": {
+          "vi": "Chạy bộ framework kiểm thử Pytest trong dự án.",
+          "en": "Execute Pytest test runner framework for tests.",
+          "ja": "テストのために Pytest テストフレームワークを実行します。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "go-mod-init",
+    "name": "go mod init",
+    "group": "Go",
+    "categorySlug": "go",
+    "description": {
+      "vi": "Khởi tạo một Go module mới trong thư mục hiện tại.",
+      "en": "Initialize a new Go module in the current directory.",
+      "ja": "現在のディレクトリで新しい Go モジュールを初期化します。"
+    },
+    "detail": {
+      "vi": "Tạo tệp go.mod để bắt đầu quản lý các dependency cho dự án Go của bạn.",
+      "en": "Create a go.mod file to start tracking dependencies for your Go project.",
+      "ja": "Go プロジェクトの依存関係의 追跡を開始するために go.mod ファイルを作成します。"
+    },
+    "syntax": "go mod init <module_name>",
+    "example": "go mod init github.com/user/myproject",
+    "breakdown": [
+      {
+        "vi": "go: công cụ dòng lệnh Go",
+        "en": "go: the Go command-line tool",
+        "ja": "go: Go コマンドラインツール"
+      },
+      {
+        "vi": "mod init: khởi tạo tệp module quản lý phiên bản",
+        "en": "mod init: initialize module version management file",
+        "ja": "mod init: モジュールバージョン管理ファイルを初期化する"
+      },
+      {
+        "vi": "<module_name>: đường dẫn định danh duy nhất cho module (thường là đường dẫn repo git)",
+        "en": "<module_name>: unique module path (often the git repository URL)",
+        "ja": "<module_name>: 一意のモジュールパス（通常は git リポジトリの URL）"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Tệp go.mod đã tồn tại từ trước.",
+        "en": "go.mod file already exists.",
+        "ja": "go.mod ファイルは既に存在します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Xóa tệp go.mod cũ trước khi chạy lại lệnh, hoặc sử dụng tệp có sẵn.",
+        "en": "Delete the old go.mod file before running the command again, or use the existing one.",
+        "ja": "コマンドを再実行する前に古い go.mod ファイルを削除するか、既存のファイルを使用します。"
+      }
+    ],
+    "tags": [
+      "go",
+      "module",
+      "init",
+      "dependency"
+    ],
+    "variations": [
+      {
+        "syntax": "go mod tidy",
+        "description": {
+          "vi": "Dọn dẹp tệp go.mod và go.sum bằng cách tải thêm các module thiếu và xóa các module thừa.",
+          "en": "Clean up go.mod and go.sum files by adding missing modules and removing unused ones.",
+          "ja": "不足しているモジュールを追加し、未使用のモジュールを削除して、go.mod および go.sum ファイルをクリーンアップします。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "go-run",
+    "name": "go run",
+    "group": "Go",
+    "categorySlug": "go",
+    "description": {
+      "vi": "Biên dịch tạm thời và khởi chạy chương trình Go.",
+      "en": "Compile temporarily and execute Go program.",
+      "ja": "一時的にコンパイルして Go プログラムを実行します。"
+    },
+    "detail": {
+      "vi": "Dùng để chạy thử nhanh mã nguồn trong quá trình phát triển mà không sinh ra file thực thi (binary) vĩnh viễn.",
+      "en": "Used for rapidly running source code during development without outputting a permanent binary file.",
+      "ja": "開発中に永続的なバイナリファイルを出力せずに、ソースコードを素早く実行するために使用されます。"
+    },
+    "syntax": "go run <files_or_directory>",
+    "example": "go run .",
+    "breakdown": [
+      {
+        "vi": "run: biên dịch và chạy file ngay lập tức",
+        "en": "run: compile and execute files immediately",
+        "ja": "run: ファイルを即座にコンパイルして実行する"
+      },
+      {
+        "vi": ".: đường dẫn thư mục hiện tại chứa gói main",
+        "en": ".: path to the current directory containing the main package",
+        "ja": ".: main パッケージを含む現在のディレクトリへのパス"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không tìm thấy package main chứa hàm func main().",
+        "en": "No package main found with a func main() entrypoint.",
+        "ja": "func main() エントリポイントを持つ package main が見つかりません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đảm bảo tệp bạn chạy khai báo package main và chứa hàm main().",
+        "en": "Ensure the file you execute declares package main and contains func main().",
+        "ja": "実行するファイルが package main を宣言し、func main() を含んでいることを確認してください。"
+      }
+    ],
+    "tags": [
+      "go",
+      "run",
+      "execute"
+    ],
+    "variations": [
+      {
+        "syntax": "go run main.go",
+        "description": {
+          "vi": "Khởi chạy một tệp Go cụ thể chứa hàm main.",
+          "en": "Execute a specific Go source file containing the main function.",
+          "ja": "main 関数を含む特定の Go ソースファイルを実行します。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "go-build",
+    "name": "go build",
+    "group": "Go",
+    "categorySlug": "go",
+    "description": {
+      "vi": "Biên dịch mã nguồn Go thành tệp binary thực thi.",
+      "en": "Compile Go packages and dependencies into an executable binary.",
+      "ja": "Go パッケージと依存関係をコンパイルして実行可能バイナリにします。"
+    },
+    "detail": {
+      "vi": "Biên dịch dự án thành tệp thực thi độc lập không cần cài đặt môi trường Go để chạy, tối ưu hiệu năng chạy thực tế.",
+      "en": "Compile the project into a standalone executable that runs without requiring a installed Go environment, optimizing production performance.",
+      "ja": "インストールされた Go 環境を必要とせずに実行できるスタンドアロンの実行可能ファイルにプロジェクトをコンパイルし、本番環境のパフォーマンスを最適化します。"
+    },
+    "syntax": "go build [flags]",
+    "example": "go build",
+    "breakdown": [
+      {
+        "vi": "build: biên dịch các package và sinh file thực thi",
+        "en": "build: compile packages and output executable binary",
+        "ja": "build: パッケージをコンパイルし、実行可能バイナリを出力する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Mã nguồn bị lỗi cú pháp hoặc thiếu thư viện chưa được download (go mod tidy).",
+        "en": "Compilation errors due to syntax issues or unresolved dependencies.",
+        "ja": "構文エラーまたは未解決の依存関係によるコンパイルエラー。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đọc kỹ logs biên dịch, chạy go mod tidy để tải đầy đủ thư viện.",
+        "en": "Read compilation logs carefully and run go mod tidy to resolve dependencies.",
+        "ja": "コンパイルログを注意深く読み、go mod tidy を実行して依存関係を解決します。"
+      }
+    ],
+    "tags": [
+      "go",
+      "build",
+      "compile",
+      "binary"
+    ],
+    "variations": [
+      {
+        "syntax": "go build -o bin/app",
+        "description": {
+          "vi": "Chỉ định vị trí và tên tệp binary xuất ra (ví dụ: tạo tệp app trong thư mục bin).",
+          "en": "Specify the output path and name of the compiled binary file (e.g. app in bin folder).",
+          "ja": "コンパイルされたバイナリファイルの出力パスと名前を指定します（例: bin フォルダー内の app）。"
+        }
+      },
+      {
+        "syntax": "GOOS=linux GOARCH=amd64 go build",
+        "description": {
+          "vi": "Biên dịch chéo (Cross-compilation) để tạo file chạy trên hệ điều hành Linux x64 từ Windows/macOS.",
+          "en": "Cross-compile code to generate a binary executable for Linux x64 from Windows/macOS.",
+          "ja": "Windows/macOS から Linux x64 用のバイナリ実行可能ファイルを生成するためにコードをクロスコンパイルします。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "go-get",
+    "name": "go get",
+    "group": "Go",
+    "categorySlug": "go",
+    "description": {
+      "vi": "Thêm một thư viện phụ thuộc mới vào Go module.",
+      "en": "Add dependencies to current module and install them.",
+      "ja": "現在のモジュールに依存関係を追加してインストールします。"
+    },
+    "detail": {
+      "vi": "Tải xuống thư viện bên thứ ba và tự động cập nhật vào tệp go.mod và go.sum.",
+      "en": "Download third-party packages and automatically update go.mod and go.sum files.",
+      "ja": "サードパーティのパッケージをダウンロードし、go.mod および go.sum ファイルを自動的に更新します。"
+    },
+    "syntax": "go get <package_path>",
+    "example": "go get github.com/gin-gonic/gin",
+    "breakdown": [
+      {
+        "vi": "get: tải về và thêm thư viện",
+        "en": "get: download and add package dependencies",
+        "ja": "get: パッケージの依存関係をダウンロードして追加する"
+      },
+      {
+        "vi": "<package_path>: đường dẫn thư viện trên internet",
+        "en": "<package_path>: repository path/URL of the package",
+        "ja": "<package_path>: パッケージのリポジトリパス/URL"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Thư viện không tồn tại hoặc bị sai URL.",
+        "en": "Target package does not exist or URL is invalid.",
+        "ja": "対象のパッケージが存在しないか、URL が無効です。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra lại đường dẫn repo chính xác của package.",
+        "en": "Check and verify the exact repository URL of the package.",
+        "ja": "パッケージの正確なリポジトリ URL を確認し、検証します。"
+      }
+    ],
+    "tags": [
+      "go",
+      "get",
+      "package",
+      "dependency"
+    ],
+    "variations": [
+      {
+        "syntax": "go get -u <package_path>",
+        "description": {
+          "vi": "Nâng cấp thư viện cụ thể lên phiên bản mới nhất.",
+          "en": "Upgrade a specific package dependency to its latest version.",
+          "ja": "特定のパッケージ依存関係を最新バージョンにアップグレードします。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "go-test",
+    "name": "go test",
+    "group": "Go",
+    "categorySlug": "go",
+    "description": {
+      "vi": "Chạy bộ kiểm thử (Unit Tests) trong dự án Go.",
+      "en": "Run automated unit tests in Go packages.",
+      "ja": "Go パッケージで自動単体テストを実行します。"
+    },
+    "detail": {
+      "vi": "Quét tất cả các file có đuôi _test.go và thực thi các hàm kiểm thử bắt đầu bằng TestXxx.",
+      "en": "Scan all files ending with _test.go and execute test functions starting with TestXxx.",
+      "ja": "_test.go で終わるすべてのファイルをスキャンし、TestXxx で始まるテスト関数を実行します。"
+    },
+    "syntax": "go test <packages>",
+    "example": "go test ./...",
+    "breakdown": [
+      {
+        "vi": "test: chạy framework kiểm thử",
+        "en": "test: run test framework suite",
+        "ja": "test: テストフレームワークスイートを実行する"
+      },
+      {
+        "vi": "./...: cú pháp chạy test đệ quy ở tất cả thư mục con",
+        "en": "./...: recursive syntax to test all subdirectories",
+        "ja": "./...: すべてのサブディレクトリをテストする再帰的な構文"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Kiểm thử thất bại do lỗi logic trong code.",
+        "en": "Tests fail due to code logical errors.",
+        "ja": "コードの論理エラーによりテストが失敗します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Xem logs kiểm thử để debug, sửa code lỗi và chạy lại.",
+        "en": "Read the test logs to debug, repair the failing code and run again.",
+        "ja": "テストログを読んでデバッグし、失敗したコードを修復して再実行します。"
+      }
+    ],
+    "tags": [
+      "go",
+      "test",
+      "unit-test"
+    ],
+    "variations": [
+      {
+        "syntax": "go test -v ./...",
+        "description": {
+          "vi": "Chạy kiểm thử hiển thị chi tiết (verbose) từng ca test và kết quả in ra console.",
+          "en": "Run tests in verbose mode, showing each test case run and logs in stdout.",
+          "ja": "詳細モードでテストを実行し、実行された各テストケースとログを標準出力に表示します。"
+        }
+      },
+      {
+        "syntax": "go test -cover ./...",
+        "description": {
+          "vi": "Đo lường và in ra phần trăm độ bao phủ (code coverage) của kiểm thử.",
+          "en": "Calculate and print code coverage percentage of tests.",
+          "ja": "テストのコードカバレッジ率を計算して出力します。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "vue-create",
+    "name": "npm create vue@latest",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Khởi tạo dự án Vue.js bằng create-vue.",
+      "en": "Scaffold a Vue.js project using create-vue.",
+      "ja": "create-vue を使用して Vue.js プロジェクトを作成します。"
+    },
+    "detail": {
+      "vi": "Dùng khi bắt đầu dự án Vue 3 mới với các tùy chọn TypeScript, Router, Pinia, ESLint.",
+      "en": "Use when starting a new Vue 3 project with options for TypeScript, Router, Pinia, ESLint.",
+      "ja": "TypeScript、Router、Pinia、ESLint のオプションを備えた新しい Vue 3 プロジェクトを開始する場合に使用します。"
+    },
+    "syntax": "npm create vue@latest",
+    "example": "npm create vue@latest my-vue-app",
+    "breakdown": [
+      {
+        "vi": "npm create: chạy scaffolding",
+        "en": "npm create: run scaffolding",
+        "ja": "npm create: スキャフォールディングを実行する"
+      },
+      {
+        "vi": "vue@latest: phiên bản Vue mới nhất",
+        "en": "vue@latest: latest Vue version",
+        "ja": "vue@latest: 最新の Vue バージョン"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Node.js version cũ.",
+        "en": "Node.js version is too old.",
+        "ja": "Node.js のバージョンが古すぎます。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Cập nhật Node.js >= 18.",
+        "en": "Update Node.js >= 18.",
+        "ja": "Node.js >= 18 に更新します。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "setup",
+      "create-vue"
+    ]
+  },
+  {
+    "id": "vue-dev",
+    "name": "npm run dev (Vue)",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Chạy Vite dev server cho Vue.",
+      "en": "Run Vite dev server for Vue.",
+      "ja": "Vue 用の Vite 開発サーバーを実行します。"
+    },
+    "detail": {
+      "vi": "Khởi động dev server với HMR (Hot Module Replacement) cho Vue SFC.",
+      "en": "Start the dev server with HMR (Hot Module Replacement) for Vue SFC.",
+      "ja": "Vue SFC の HMR (Hot Module Replacement) を使用して開発サーバーを起動します。"
+    },
+    "syntax": "npm run dev",
+    "example": "npm run dev",
+    "breakdown": [
+      {
+        "vi": "run dev: thực thi script dev",
+        "en": "run dev: execute dev script",
+        "ja": "run dev: 開発スクリプトを実行します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Port đang được sử dụng.",
+        "en": "Port is already in use.",
+        "ja": "ポートは既に使用中です。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đổi port hoặc tắt tiến trình đang chạy.",
+        "en": "Change the port or kill the running process.",
+        "ja": "ポートを変更するか、実行中のプロセスを終了します。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "dev",
+      "vite"
+    ]
+  },
+  {
+    "id": "vue-build",
+    "name": "npm run build (Vue)",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Build dự án Vue cho production.",
+      "en": "Build Vue project for production.",
+      "ja": "本番用に Vue プロジェクトをビルドします。"
+    },
+    "detail": {
+      "vi": "Tạo thư mục dist chứa bundle tối ưu với Vite.",
+      "en": "Generate an optimized dist bundle with Vite.",
+      "ja": "Vite で最適化された dist バンドルを生成します。"
+    },
+    "syntax": "npm run build",
+    "example": "npm run build",
+    "breakdown": [
+      {
+        "vi": "build: tạo bundle production",
+        "en": "build: create production bundle",
+        "ja": "build: プロダクションバンドルを作成する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "TypeScript error khi build.",
+        "en": "TypeScript error during build.",
+        "ja": "ビルド時の TypeScript エラー。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Fix type errors hoặc chạy vue-tsc --noEmit để kiểm tra.",
+        "en": "Fix type errors or run vue-tsc --noEmit to check.",
+        "ja": "型エラーを修正するか、vue-tsc --noEmit を実行して確認します。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "build",
+      "production"
+    ]
+  },
+  {
+    "id": "vue-ref",
+    "name": "ref / reactive",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Tạo state phản ứng với Composition API.",
+      "en": "Create reactive state with Composition API.",
+      "ja": "Composition API でリアクティブな状態を作成します。"
+    },
+    "detail": {
+      "vi": "ref() dùng cho primitive values, reactive() dùng cho objects. ref tự động unwrap trong template.",
+      "en": "ref() is for primitive values, reactive() is for objects. ref auto-unwraps in templates.",
+      "ja": "ref() はプリミティブ値に、reactive() はオブジェクトに使用します。ref はテンプレート内で自動アンラップされます。"
+    },
+    "syntax": "const count = ref(0)\nconst state = reactive({ name: 'Vue' })",
+    "example": "const count = ref(0)\ncount.value++",
+    "breakdown": [
+      {
+        "vi": "ref: wrapper cho giá trị primitive",
+        "en": "ref: wrapper for primitive values",
+        "ja": "ref: プリミティブ値のラッパー"
+      },
+      {
+        "vi": "reactive: wrapper cho object",
+        "en": "reactive: wrapper for objects",
+        "ja": "reactive: オブジェクトのラッパー"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Quên .value khi thay đổi ref trong script.",
+        "en": "Forgetting .value when mutating ref in script.",
+        "ja": "スクリプト内で ref を変更するときに .value を忘れる。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Luôn dùng .value để đọc/ghi ref trong setup script.",
+        "en": "Always use .value to read/write ref in setup script.",
+        "ja": "setup スクリプト内では必ず .value を使用して ref を読み書きします。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "composition-api",
+      "reactivity"
+    ]
+  },
+  {
+    "id": "vue-computed",
+    "name": "computed",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Tạo giá trị computed phụ thuộc vào state khác.",
+      "en": "Create computed values derived from other state.",
+      "ja": "他の状態から派生した算出プロパティを作成します。"
+    },
+    "detail": {
+      "vi": "computed tự động cập nhật khi các dependency thay đổi, kết quả được cache.",
+      "en": "computed automatically updates when dependencies change, results are cached.",
+      "ja": "computed は依存関係が変更されると自動的に更新され、結果はキャッシュされます。"
+    },
+    "syntax": "const doubled = computed(() => count.value * 2)",
+    "example": "const isEven = computed(() => count.value % 2 === 0)",
+    "breakdown": [
+      {
+        "vi": "computed: getter phản ứng",
+        "en": "computed: reactive getter",
+        "ja": "computed: リアクティブゲッター"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Thay đổi giá trị computed trực tiếp (readonly).",
+        "en": "Mutating computed value directly (it's readonly).",
+        "ja": "算出プロパティを直接変更する（読み取り専用です）。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng computed với get/set nếu muốn writable computed.",
+        "en": "Use computed with get/set for writable computed.",
+        "ja": "書き込み可能な算出プロパティには get/set 付きの computed を使用します。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "computed",
+      "composition-api"
+    ]
+  },
+  {
+    "id": "vue-watch",
+    "name": "watch / watchEffect",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Theo dõi sự thay đổi của state.",
+      "en": "Watch for state changes.",
+      "ja": "状態の変化を監視します。"
+    },
+    "detail": {
+      "vi": "watch theo dõi một hoặc nhiều source cụ thể, watchEffect tự động theo dõi các reactive được dùng trong callback.",
+      "en": "watch watches one or more specific sources, watchEffect auto-tracks reactive dependencies used in the callback.",
+      "ja": "watch は 1 つ以上の特定のソースを監視し、watchEffect はコールバック内で使用されるリアクティブな依存関係を自動追跡します。"
+    },
+    "syntax": "watch(source, (newVal, oldVal) => { ... })\nwatchEffect(() => { ... })",
+    "example": "watch(count, (n, o) => console.log(`from ${o} to ${n}`))",
+    "breakdown": [
+      {
+        "vi": "watch: theo dõi cụ thể",
+        "en": "watch: specific watcher",
+        "ja": "watch: 特定の監視"
+      },
+      {
+        "vi": "watchEffect: tự động gom dependencies",
+        "en": "watchEffect: auto-collect dependencies",
+        "ja": "watchEffect: 依存関係を自動収集"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Quên deep option khi watch object/array.",
+        "en": "Forgetting the deep option when watching objects/arrays.",
+        "ja": "オブジェクト/配列を監視するときに deep オプションを忘れる。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm { deep: true } làm tham số thứ ba của watch.",
+        "en": "Pass { deep: true } as the third argument of watch.",
+        "ja": "watch の第 3 引数に { deep: true } を渡します。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "watch",
+      "composition-api"
+    ]
+  },
+  {
+    "id": "vue-component",
+    "name": "SFC / script setup",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Single File Component với Composition API.",
+      "en": "Single File Component with Composition API.",
+      "ja": "Composition API を使用した単一ファイルコンポーネント。"
+    },
+    "detail": {
+      "vi": "SFC gồm template, script setup, style scoped. script setup tự động expose ra template.",
+      "en": "SFC consists of template, script setup, scoped style. script setup auto-exposes to template.",
+      "ja": "SFC は template、script setup、scoped style で構成されます。script setup は自動的にテンプレートに公開されます。"
+    },
+    "syntax": "<script setup lang=\"ts\">\n  import { ref } from 'vue'\n  const msg = ref('Hello')\n</script>\n\n<template>\n  <h1>{{ msg }}</h1>\n</template>\n\n<style scoped>\nh1 { color: green }\n</style>",
+    "example": "<script setup lang=\"ts\">\nconst count = ref(0)\n</script>",
+    "breakdown": [
+      {
+        "vi": "script setup: composition API sugar",
+        "en": "script setup: composition API sugar",
+        "ja": "script setup: Composition API のシンタックスシュガー"
+      },
+      {
+        "vi": "style scoped: CSS cục bộ",
+        "en": "style scoped: scoped CSS",
+        "ja": "style scoped: スコープ付き CSS"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Quên lang=\"ts\" khi dùng TypeScript.",
+        "en": "Forgetting lang=\"ts\" when using TypeScript.",
+        "ja": "TypeScript 使用時に lang=\"ts\" を忘れる。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm lang=\"ts\" vào thẻ script setup.",
+        "en": "Add lang=\"ts\" to the script setup tag.",
+        "ja": "script setup タグに lang=\"ts\" を追加します。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "sfc",
+      "composition-api"
+    ]
+  },
+  {
+    "id": "vue-props-emits",
+    "name": "defineProps / defineEmits",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Khai báo props và emits trong script setup.",
+      "en": "Declare props and emits in script setup.",
+      "ja": "script setup で props と emits を宣言します。"
+    },
+    "detail": {
+      "vi": "defineProps và defineEmits là compiler macros, không cần import. Có thể khai báo type-only.",
+      "en": "defineProps and defineEmits are compiler macros, no import needed. Supports type-only declarations.",
+      "ja": "defineProps と defineEmits はコンパイラマクロで、インポートは不要です。型のみの宣言をサポートします。"
+    },
+    "syntax": "const props = defineProps<{ title: string; count?: number }>()\nconst emit = defineEmits<{ (e: 'update', id: number): void }>()",
+    "example": "const props = defineProps<{ msg: string }>()",
+    "breakdown": [
+      {
+        "vi": "defineProps: khai báo props",
+        "en": "defineProps: declare props",
+        "ja": "defineProps: props を宣言"
+      },
+      {
+        "vi": "defineEmits: khai báo events",
+        "en": "defineEmits: declare events",
+        "ja": "defineEmits: イベントを宣言"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Dùng defineProps như function runtime (không cần import).",
+        "en": "Trying to import defineProps as a runtime function (no import needed).",
+        "ja": "defineProps をランタイム関数としてインポートしようとする（インポート不要）。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "defineProps là macro, chỉ dùng trong script setup.",
+        "en": "defineProps is a macro, only usable in script setup.",
+        "ja": "defineProps はマクロで、script setup 内でのみ使用できます。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "props",
+      "emits",
+      "typescript"
+    ]
+  },
+  {
+    "id": "vue-router",
+    "name": "Vue Router setup",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Cài đặt và cấu hình Vue Router.",
+      "en": "Install and configure Vue Router.",
+      "ja": "Vue Router をインストールして設定します。"
+    },
+    "detail": {
+      "vi": "Tạo router instance với createRouter và createWebHistory, sau đó dùng trong app.use(router).",
+      "en": "Create a router instance with createRouter and createWebHistory, then use app.use(router).",
+      "ja": "createRouter と createWebHistory でルーターインスタンスを作成し、app.use(router) で使用します。"
+    },
+    "syntax": "const router = createRouter({\n  history: createWebHistory(),\n  routes: [\n    { path: '/', component: Home },\n    { path: '/about', component: About }\n  ]\n})",
+    "example": "app.use(router)",
+    "breakdown": [
+      {
+        "vi": "createRouter: tạo router instance",
+        "en": "createRouter: create router instance",
+        "ja": "createRouter: ルーターインスタンスを作成"
+      },
+      {
+        "vi": "createWebHistory: HTML5 history mode",
+        "en": "createWebHistory: HTML5 history mode",
+        "ja": "createWebHistory: HTML5 履歴モード"
+      },
+      {
+        "vi": "RouterView: component hiển thị route",
+        "en": "RouterView: route display component",
+        "ja": "RouterView: ルート表示コンポーネント"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Lỗi khi dùng createWebHashHistory (không đúng mode).",
+        "en": "Error when using createWebHashHistory (wrong mode).",
+        "ja": "createWebHashHistory の使用時のエラー（モードが間違っている）。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng createWebHistory cho SPA hoặc createWebHashHistory cho static deploy.",
+        "en": "Use createWebHistory for SPA or createWebHashHistory for static deployment.",
+        "ja": "SPA には createWebHistory、静的デプロイには createWebHashHistory を使用します。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "router",
+      "spa"
+    ]
+  },
+  {
+    "id": "vue-lifecycle",
+    "name": "lifecycle hooks",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Hook vòng đời component trong Composition API.",
+      "en": "Component lifecycle hooks in Composition API.",
+      "ja": "Composition API のコンポーネントライフサイクルフック。"
+    },
+    "detail": {
+      "vi": "onMounted, onUnmounted, onUpdated, onBeforeMount,... thay thế cho Options API lifecycle.",
+      "en": "onMounted, onUnmounted, onUpdated, onBeforeMount... replace Options API lifecycle.",
+      "ja": "onMounted, onUnmounted, onUpdated, onBeforeMount... が Options API のライフサイクルを置き換えます。"
+    },
+    "syntax": "onMounted(() => {\n  // fetch data, init\n})\nonUnmounted(() => {\n  // cleanup\n})",
+    "example": "onMounted(() => fetchUsers())",
+    "breakdown": [
+      {
+        "vi": "onMounted: chạy khi component mount",
+        "en": "onMounted: runs when component mounts",
+        "ja": "onMounted: コンポーネントマウント時に実行"
+      },
+      {
+        "vi": "onUnmounted: cleanup khi unmount",
+        "en": "onUnmounted: cleanup on unmount",
+        "ja": "onUnmounted: アンマウント時のクリーンアップ"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Gọi hook bên ngoài setup() hoặc async setup.",
+        "en": "Calling hooks outside setup() or async setup.",
+        "ja": "setup() または非同期 setup の外部でフックを呼び出す。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đảm bảo lifecycle hook được gọi đồng bộ trong setup.",
+        "en": "Ensure lifecycle hooks are called synchronously in setup.",
+        "ja": "ライフサイクルフックが setup 内で同期的に呼び出されるようにします。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "lifecycle",
+      "hooks"
+    ]
+  },
+  {
+    "id": "vue-v-for",
+    "name": "v-for",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Render danh sách với v-for directive.",
+      "en": "Render lists with the v-for directive.",
+      "ja": "v-for ディレクティブでリストをレンダリングします。"
+    },
+    "detail": {
+      "vi": "v-for lặp qua array hoặc object, luôn dùng :key để tối ưu diff.",
+      "en": "v-for iterates over arrays or objects, always use :key for optimal diffing.",
+      "ja": "v-for は配列やオブジェクトを反復処理します。最適な差分検出のために常に :key を使用します。"
+    },
+    "syntax": "<li v-for=\"(item, index) in items\" :key=\"item.id\">{{ item.name }}</li>",
+    "example": "<div v-for=\"user in users\" :key=\"user.id\">{{ user.name }}</div>",
+    "breakdown": [
+      {
+        "vi": "v-for: directive lặp",
+        "en": "v-for: iteration directive",
+        "ja": "v-for: 反復ディレクティブ"
+      },
+      {
+        "vi": ":key: định danh duy nhất",
+        "en": ":key: unique identifier",
+        "ja": ":key: 一意の識別子"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không dùng key hoặc dùng index làm key cho danh sách động.",
+        "en": "Missing key or using index as key for dynamic lists.",
+        "ja": "キーがない、または動的リストのキーにインデックスを使用している。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Luôn dùng id duy nhất làm key, tránh dùng index.",
+        "en": "Always use a unique id as key, avoid using index.",
+        "ja": "一意の ID をキーとして使用し、インデックスは避けます。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "directive",
+      "list"
+    ]
+  },
+  {
+    "id": "vue-v-if",
+    "name": "v-if / v-else",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Render có điều kiện với v-if directive.",
+      "en": "Conditional rendering with v-if directive.",
+      "ja": "v-if ディレクティブによる条件付きレンダリング。"
+    },
+    "detail": {
+      "vi": "v-if loại bỏ element khỏi DOM, v-show chỉ ẩn bằng CSS. Dùng v-if khi điều kiện hiếm thay đổi.",
+      "en": "v-if removes element from DOM, v-show only hides via CSS. Use v-if for rarely changing conditions.",
+      "ja": "v-if は DOM から要素を削除し、v-show は CSS で非表示にするだけです。めったに変更しない条件には v-if を使用します。"
+    },
+    "syntax": "<p v-if=\"isLoggedIn\">Welcome</p>\n<p v-else>Please log in</p>",
+    "example": "<div v-if=\"loading\">Loading...</div>\n<div v-else-if=\"error\">Error: {{ error }}</div>\n<div v-else>Content here</div>",
+    "breakdown": [
+      {
+        "vi": "v-if: render nếu đúng",
+        "en": "v-if: render if true",
+        "ja": "v-if: true の場合にレンダリング"
+      },
+      {
+        "vi": "v-else: render ngược lại",
+        "en": "v-else: otherwise render",
+        "ja": "v-else: それ以外の場合にレンダリング"
+      },
+      {
+        "vi": "v-show: ẩn/hiện bằng CSS",
+        "en": "v-show: toggle via CSS",
+        "ja": "v-show: CSS で切り替え"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Dùng v-if và v-for trên cùng element.",
+        "en": "Using v-if and v-for on the same element.",
+        "ja": "同じ要素に v-if と v-for を使用する。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Không dùng v-if và v-for cùng lúc. Dùng template tag hoặc computed filter.",
+        "en": "Don't use v-if and v-for together. Use template tag or computed filter.",
+        "ja": "v-if と v-for は同時に使用しないでください。template タグまたは computed フィルターを使用します。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "directive",
+      "conditional"
+    ]
+  },
+  {
+    "id": "vue-v-model",
+    "name": "v-model",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Two-way binding với v-model.",
+      "en": "Two-way binding with v-model.",
+      "ja": "v-model による双方向バインディング。"
+    },
+    "detail": {
+      "vi": "v-model là syntactic sugar cho :value + @input. Hỗ trợ .lazy, .number, .trim modifiers.",
+      "en": "v-model is syntactic sugar for :value + @input. Supports .lazy, .number, .trim modifiers.",
+      "ja": "v-model は :value + @input のシンタックスシュガーです。.lazy、.number、.trim 修飾子をサポートします。"
+    },
+    "syntax": "<input v-model=\"username\" />",
+    "example": "<input v-model.trim=\"email\" placeholder=\"Enter email\" />",
+    "breakdown": [
+      {
+        "vi": "v-model: two-way binding",
+        "en": "v-model: two-way binding",
+        "ja": "v-model: 双方向バインディング"
+      },
+      {
+        "vi": ".trim: tự động trim whitespace",
+        "en": ".trim: auto trim whitespace",
+        "ja": ".trim: 自動トリム"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không dùng được v-model cho props (one-way data flow).",
+        "en": "Cannot use v-model on props (one-way data flow).",
+        "ja": "props に v-model を使用できない（単方向データフロー）。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng computed với get/set hoặc emit update:modelValue cho custom component.",
+        "en": "Use computed with get/set or emit update:modelValue for custom components.",
+        "ja": "カスタムコンポーネントには get/set 付きの computed または emit update:modelValue を使用します。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "directive",
+      "form",
+      "binding"
+    ]
+  },
+  {
+    "id": "vue-pinia",
+    "name": "Pinia store",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "State management với Pinia.",
+      "en": "State management with Pinia.",
+      "ja": "Pinia による状態管理。"
+    },
+    "detail": {
+      "vi": "Pinia là state management chính thức cho Vue 3. defineStore với cú pháp setup store hoặc options store.",
+      "en": "Pinia is the official state management for Vue 3. defineStore with setup store or options store syntax.",
+      "ja": "Pinia は Vue 3 の公式状態管理ライブラリです。setup store または options store 構文で defineStore を使用します。"
+    },
+    "syntax": "export const useCounterStore = defineStore('counter', () => {\n  const count = ref(0)\n  function increment() { count.value++ }\n  return { count, increment }\n})",
+    "example": "const store = useCounterStore()\nstore.increment()",
+    "breakdown": [
+      {
+        "vi": "defineStore: tạo store",
+        "en": "defineStore: create store",
+        "ja": "defineStore: ストアを作成"
+      },
+      {
+        "vi": "setup store: dùng ref/reactive/computed",
+        "en": "setup store: uses ref/reactive/computed",
+        "ja": "setup store: ref/reactive/computed を使用"
+      },
+      {
+        "vi": "storeToRefs: giữ reactivity khi destructure",
+        "en": "storeToRefs: keep reactivity on destructure",
+        "ja": "storeToRefs: 分割代入でもリアクティビティを維持"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Mất reactivity khi destructure store.",
+        "en": "Losing reactivity when destructuring store.",
+        "ja": "ストアを分割代入するとリアクティビティが失われる。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng storeToRefs() để destructure mà giữ reactivity.",
+        "en": "Use storeToRefs() to destructure while keeping reactivity.",
+        "ja": "storeToRefs() を使用してリアクティビティを維持しながら分割代入します。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "pinia",
+      "state"
+    ]
+  },
+  {
+    "id": "vue-vite-config",
+    "name": "@vitejs/plugin-vue",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Cấu hình Vite plugin cho Vue.",
+      "en": "Configure Vite plugin for Vue.",
+      "ja": "Vue 用の Vite プラグイン設定。"
+    },
+    "detail": {
+      "vi": "Vue SFC cần @vitejs/plugin-vue trong vite.config.ts để build và dev.",
+      "en": "Vue SFC requires @vitejs/plugin-vue in vite.config.ts for build and dev.",
+      "ja": "Vue SFC はビルドと開発のために vite.config.ts に @vitejs/plugin-vue が必要です。"
+    },
+    "syntax": "import { defineConfig } from 'vite'\nimport vue from '@vitejs/plugin-vue'\n\nexport default defineConfig({\n  plugins: [vue()]\n})",
+    "example": "plugins: [vue()]",
+    "breakdown": [
+      {
+        "vi": "@vitejs/plugin-vue: compile SFC",
+        "en": "@vitejs/plugin-vue: compiles SFC",
+        "ja": "@vitejs/plugin-vue: SFC をコンパイル"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Thiếu plugin-vue dẫn đến lỗi build.",
+        "en": "Missing plugin-vue causes build errors.",
+        "ja": "plugin-vue がないとビルドエラーが発生します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Cài @vitejs/plugin-vue: npm install -D @vitejs/plugin-vue.",
+        "en": "Install @vitejs/plugin-vue: npm install -D @vitejs/plugin-vue.",
+        "ja": "@vitejs/plugin-vue をインストール: npm install -D @vitejs/plugin-vue。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "vite",
+      "config",
+      "plugin"
+    ]
+  },
+  {
+    "id": "nginx-status",
+    "name": "systemctl status nginx",
+    "group": "Nginx",
+    "categorySlug": "nginx",
+    "description": {
+      "vi": "Kiểm tra trạng thái service Nginx.",
+      "en": "Check Nginx service status.",
+      "ja": "Nginx サービスのステータスを確認します。"
+    },
+    "detail": {
+      "vi": "Xem Nginx đang chạy, dừng hay gặp lỗi trước khi kiểm tra cấu hình.",
+      "en": "Check if Nginx is running, stopped, or has errors before verifying configuration.",
+      "ja": "設定を確認する前に、Nginx が実行中か、停止中か、エラーが発生しているかを確認します。"
+    },
+    "syntax": "systemctl status nginx",
+    "example": "systemctl status nginx",
+    "breakdown": [
+      {
+        "vi": "systemctl: quản lý systemd service",
+        "en": "systemctl: systemd service manager",
+        "ja": "systemctl: systemd サービス管理"
+      },
+      {
+        "vi": "status: xem trạng thái",
+        "en": "status: view status",
+        "ja": "status: ステータス表示"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Unit nginx.service not found.",
+        "en": "Unit nginx.service not found.",
+        "ja": "Unit nginx.service が見つかりません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Cài Nginx trước: sudo apt install nginx.",
+        "en": "Install Nginx first: sudo apt install nginx.",
+        "ja": "最初に Nginx をインストール: sudo apt install nginx。"
+      }
+    ],
+    "tags": [
+      "nginx",
+      "status",
+      "service"
+    ]
+  },
+  {
+    "id": "nginx-start",
+    "name": "sudo systemctl start nginx",
+    "group": "Nginx",
+    "categorySlug": "nginx",
+    "description": {
+      "vi": "Khởi động service Nginx.",
+      "en": "Start the Nginx service.",
+      "ja": "Nginx サービスを開始します。"
+    },
+    "detail": {
+      "vi": "Dùng khi Nginx chưa chạy hoặc sau khi cài đặt.",
+      "en": "Use when Nginx is not running or after installation.",
+      "ja": "Nginx が実行されていない場合やインストール後に使用します。"
+    },
+    "syntax": "sudo systemctl start nginx",
+    "example": "sudo systemctl start nginx",
+    "breakdown": [
+      {
+        "vi": "start: khởi động service",
+        "en": "start: start the service",
+        "ja": "start: サービスを開始"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Nginx config test failed (có lỗi config).",
+        "en": "Nginx configuration test failed.",
+        "ja": "Nginx 設定テストが失敗しました。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chạy nginx -t trước để kiểm tra lỗi cấu hình.",
+        "en": "Run nginx -t first to check for configuration errors.",
+        "ja": "最初に nginx -t を実行して設定エラーを確認します。"
+      }
+    ],
+    "tags": [
+      "nginx",
+      "start",
+      "service"
+    ]
+  },
+  {
+    "id": "nginx-stop",
+    "name": "sudo systemctl stop nginx",
+    "group": "Nginx",
+    "categorySlug": "nginx",
+    "description": {
+      "vi": "Dừng service Nginx.",
+      "en": "Stop the Nginx service.",
+      "ja": "Nginx サービスを停止します。"
+    },
+    "detail": {
+      "vi": "Dùng khi cần bảo trì hoặc tạm dừng web server.",
+      "en": "Use when performing maintenance or temporarily stopping the web server.",
+      "ja": "メンテナンス時や Web サーバーを一時的に停止する場合に使用します。"
+    },
+    "syntax": "sudo systemctl stop nginx",
+    "example": "sudo systemctl stop nginx",
+    "breakdown": [
+      {
+        "vi": "stop: dừng service",
+        "en": "stop: stop the service",
+        "ja": "stop: サービスを停止"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có quyền sudo.",
+        "en": "No sudo privileges.",
+        "ja": "sudo 権限がありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đảm bảo user có quyền sudo.",
+        "en": "Ensure the user has sudo privileges.",
+        "ja": "ユーザーに sudo 権限があることを確認します。"
+      }
+    ],
+    "tags": [
+      "nginx",
+      "stop",
+      "service"
+    ]
+  },
+  {
+    "id": "nginx-restart",
+    "name": "sudo systemctl restart nginx",
+    "group": "Nginx",
+    "categorySlug": "nginx",
+    "description": {
+      "vi": "Khởi động lại service Nginx.",
+      "en": "Restart the Nginx service.",
+      "ja": "Nginx サービスを再起動します。"
+    },
+    "detail": {
+      "vi": "Restart tắt và khởi động lại Nginx, thường dùng sau khi thay đổi cấu hình.",
+      "en": "Restart stops and starts Nginx again, typically used after configuration changes.",
+      "ja": "再起動は Nginx を停止して再度起動します。通常は設定変更後に使用します。"
+    },
+    "syntax": "sudo systemctl restart nginx",
+    "example": "sudo systemctl restart nginx",
+    "breakdown": [
+      {
+        "vi": "restart: khởi động lại",
+        "en": "restart: restart the service",
+        "ja": "restart: サービスを再起動"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Cấu hình lỗi làm Nginx không restart được.",
+        "en": "Configuration errors prevent Nginx from restarting.",
+        "ja": "設定エラーにより Nginx が再起動できません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng nginx -t để kiểm tra cấu hình trước khi restart.",
+        "en": "Use nginx -t to validate configuration before restarting.",
+        "ja": "再起動前に nginx -t を使用して設定を検証します。"
+      }
+    ],
+    "tags": [
+      "nginx",
+      "restart",
+      "service"
+    ]
+  },
+  {
+    "id": "nginx-reload",
+    "name": "sudo systemctl reload nginx",
+    "group": "Nginx",
+    "categorySlug": "nginx",
+    "description": {
+      "vi": "Tải lại cấu hình Nginx mà không dừng service.",
+      "en": "Reload Nginx configuration without stopping the service.",
+      "ja": "サービスを停止せずに Nginx 設定を再読み込みします。"
+    },
+    "detail": {
+      "vi": "Reload an toàn hơn restart, không làm gián đoạn kết nối đang xử lý.",
+      "en": "Reload is safer than restart, does not interrupt active connections.",
+      "ja": "再読み込みは再起動より安全で、アクティブな接続を中断しません。"
+    },
+    "syntax": "sudo systemctl reload nginx",
+    "example": "sudo systemctl reload nginx",
+    "breakdown": [
+      {
+        "vi": "reload: tải lại config",
+        "en": "reload: reload configuration",
+        "ja": "reload: 設定を再読み込み"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Cấu hình lỗi không reload được.",
+        "en": "Cannot reload due to configuration errors.",
+        "ja": "設定エラーのため再読み込みできません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra bằng nginx -t và sửa lỗi trước khi reload.",
+        "en": "Check with nginx -t and fix errors before reloading.",
+        "ja": "再読み込み前に nginx -t で確認しエラーを修正します。"
+      }
+    ],
+    "tags": [
+      "nginx",
+      "reload",
+      "config"
+    ]
+  },
+  {
+    "id": "nginx-test",
+    "name": "nginx -t",
+    "group": "Nginx",
+    "categorySlug": "nginx",
+    "description": {
+      "vi": "Kiểm tra cú pháp cấu hình Nginx.",
+      "en": "Test Nginx configuration syntax.",
+      "ja": "Nginx 設定の構文をテストします。"
+    },
+    "detail": {
+      "vi": "Luôn chạy lệnh này trước khi reload/restart để tránh làm sập site.",
+      "en": "Always run this command before reloading/restarting to avoid taking the site down.",
+      "ja": "サイトをダウンさせないために、再読み込み/再起動の前に必ずこのコマンドを実行します。"
+    },
+    "syntax": "sudo nginx -t",
+    "example": "sudo nginx -t",
+    "breakdown": [
+      {
+        "vi": "-t: test configuration",
+        "en": "-t: test configuration",
+        "ja": "-t: 設定をテスト"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Cú pháp sai hoặc thiếu dấu ; ở cuối dòng.",
+        "en": "Syntax error or missing semicolon at end of line.",
+        "ja": "構文エラーまたは行末のセミコロン忘れ。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra dòng lỗi được báo và sửa cấu hình.",
+        "en": "Check the reported error line and fix the configuration.",
+        "ja": "報告されたエラー行を確認して設定を修正します。"
+      }
+    ],
+    "tags": [
+      "nginx",
+      "test",
+      "config"
+    ]
+  },
+  {
+    "id": "nginx-static",
+    "name": "static file server",
+    "group": "Nginx",
+    "categorySlug": "nginx",
+    "description": {
+      "vi": "Cấu hình Nginx serve file tĩnh.",
+      "en": "Configure Nginx to serve static files.",
+      "ja": "Nginx で静的ファイルを配信する設定。"
+    },
+    "detail": {
+      "vi": "Dùng root và index để chỉ định thư mục gốc và file mặc định. Thêm try_files để hỗ trợ SPA fallback.",
+      "en": "Use root and index to specify the document root and default file. Add try_files for SPA fallback.",
+      "ja": "root と index を使用してドキュメントルートとデフォルトファイルを指定します。SPA フォールバック用に try_files を追加します。"
+    },
+    "syntax": "server {\n  listen 80;\n  server_name example.com;\n  root /var/www/html;\n  index index.html;\n  location / {\n    try_files $uri $uri/ /index.html;\n  }\n}",
+    "example": "root /var/www/my-app/dist;",
+    "breakdown": [
+      {
+        "vi": "root: thư mục gốc chứa file",
+        "en": "root: document root directory",
+        "ja": "root: ドキュメントルートディレクトリ"
+      },
+      {
+        "vi": "index: file mặc định",
+        "en": "index: default file",
+        "ja": "index: デフォルトファイル"
+      },
+      {
+        "vi": "try_files: fallback file",
+        "en": "try_files: fallback file",
+        "ja": "try_files: フォールバックファイル"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "403 Forbidden do permission thư mục.",
+        "en": "403 Forbidden due to directory permissions.",
+        "ja": "ディレクトリの権限による 403 Forbidden。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra quyền www-data đọc được thư mục root.",
+        "en": "Ensure www-data can read the root directory.",
+        "ja": "www-data がルートディレクトリを読み取れることを確認します。"
+      }
+    ],
+    "tags": [
+      "nginx",
+      "static",
+      "server"
+    ]
+  },
+  {
+    "id": "nginx-reverse-proxy",
+    "name": "reverse proxy",
+    "group": "Nginx",
+    "categorySlug": "nginx",
+    "description": {
+      "vi": "Cấu hình reverse proxy qua Nginx.",
+      "en": "Configure reverse proxy with Nginx.",
+      "ja": "Nginx でリバースプロキシを設定します。"
+    },
+    "detail": {
+      "vi": "Chuyển tiếp request từ Nginx đến ứng dụng backend (Node.js, Java, Python...). Thêm header X-Forwarded-* để backend biết IP thật.",
+      "en": "Forward requests from Nginx to backend apps (Node.js, Java, Python...). Add X-Forwarded-* headers so the backend sees the real IP.",
+      "ja": "Nginx からバックエンドアプリ（Node.js、Java、Python...）へリクエストを転送します。X-Forwarded-* ヘッダーを追加してバックエンドが実際の IP を認識できるようにします。"
+    },
+    "syntax": "location /api/ {\n  proxy_pass http://localhost:3000;\n  proxy_set_header Host $host;\n  proxy_set_header X-Real-IP $remote_addr;\n  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n  proxy_set_header X-Forwarded-Proto $scheme;\n}",
+    "example": "proxy_pass http://127.0.0.1:8080;",
+    "breakdown": [
+      {
+        "vi": "proxy_pass: URL backend",
+        "en": "proxy_pass: backend URL",
+        "ja": "proxy_pass: バックエンド URL"
+      },
+      {
+        "vi": "proxy_set_header: thêm header",
+        "en": "proxy_set_header: set headers",
+        "ja": "proxy_set_header: ヘッダーを設定"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "502 Bad Gateway khi backend không chạy.",
+        "en": "502 Bad Gateway when the backend is not running.",
+        "ja": "バックエンドが実行されていない場合の 502 Bad Gateway。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra backend đang chạy và proxy_pass đúng port.",
+        "en": "Check if the backend is running and proxy_pass has the correct port.",
+        "ja": "バックエンドが実行されているか、proxy_pass のポートが正しいかを確認します。"
+      }
+    ],
+    "tags": [
+      "nginx",
+      "proxy",
+      "reverse-proxy"
+    ]
+  },
+  {
+    "id": "nginx-load-balancer",
+    "name": "load balancing upstream",
+    "group": "Nginx",
+    "categorySlug": "nginx",
+    "description": {
+      "vi": "Cấu hình cân bằng tải giữa nhiều backend.",
+      "en": "Configure load balancing across multiple backends.",
+      "ja": "複数のバックエンド間の負荷分散を設定します。"
+    },
+    "detail": {
+      "vi": "upstream định nghĩa nhóm server backend. Các phương thức: round-robin (mặc định), least_conn, ip_hash.",
+      "en": "upstream defines a group of backend servers. Methods: round-robin (default), least_conn, ip_hash.",
+      "ja": "upstream はバックエンドサーバーのグループを定義します。方式: round-robin（デフォルト）、least_conn、ip_hash。"
+    },
+    "syntax": "upstream backend {\n  server 10.0.0.1:3000 weight=3;\n  server 10.0.0.2:3000;\n  server 10.0.0.3:3000 backup;\n}\n\nserver {\n  location / {\n    proxy_pass http://backend;\n  }\n}",
+    "example": "upstream api_servers {\n  server 127.0.0.1:4001;\n  server 127.0.0.1:4002;\n}",
+    "breakdown": [
+      {
+        "vi": "upstream: nhóm server backend",
+        "en": "upstream: backend server group",
+        "ja": "upstream: バックエンドサーバーグループ"
+      },
+      {
+        "vi": "weight: trọng số phân phối",
+        "en": "weight: distribution weight",
+        "ja": "weight: 配分比率"
+      },
+      {
+        "vi": "backup: server dự phòng",
+        "en": "backup: fallback server",
+        "ja": "backup: 予備サーバー"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "upstream không có server available.",
+        "en": "No available servers in upstream.",
+        "ja": "upstream に利用可能なサーバーがありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm ít nhất một server trong upstream, kiểm tra các backend đều online.",
+        "en": "Add at least one server in upstream, ensure all backends are online.",
+        "ja": "upstream に少なくとも 1 つのサーバーを追加し、すべてのバックエンドがオンラインであることを確認します。"
+      }
+    ],
+    "tags": [
+      "nginx",
+      "load-balancer",
+      "upstream"
+    ]
+  },
+  {
+    "id": "nginx-https",
+    "name": "SSL / HTTPS",
+    "group": "Nginx",
+    "categorySlug": "nginx",
+    "description": {
+      "vi": "Cấu hình HTTPS với chứng chỉ SSL.",
+      "en": "Configure HTTPS with SSL certificates.",
+      "ja": "SSL 証明書を使用して HTTPS を設定します。"
+    },
+    "detail": {
+      "vi": "Dùng certbot (Let's Encrypt) để tạo chứng chỉ miễn phí. Nên redirect HTTP sang HTTPS và cấu hình SSL an toàn.",
+      "en": "Use certbot (Let's Encrypt) for free certificates. Redirect HTTP to HTTPS and configure secure SSL.",
+      "ja": "無料証明書には certbot (Let's Encrypt) を使用します。HTTP を HTTPS にリダイレクトし、安全な SSL を設定します。"
+    },
+    "syntax": "server {\n  listen 443 ssl;\n  server_name example.com;\n  ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;\n  ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;\n}\n\nserver {\n  listen 80;\n  server_name example.com;\n  return 301 https://$host$request_uri;\n}",
+    "example": "ssl_certificate /etc/ssl/certs/my-site.crt;",
+    "breakdown": [
+      {
+        "vi": "listen 443 ssl: port HTTPS",
+        "en": "listen 443 ssl: HTTPS port",
+        "ja": "listen 443 ssl: HTTPS ポート"
+      },
+      {
+        "vi": "ssl_certificate: đường dẫn cert",
+        "en": "ssl_certificate: certificate path",
+        "ja": "ssl_certificate: 証明書パス"
+      },
+      {
+        "vi": "return 301: redirect HTTP → HTTPS",
+        "en": "return 301: redirect HTTP → HTTPS",
+        "ja": "return 301: HTTP → HTTPS リダイレクト"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "SSL certificate not trusted hoặc hết hạn.",
+        "en": "SSL certificate not trusted or expired.",
+        "ja": "SSL 証明書が信頼されていないか、期限切れです。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Gia hạn cert: sudo certbot renew. Kiểm tra đường dẫn cert đúng.",
+        "en": "Renew cert: sudo certbot renew. Verify the certificate path is correct.",
+        "ja": "証明書を更新: sudo certbot renew。証明書のパスが正しいことを確認します。"
+      }
+    ],
+    "tags": [
+      "nginx",
+      "ssl",
+      "https",
+      "certbot"
+    ]
+  },
+  {
+    "id": "nginx-logs",
+    "name": "log config",
+    "group": "Nginx",
+    "categorySlug": "nginx",
+    "description": {
+      "vi": "Cấu hình log access và error của Nginx.",
+      "en": "Configure Nginx access and error logs.",
+      "ja": "Nginx のアクセスログとエラーログを設定します。"
+    },
+    "detail": {
+      "vi": "access_log ghi lại mọi request, error_log ghi lỗi. Có thể tùy chỉnh format log và bật/tắt cho từng location.",
+      "en": "access_log records every request, error_log records errors. Custom log format and enable/disable per location.",
+      "ja": "access_log はすべてのリクエストを記録し、error_log はエラーを記録します。ログ形式のカスタマイズや location ごとの有効/無効が可能です。"
+    },
+    "syntax": "access_log /var/log/nginx/example.com.access.log;\nerror_log /var/log/nginx/example.com.error.log warn;\n\nlog_format custom '$remote_addr - $remote_user [$time_local] \"$request\" $status $body_bytes_sent';",
+    "example": "access_log off;",
+    "breakdown": [
+      {
+        "vi": "access_log: log request",
+        "en": "access_log: request log",
+        "ja": "access_log: リクエストログ"
+      },
+      {
+        "vi": "error_log: log lỗi",
+        "en": "error_log: error log",
+        "ja": "error_log: エラーログ"
+      },
+      {
+        "vi": "log_format: định dạng log",
+        "en": "log_format: log format",
+        "ja": "log_format: ログ形式"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Disk đầy do log quá lớn.",
+        "en": "Disk full due to large logs.",
+        "ja": "ログが大きすぎてディスクがいっぱい。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Cấu hình logrotate để nén và xoay log tự động.",
+        "en": "Configure logrotate to compress and rotate logs automatically.",
+        "ja": "logrotate を設定してログを自動圧縮・ローテーションします。"
+      }
+    ],
+    "tags": [
+      "nginx",
+      "log",
+      "debug"
+    ]
+  },
+  {
+    "id": "nginx-location",
+    "name": "location block",
+    "group": "Nginx",
+    "categorySlug": "nginx",
+    "description": {
+      "vi": "Xử lý request theo đường dẫn với location block.",
+      "en": "Handle requests by path using location blocks.",
+      "ja": "location ブロックを使用してパスごとにリクエストを処理します。"
+    },
+    "detail": {
+      "vi": "Location match: prefix (mặc định), = (exact), ~ (regex), ~* (regex không phân biệt hoa thường), ^~ (prefix ưu tiên).",
+      "en": "Location match: prefix (default), = (exact), ~ (regex), ~* (case-insensitive regex), ^~ (preferential prefix).",
+      "ja": "Location マッチ: 接頭辞（デフォルト）、=（完全一致）、〜（正規表現）、〜*（大文字小文字を区別しない正規表現）、^〜（優先接頭辞）。"
+    },
+    "syntax": "location = /exact-match { ... }\nlocation /images/ { ... }\nlocation ~*\\.(jpg|png|css|js)$ { ... }\nlocation ^~ /api/ { ... }",
+    "example": "location / {\n  try_files $uri $uri/ /index.html;\n}",
+    "breakdown": [
+      {
+        "vi": "location: khối xử lý theo path",
+        "en": "location: path-based processing block",
+        "ja": "location: パスベースの処理ブロック"
+      },
+      {
+        "vi": "=: khớp chính xác",
+        "en": "=: exact match",
+        "ja": "=: 完全一致"
+      },
+      {
+        "vi": "~: regex match",
+        "en": "~: regex match",
+        "ja": "~: 正規表現マッチ"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Location order ảnh hưởng đến kết quả match.",
+        "en": "Location order affects matching results.",
+        "ja": "location の順序がマッチング結果に影響します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đặt location chính xác (=) trước, prefix sau. Nắm rõ Nginx location priority.",
+        "en": "Put exact match (=) first, then prefix. Understand Nginx location priority.",
+        "ja": "完全一致 (=) を最初に、次に接頭辞を配置します。Nginx の location 優先順位を理解してください。"
+      }
+    ],
+    "tags": [
+      "nginx",
+      "location",
+      "routing"
+    ]
+  },
+  {
+    "id": "nginx-php-fpm",
+    "name": "PHP-FPM",
+    "group": "Nginx",
+    "categorySlug": "nginx",
+    "description": {
+      "vi": "Cấu hình Nginx chạy PHP qua PHP-FPM.",
+      "en": "Configure Nginx to run PHP via PHP-FPM.",
+      "ja": "Nginx で PHP-FPM 経由で PHP を実行する設定。"
+    },
+    "detail": {
+      "vi": "Dùng fastcgi_pass để chuyển request .php đến PHP-FPM socket hoặc TCP.",
+      "en": "Use fastcgi_pass to forward .php requests to PHP-FPM socket or TCP.",
+      "ja": "fastcgi_pass を使用して .php リクエストを PHP-FPM ソケットまたは TCP に転送します。"
+    },
+    "syntax": "location ~ \\.php$ {\n  fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;\n  fastcgi_index index.php;\n  fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;\n  include fastcgi_params;\n}",
+    "example": "fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;",
+    "breakdown": [
+      {
+        "vi": "fastcgi_pass: kết nối PHP-FPM",
+        "en": "fastcgi_pass: connect to PHP-FPM",
+        "ja": "fastcgi_pass: PHP-FPM に接続"
+      },
+      {
+        "vi": "SCRIPT_FILENAME: đường dẫn file PHP",
+        "en": "SCRIPT_FILENAME: PHP file path",
+        "ja": "SCRIPT_FILENAME: PHP ファイルパス"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "404 hoặc 502 do socket sai hoặc PHP-FPM chưa chạy.",
+        "en": "404 or 502 due to wrong socket or PHP-FPM not running.",
+        "ja": "ソケットの誤りまたは PHP-FPM が実行されていないため 404 または 502。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra file socket trong /var/run/php/, đảm bảo php-fpm service đang chạy.",
+        "en": "Check the socket file in /var/run/php/, ensure php-fpm service is running.",
+        "ja": "/var/run/php/ のソケットファイルを確認し、php-fpm サービスが実行されていることを確認します。"
+      }
+    ],
+    "tags": [
+      "nginx",
+      "php",
+      "fpm",
+      "fastcgi"
+    ]
+  },
+  {
+    "id": "nginx-rate-limit",
+    "name": "rate limiting",
+    "group": "Nginx",
+    "categorySlug": "nginx",
+    "description": {
+      "vi": "Giới hạn tốc độ request để chống DDoS và abuse.",
+      "en": "Limit request rate to prevent DDoS and abuse.",
+      "ja": "DDoS や不正利用を防ぐためにリクエストレートを制限します。"
+    },
+    "detail": {
+      "vi": "Dùng limit_req_zone để định nghĩa vùng nhớ và rate, limit_req để áp dụng cho location.",
+      "en": "Use limit_req_zone to define shared memory and rate, limit_req to apply to a location.",
+      "ja": "limit_req_zone で共有メモリとレートを定義し、limit_req で location に適用します。"
+    },
+    "syntax": "http {\n  limit_req_zone $binary_remote_addr zone=mylimit:10m rate=10r/s;\n  server {\n    location /login/ {\n      limit_req zone=mylimit burst=20 nodelay;\n    }\n  }\n}",
+    "example": "limit_req zone=api_limit burst=5 nodelay;",
+    "breakdown": [
+      {
+        "vi": "limit_req_zone: định nghĩa zone",
+        "en": "limit_req_zone: define zone",
+        "ja": "limit_req_zone: ゾーンを定義"
+      },
+      {
+        "vi": "rate: số request/giây",
+        "en": "rate: requests per second",
+        "ja": "rate: 秒間リクエスト数"
+      },
+      {
+        "vi": "burst: hàng đợi cho phép",
+        "en": "burst: allowed queue",
+        "ja": "burst: 許可されるキュー"
+      },
+      {
+        "vi": "nodelay: không delay burst",
+        "en": "nodelay: no delay on burst",
+        "ja": "nodelay: バーストを遅延なしで処理"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Request bị từ chối 503 với rate limit.",
+        "en": "Requests rejected with 503 due to rate limiting.",
+        "ja": "レート制限によりリクエストが 503 で拒否されます。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Tăng rate hoặc burst nếu cần, hoặc thêm nodelay để tránh tích tụ.",
+        "en": "Increase rate or burst if needed, or add nodelay to avoid queuing.",
+        "ja": "必要に応じて rate や burst を増やすか、キューイングを避けるために nodelay を追加します。"
+      }
+    ],
+    "tags": [
+      "nginx",
+      "rate-limit",
+      "security"
+    ]
+  },
+  {
+    "id": "nginx-cors",
+    "name": "CORS headers",
+    "group": "Nginx",
+    "categorySlug": "nginx",
+    "description": {
+      "vi": "Thêm CORS headers vào response Nginx.",
+      "en": "Add CORS headers to Nginx responses.",
+      "ja": "Nginx のレスポンスに CORS ヘッダーを追加します。"
+    },
+    "detail": {
+      "vi": "Cấu hình Access-Control-Allow-Origin cho phép cross-origin request từ frontend.",
+      "en": "Configure Access-Control-Allow-Origin to allow cross-origin requests from frontend.",
+      "ja": "Access-Control-Allow-Origin を設定して、フロントエンドからのクロスオリジンリクエストを許可します。"
+    },
+    "syntax": "location /api/ {\n  add_header Access-Control-Allow-Origin \"*\" always;\n  add_header Access-Control-Allow-Methods \"GET, POST, OPTIONS\" always;\n  add_header Access-Control-Allow-Headers \"Authorization, Content-Type\" always;\n\n  if ($request_method = OPTIONS) {\n    return 204;\n  }\n}",
+    "example": "add_header Access-Control-Allow-Origin \"https://example.com\" always;",
+    "breakdown": [
+      {
+        "vi": "Access-Control-Allow-Origin: domain được phép",
+        "en": "Access-Control-Allow-Origin: allowed domain",
+        "ja": "Access-Control-Allow-Origin: 許可するドメイン"
+      },
+      {
+        "vi": "OPTIONS: preflight request",
+        "en": "OPTIONS: preflight request",
+        "ja": "OPTIONS: プリフライトリクエスト"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Dùng * cho phép tất cả domain, không an toàn cho production.",
+        "en": "Using * allows all domains, not safe for production.",
+        "ja": "* を使用するとすべてのドメインを許可するため、本番環境では安全ではありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thay * bằng domain cụ thể, hoặc dùng map để dynamic origin.",
+        "en": "Replace * with a specific domain, or use map for dynamic origin.",
+        "ja": "* を特定のドメインに置き換えるか、動的なオリジンには map を使用します。"
+      }
+    ],
+    "tags": [
+      "nginx",
+      "cors",
+      "headers",
+      "security"
+    ]
   }
 ]

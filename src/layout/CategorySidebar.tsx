@@ -68,7 +68,7 @@ const CategorySidebar = ({ isCollapsed, onToggle }: CategorySidebarProps) => {
 
               <div className="flex flex-col gap-1">
                 {groupCategories.map((category) => {
-                  const isActive = location.pathname.includes(category.slug);
+                  const isActive = location.pathname.includes(`/category/${category.slug}`);
                   return (
                     <Link
                       key={category.id}

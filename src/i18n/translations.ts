@@ -7,7 +7,7 @@ export const translations = {
     heroEyebrow: "Developer Command Handbook",
     heroTitle: "Developer Command Handbook",
     heroDescription:
-      "Tổng hợp câu lệnh Git, React, Vite, Next.js, PHP, MySQL, Laravel, TailwindCSS và nhiều công cụ khác.",
+      "Tổng hợp câu lệnh Git, React, Vue.js, Vite, Next.js, PHP, MySQL, Laravel, TailwindCSS, Node.js, Linux, Docker, Nginx, Composer, Python, Go và nhiều công cụ khác.",
     searchPlaceholder: "Tìm kiếm command, tag, framework...",
     featuredCategories: "Danh mục nổi bật",
     quickResults: "Kết quả tìm nhanh",
@@ -64,7 +64,7 @@ export const translations = {
     heroEyebrow: "Developer Command Handbook",
     heroTitle: "Developer Command Handbook",
     heroDescription:
-      "A clean reference for Git, React, Vite, Next.js, PHP, MySQL, Laravel, TailwindCSS, and more.",
+      "A clean reference for Git, React, Vue.js, Vite, Next.js, PHP, MySQL, Laravel, TailwindCSS, Node.js, Linux, Docker, Nginx, Composer, Python, Go, and more.",
     searchPlaceholder: "Search commands, tags, frameworks...",
     featuredCategories: "Featured categories",
     quickResults: "Quick results",
@@ -121,7 +121,7 @@ export const translations = {
     heroEyebrow: "Developer Command Handbook",
     heroTitle: "Developer Command Handbook",
     heroDescription:
-      "Git、React、Vite、Next.js、PHP, MySQL、Laravel、TailwindCSS などの主要コマンドをすばやく調べられます。",
+      "Git、React、Vue.js、Vite、Next.js、PHP、MySQL、Laravel、TailwindCSS、Node.js、Linux、Docker、Nginx、Composer、Python、Go などの主要コマンドをすばやく調べられます。",
     searchPlaceholder: "コマンド、タグ、フレームワークを検索...",
     featuredCategories: "主要カテゴリ",
     quickResults: "検索結果",
