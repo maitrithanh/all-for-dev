@@ -1,0 +1,6363 @@
+[
+  {
+    "id": "git-init",
+    "name": "git init",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Khởi tạo repository mới trong thư mục hiện tại.",
+      "en": "Initialize a new repository in the current directory.",
+      "ja": "現在のディレクトリで新しいリポジトリを初期化します。"
+    },
+    "detail": {
+      "vi": "Sử dụng lệnh này khi bạn muốn bắt đầu quản lý code bằng Git trong một thư mục đang có.",
+      "en": "Use this command when you want to start managing code using Git in an existing directory.",
+      "ja": "既存のディレクトリで Git を使用してコードの管理を開始する場合は、このコマンドを使用します。"
+    },
+    "syntax": "git init",
+    "example": "git init",
+    "breakdown": [
+      {
+        "vi": "git: hệ thống quản lý mã nguồn",
+        "en": "git: resource management system",
+        "ja": "git: リソース管理システム"
+      },
+      {
+        "vi": "init: tạo thư mục .git và thiết lập repository",
+        "en": "init: create .git directory and design the repository",
+        "ja": "init: .git ディレクトリを作成し、リポジトリを設計します。"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Repository đã tồn tại trước đó.",
+        "en": "Repository was previously used.",
+        "ja": "リポジトリは以前に使用されていました。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Xóa thư mục .git nếu muốn khởi tạo lại.",
+        "en": "Delete the .git folder if you want to initialize again.",
+        "ja": "再度初期化したい場合は、.git フォルダーを削除してください。"
+      }
+    ],
+    "tags": [
+      "repository",
+      "init",
+      "git"
+    ]
+  },
+  {
+    "id": "git-clone",
+    "name": "git clone",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Tải về repository từ remote về máy local.",
+      "en": "Download the repository from remote to local sewing machine.",
+      "ja": "リモートミシンからローカルミシンにリポジトリをダウンロードします。"
+    },
+    "detail": {
+      "vi": "Clone giúp bạn tạo bản sao đầy đủ của repository từ GitHub/GitLab về máy.",
+      "en": "Clone helps you create and push copies of your repository from GitHub/GitLab to your computer.",
+      "ja": "Clone は、リポジトリのコピーを作成し、GitHub/GitLab からコンピューターにプッシュするのに役立ちます。"
+    },
+    "syntax": "git clone <url>",
+    "example": "git clone https://github.com/user/repo.git",
+    "breakdown": [
+      {
+        "vi": "clone: tải về toàn bộ history",
+        "en": "clone: ​​Download the history",
+        "ja": "クローン: 履歴をダウンロードする"
+      },
+      {
+        "vi": "url: địa chỉ remote",
+        "en": "url: remote address",
+        "ja": "URL: リモートアドレス"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có quyền truy cập repository.",
+        "en": "No repository access.",
+        "ja": "リポジトリへのアクセスはありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra quyền và SSH key/token.",
+        "en": "Check permissions and SSH key/token.",
+        "ja": "権限と SSH キー/トークンを確認します。"
+      }
+    ],
+    "tags": [
+      "clone",
+      "remote"
+    ],
+    "variations": [
+      {
+        "syntax": "git clone --depth 1 <url>",
+        "description": {
+          "vi": "Chỉ tải commit gần nhất để tối ưu thời gian và dung lượng (Shallow clone).",
+          "en": "Clone only the latest commit to optimize download time and disk space (Shallow clone).",
+          "ja": "ダウンロード時間とディスクスペースを最適化するために、最新のコミットのみをクローンします（シャロークローン）。"
+        }
+      },
+      {
+        "syntax": "git clone --branch <branch-name> <url>",
+        "description": {
+          "vi": "Chỉ định clone một nhánh cụ thể từ repository.",
+          "en": "Specify and clone a single specific branch from the repository.",
+          "ja": "リポジトリから特定のブランチを指定してクローンします。"
+        }
+      },
+      {
+        "syntax": "git clone --recurse-submodules <url>",
+        "description": {
+          "vi": "Clone kèm theo tất cả các submodule nằm trong dự án.",
+          "en": "Clone the repository along with all its submodules.",
+          "ja": "すべてのサブモジュールも含めてリポジトリをクローンします。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "git-status",
+    "name": "git status",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Kiểm tra trạng thái file trong repo.",
+      "en": "Check file status in repo.",
+      "ja": "リポジトリ内のファイルのステータスを確認します。"
+    },
+    "detail": {
+      "vi": "Cho biết file nào thay đổi, chưa add, hay đã staged.",
+      "en": "Tell me which files have changed, haven't been added, or have been staged.",
+      "ja": "どのファイルが変更されたか、追加されていないか、またはステージングされているかを教えてください。"
+    },
+    "syntax": "git status",
+    "example": "git status",
+    "breakdown": [
+      {
+        "vi": "status: thống kê file đang được theo dõi",
+        "en": "status: file information being monitored",
+        "ja": "status: ファイル情報を監視中"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Dùng sai thư mục repo.",
+        "en": "Repo directory tolerance.",
+        "ja": "リポジトリ ディレクトリの許容範囲。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chạy trong thư mục có .git.",
+        "en": "Run in the co .git directory.",
+        "ja": "co .git ディレクトリで実行します。"
+      }
+    ],
+    "tags": [
+      "status",
+      "git"
+    ]
+  },
+  {
+    "id": "git-add",
+    "name": "git add .",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Thêm tất cả thay đổi vào staging.",
+      "en": "Add all changes to staging.",
+      "ja": "すべての変更をステージングに追加します。"
+    },
+    "detail": {
+      "vi": "Dùng khi bạn muốn đưa toàn bộ thay đổi vào staging trước khi commit.",
+      "en": "Use when you want to commit changes to staging before committing.",
+      "ja": "コミットする前にステージングへの変更をコミットする場合に使用します。"
+    },
+    "syntax": "git add .",
+    "example": "git add .",
+    "breakdown": [
+      {
+        "vi": "add: đưa file vào staging",
+        "en": "add: import files to staging",
+        "ja": "追加: ファイルをステージングにインポートする"
+      },
+      {
+        "vi": ".: tất cả file trong thư mục",
+        "en": ".: all files in the directory",
+        "ja": ".: ディレクトリ内のすべてのファイル"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Vô tình add file không mong muốn.",
+        "en": "Vo Tinh adds unwanted files.",
+        "ja": "Vo Tinh は不要なファイルを追加します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng git reset <file> để bỏ stage.",
+        "en": "Use git reset <file> to remove stage.",
+        "ja": "git replace <file> を使用してステージを削除します。"
+      }
+    ],
+    "tags": [
+      "stage",
+      "git"
+    ]
+  },
+  {
+    "id": "git-commit",
+    "name": "git commit -m \"message\"",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Tạo commit với message ngắn gọn.",
+      "en": "Create a commit with a brief message.",
+      "ja": "短いメッセージを含むコミットを作成します。"
+    },
+    "detail": {
+      "vi": "Commit giữ lại snapshot và message giải thích thay đổi.",
+      "en": "Commit saves the snapshot and change notification message.",
+      "ja": "コミットするとスナップショットが保存され、通知メッセージが変更されます。"
+    },
+    "syntax": "git commit -m \"message\"",
+    "example": "git commit -m \"feat: add search bar\"",
+    "breakdown": [
+      {
+        "vi": "commit: lưu snapshot",
+        "en": "commit: save snapshot",
+        "ja": "コミット: スナップショットを保存"
+      },
+      {
+        "vi": "-m: thêm message",
+        "en": "-m: add messages",
+        "ja": "-m: メッセージを追加します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có file nào staged.",
+        "en": "There are no staged files.",
+        "ja": "ステージングされたファイルはありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng git add trước khi commit.",
+        "en": "Use git add before committing.",
+        "ja": "コミットする前に git add を使用します。"
+      }
+    ],
+    "tags": [
+      "commit",
+      "git"
+    ],
+    "variations": [
+      {
+        "syntax": "git commit -m \"message\"",
+        "description": {
+          "vi": "Tạo commit thông thường với thông điệp ngắn gọn.",
+          "en": "Create a regular commit with a brief message.",
+          "ja": "短いメッセージを含む通常のコミットを作成します。"
+        }
+      },
+      {
+        "syntax": "git commit -am \"message\"",
+        "description": {
+          "vi": "Thêm tất cả các file đã thay đổi (tracked) và commit cùng lúc mà không cần chạy git add.",
+          "en": "Stage all modified files and commit them at once, bypassing separate git add.",
+          "ja": "別々の git add をバイパスして、変更されたすべてのファイルを一度にステージングしてコミットします。"
+        }
+      },
+      {
+        "syntax": "git commit --amend -m \"new message\"",
+        "description": {
+          "vi": "Ghi đè hoặc sửa đổi nội dung/thông điệp của commit gần nhất.",
+          "en": "Amend or overwrite the content and message of the very last commit.",
+          "ja": "最新のコミットの内容とメッセージを修正または上書きします。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "git-push",
+    "name": "git push",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Đẩy commit lên remote repository.",
+      "en": "Push commit to remote repository.",
+      "ja": "コミットをリモート リポジトリにプッシュします。"
+    },
+    "detail": {
+      "vi": "Upload commit local lên remote để chia sẻ với team.",
+      "en": "Upload local commit to remote to share with the team.",
+      "ja": "ローカルコミットをリモートにアップロードしてチームと共有します。"
+    },
+    "syntax": "git push origin <branch>",
+    "example": "git push origin main",
+    "breakdown": [
+      {
+        "vi": "push: đẩy commit",
+        "en": "push: push commit",
+        "ja": "プッシュ: プッシュコミット"
+      },
+      {
+        "vi": "origin: remote name",
+        "en": "origin: remote name",
+        "ja": "送信元: リモート名"
+      },
+      {
+        "vi": "branch: tên nhánh",
+        "en": "branch: branch name",
+        "ja": "ブランチ: ブランチ名"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Nhánh bị từ chối do conflict.",
+        "en": "Quickly compassionate play due to conflict.",
+        "ja": "葛藤によるすぐに思いやりのあるプレー。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Pull trước, resolve conflict, sau đó push.",
+        "en": "Pull first, resolve conflict, then push.",
+        "ja": "最初にプルし、競合を解決してからプッシュします。"
+      }
+    ],
+    "tags": [
+      "push",
+      "remote"
+    ]
+  },
+  {
+    "id": "git-pull",
+    "name": "git pull",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Kéo commit mới từ remote về local.",
+      "en": "Pull new commit from remote to local.",
+      "ja": "新しいコミットをリモートからローカルにプルします。"
+    },
+    "detail": {
+      "vi": "Pull kết hợp fetch và merge vào nhánh hiện tại.",
+      "en": "Pull ket hop fetch and merge into current branch.",
+      "ja": "ket ホップフェッチをプルし、現在のブランチにマージします。"
+    },
+    "syntax": "git pull origin <branch>",
+    "example": "git pull origin main",
+    "breakdown": [
+      {
+        "vi": "pull: fetch + merge",
+        "en": "pull: fetch + merge",
+        "ja": "プル: フェッチ + マージ"
+      },
+      {
+        "vi": "origin: remote name",
+        "en": "origin: remote name",
+        "ja": "送信元: リモート名"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Conflict khi merge.",
+        "en": "Conflict when merging.",
+        "ja": "マージ時に競合が発生します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Resolve conflict sau đó commit.",
+        "en": "Resolve conflict later by commit.",
+        "ja": "後でコミットして競合を解決します。"
+      }
+    ],
+    "tags": [
+      "pull",
+      "merge"
+    ]
+  },
+  {
+    "id": "git-branch",
+    "name": "git branch",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Danh sách các nhánh trong repo.",
+      "en": "List of branches in the repo.",
+      "ja": "リポジトリ内のブランチのリスト。"
+    },
+    "detail": {
+      "vi": "Hiển thị nhánh hiện tại và các nhánh khác.",
+      "en": "Show current branch and other branches.",
+      "ja": "現在のブランチと他のブランチを表示します。"
+    },
+    "syntax": "git branch",
+    "example": "git branch",
+    "breakdown": [
+      {
+        "vi": "branch: quản lý nhánh",
+        "en": "branch: branch management",
+        "ja": "ブランチ: ブランチ管理"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có nhánh nào.",
+        "en": "There are no branches.",
+        "ja": "支店はありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Tạo nhánh mới bằng git checkout -b.",
+        "en": "Create a new branch using git checkout -b.",
+        "ja": "git checkout -b を使用して新しいブランチを作成します。"
+      }
+    ],
+    "tags": [
+      "branch"
+    ]
+  },
+  {
+    "id": "git-checkout-b",
+    "name": "git checkout -b feature/name",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Tạo và chuyển sang nhánh mới.",
+      "en": "Create and switch to a new branch.",
+      "ja": "新しいブランチを作成して切り替えます。"
+    },
+    "detail": {
+      "vi": "Lệnh này tạo nhánh mới dựa trên nhánh hiện tại và chuyển ngay.",
+      "en": "This command creates a new branch on the current branch and transfers it immediately.",
+      "ja": "このコマンドは、現在のブランチ上に新しいブランチを作成し、それをすぐに転送します。"
+    },
+    "syntax": "git checkout -b <branch>",
+    "example": "git checkout -b feature/login",
+    "breakdown": [
+      {
+        "vi": "checkout: chuyển nhánh",
+        "en": "checkout: switch branch",
+        "ja": "チェックアウト: ブランチを切り替える"
+      },
+      {
+        "vi": "-b: tạo nhánh mới",
+        "en": "-b: create new branch",
+        "ja": "-b: 新しいブランチを作成します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Nhánh đã tồn tại.",
+        "en": "Quickly tone your ears.",
+        "ja": "すぐに耳の調子を整えます。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng git checkout <branch> để chuyển.",
+        "en": "Use git checkout <branch> to switch.",
+        "ja": "git checkout <branch> を使用して切り替えます。"
+      }
+    ],
+    "tags": [
+      "branch",
+      "checkout"
+    ]
+  },
+  {
+    "id": "git-stash",
+    "name": "git stash",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Lưu tạm thay đổi chưa commit.",
+      "en": "Temporarily save changes before committing.",
+      "ja": "コミットする前に、変更を一時的に保存します。"
+    },
+    "detail": {
+      "vi": "Dùng khi cần chuyển nhánh mà chưa muốn commit.",
+      "en": "Don't switch branches if you don't want to commit.",
+      "ja": "コミットしたくない場合はブランチを切り替えないでください。"
+    },
+    "syntax": "git stash",
+    "example": "git stash",
+    "breakdown": [
+      {
+        "vi": "stash: lưu tạm thay đổi",
+        "en": "stash: temporarily save changes",
+        "ja": "stash: 変更を一時的に保存します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có thay đổi để stash.",
+        "en": "There are no de stash changes.",
+        "ja": "スタッシュの変更はありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra git status trước.",
+        "en": "Check git status first.",
+        "ja": "まず git ステータスを確認します。"
+      }
+    ],
+    "tags": [
+      "stash"
+    ]
+  },
+  {
+    "id": "git-reset-hard",
+    "name": "git reset --hard",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Reset hoàn toàn về commit trước đó.",
+      "en": "Completely reset to previous commit.",
+      "ja": "以前のコミットに完全にリセットされます。"
+    },
+    "detail": {
+      "vi": "Loại bỏ tất cả thay đổi local, quay về trạng thái commit cũ.",
+      "en": "Remove all local changes, return to the last commit state.",
+      "ja": "すべてのローカル変更を削除し、最後のコミット状態に戻します。"
+    },
+    "syntax": "git reset --hard <commit>",
+    "example": "git reset --hard HEAD~1",
+    "breakdown": [
+      {
+        "vi": "reset: quay về commit",
+        "en": "reset: return to commit",
+        "ja": "リセット: コミットに戻る"
+      },
+      {
+        "vi": "--hard: xóa thay đổi local",
+        "en": "--hard: remove local changes",
+        "ja": "--hard: ローカルの変更を削除します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Mất dữ liệu chưa commit.",
+        "en": "Mat data not yet committed.",
+        "ja": "マット データはまだコミットされていません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng git reflog để tìm lại commit nếu cần.",
+        "en": "Use git reflog to retrieve commits if necessary.",
+        "ja": "必要に応じて git reflog を使用してコミットを取得します。"
+      }
+    ],
+    "tags": [
+      "reset",
+      "danger"
+    ],
+    "danger": {
+      "vi": "Lệnh nguy hiểm: xóa thay đổi local vĩnh viễn.",
+      "en": "Dangerous command: delete local changes permanently.",
+      "ja": "危険なコマンド: ローカルの変更を完全に削除します。"
+    }
+  },
+  {
+    "id": "git-revert",
+    "name": "git revert",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Tạo commit mới để hoàn tác commit cũ.",
+      "en": "Create a new commit to undo the old commit.",
+      "ja": "新しいコミットを作成して古いコミットを元に戻します。"
+    },
+    "detail": {
+      "vi": "Khác reset, revert giữ lịch sử và tạo commit mới để undo.",
+      "en": "Otherwise reset, revert to keep the history and create a new commit to undo.",
+      "ja": "それ以外の場合はリセットし、履歴を保存するために元に戻し、元に戻すための新しいコミットを作成します。"
+    },
+    "syntax": "git revert <commit>",
+    "example": "git revert abc123",
+    "breakdown": [
+      {
+        "vi": "revert: tạo commit undo",
+        "en": "revert: create an undo commit",
+        "ja": "元に戻す: 元に戻すコミットを作成する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Conflict khi revert.",
+        "en": "Conflict when reverting.",
+        "ja": "復帰時に競合が発生します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Resolve conflict rồi commit revert.",
+        "en": "Resolve conflict and commit revert.",
+        "ja": "競合を解決し、元に戻すことをコミットします。"
+      }
+    ],
+    "tags": [
+      "revert"
+    ]
+  },
+  {
+    "id": "git-log-oneline",
+    "name": "git log --oneline",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Xem lịch sử commit ngắn gọn.",
+      "en": "View brief commit history.",
+      "ja": "簡単なコミット履歴を表示します。"
+    },
+    "detail": {
+      "vi": "Hiển thị commit id và message trên 1 dòng.",
+      "en": "Show commit id and message on one page.",
+      "ja": "コミット ID とメッセージを 1 ページに表示します。"
+    },
+    "syntax": "git log --oneline",
+    "example": "git log --oneline",
+    "breakdown": [
+      {
+        "vi": "log: xem lịch sử",
+        "en": "log: view history",
+        "ja": "ログ: 履歴の表示"
+      },
+      {
+        "vi": "--oneline: định dạng ngắn",
+        "en": "--oneline: stable status",
+        "ja": "--oneline: 安定したステータス"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Repo chưa có commit.",
+        "en": "The repo has no commits.",
+        "ja": "リポジトリにはコミットがありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Tạo commit đầu tiên.",
+        "en": "Create first commit.",
+        "ja": "最初のコミットを作成します。"
+      }
+    ],
+    "tags": [
+      "log"
+    ]
+  },
+  {
+    "id": "react-create-vite",
+    "name": "npm create vite@latest",
+    "group": "ReactJS",
+    "categorySlug": "react",
+    "description": {
+      "vi": "Khởi tạo dự án React bằng Vite.",
+      "en": "Create a React project using Vite.",
+      "ja": "Vite を使用して React プロジェクトを作成します。"
+    },
+    "detail": {
+      "vi": "Dùng khi bắt đầu dự án React mới với template nhanh chóng.",
+      "en": "Use when starting a new React project with a chong branch template.",
+      "ja": "chong ブランチ テンプレートを使用して新しい React プロジェクトを開始するときに使用します。"
+    },
+    "syntax": "npm create vite@latest",
+    "example": "npm create vite@latest my-app -- --template react-ts",
+    "breakdown": [
+      {
+        "vi": "npm create: chạy scaffolding",
+        "en": "npm create: run scaffolding",
+        "ja": "npm create: スキャフォールディングを実行する"
+      },
+      {
+        "vi": "vite@latest: phiên bản mới",
+        "en": "vite@latest: new version",
+        "ja": "vite@latest: 新しいバージョン"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Node.js version cũ.",
+        "en": "Node.js version cu.",
+        "ja": "Node.js バージョン cu。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Cập nhật Node.js >= 18.",
+        "en": "Most cap Node.js >= 18.",
+        "ja": "ほとんどの場合、Node.js の上限は 18 以上です。"
+      }
+    ],
+    "tags": [
+      "react",
+      "vite",
+      "setup"
+    ]
+  },
+  {
+    "id": "react-install",
+    "name": "npm install",
+    "group": "ReactJS",
+    "categorySlug": "react",
+    "description": {
+      "vi": "Cài dependency cho dự án.",
+      "en": "Install dependencies for the project.",
+      "ja": "プロジェクトの依存関係をインストールします。"
+    },
+    "detail": {
+      "vi": "Tạo node_modules dựa trên package.json.",
+      "en": "Create node_modules in package.json.",
+      "ja": "package.jsonにnode_modulesを作成します。"
+    },
+    "syntax": "npm install",
+    "example": "npm install",
+    "breakdown": [
+      {
+        "vi": "install: tải dependency",
+        "en": "install: download dependency",
+        "ja": "インストール: 依存関係をダウンロード"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Version conflict.",
+        "en": "Version conflicts.",
+        "ja": "バージョンの競合。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Xóa node_modules và npm install lại.",
+        "en": "Delete node_modules and npm install again.",
+        "ja": "node_modules を削除し、npm install を再度実行します。"
+      }
+    ],
+    "tags": [
+      "npm",
+      "install"
+    ]
+  },
+  {
+    "id": "react-run-dev",
+    "name": "npm run dev",
+    "group": "ReactJS",
+    "categorySlug": "react",
+    "description": {
+      "vi": "Chạy server dev của Vite.",
+      "en": "Run Vite's dev server.",
+      "ja": "Vite の開発サーバーを実行します。"
+    },
+    "detail": {
+      "vi": "Khởi động dev server và hot reload.",
+      "en": "Start the dev server and hot reload.",
+      "ja": "開発サーバーを起動し、ホットリロードします。"
+    },
+    "syntax": "npm run dev",
+    "example": "npm run dev",
+    "breakdown": [
+      {
+        "vi": "run dev: thực thi script dev",
+        "en": "run dev: execute dev script",
+        "ja": "run dev: 開発スクリプトを実行します。"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Port đang được sử dụng.",
+        "en": "Port is in use.",
+        "ja": "ポートは使用中です。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đổi port hoặc tắt tiến trình đang chạy.",
+        "en": "Change the port or end the running program.",
+        "ja": "ポートを変更するか、実行中のプログラムを終了してください。"
+      }
+    ],
+    "tags": [
+      "dev"
+    ]
+  },
+  {
+    "id": "react-usestate",
+    "name": "useState",
+    "group": "ReactJS",
+    "categorySlug": "react",
+    "description": {
+      "vi": "Hook quản lý state trong component.",
+      "en": "Hooks manage state in components.",
+      "ja": "フックはコンポーネントの状態を管理します。"
+    },
+    "detail": {
+      "vi": "useState giúp lưu trữ giá trị và cập nhật UI tự động.",
+      "en": "useState helps save values ​​and updates the UI dynamically.",
+      "ja": "useState は値を保存し、UI を動的に更新するのに役立ちます。"
+    },
+    "syntax": "const [state, setState] = useState(initialValue)",
+    "example": "const [count, setCount] = useState(0)",
+    "breakdown": [
+      {
+        "vi": "state: giá trị hiện tại",
+        "en": "state: current value",
+        "ja": "状態: 現在の値"
+      },
+      {
+        "vi": "setState: hàm cập nhật",
+        "en": "setState: maximum capacity",
+        "ja": "setState: 最大容量"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Cập nhật state trực tiếp.",
+        "en": "Capture the latest state directly.",
+        "ja": "最新の状態を直接キャプチャします。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Luôn dùng setState để cập nhật.",
+        "en": "Always use setState for the best results.",
+        "ja": "最良の結果を得るには、常に setState を使用してください。"
+      }
+    ],
+    "tags": [
+      "hooks",
+      "state"
+    ]
+  },
+  {
+    "id": "react-useeffect",
+    "name": "useEffect",
+    "group": "ReactJS",
+    "categorySlug": "react",
+    "description": {
+      "vi": "Hook xử lý side effects.",
+      "en": "Hooks handle side effects.",
+      "ja": "フックは副作用を処理します。"
+    },
+    "detail": {
+      "vi": "Dùng cho fetch data, event listener, cleanup.",
+      "en": "Used for fetch data, event listener, cleanup.",
+      "ja": "データの取得、イベント リスナー、クリーンアップに使用されます。"
+    },
+    "syntax": "useEffect(() => { ... }, [deps])",
+    "example": "useEffect(() => { document.title = title; }, [title])",
+    "breakdown": [
+      {
+        "vi": "callback: logic",
+        "en": "callback: logic",
+        "ja": "コールバック: ロジック"
+      },
+      {
+        "vi": "deps: danh sách phụ thuộc",
+        "en": "deps: list of remedies",
+        "ja": "deps: 救済策のリスト"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Quên khai báo dependency.",
+        "en": "Familiar with declaring dependencies.",
+        "ja": "依存関係の宣言に精通している。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Xem warning của React và thêm deps.",
+        "en": "See React's warning and add deps.",
+        "ja": "React の警告を参照して deps を追加してください。"
+      }
+    ],
+    "tags": [
+      "hooks",
+      "effect"
+    ]
+  },
+  {
+    "id": "react-router-setup",
+    "name": "React Router setup",
+    "group": "ReactJS",
+    "categorySlug": "react",
+    "description": {
+      "vi": "Cài đặt router cho SPA.",
+      "en": "Install router for SPA.",
+      "ja": "SPA用ルーターを設置します。"
+    },
+    "detail": {
+      "vi": "Cấu hình BrowserRouter, Routes, Route để điều hướng.",
+      "en": "Configure BrowserRouter, Routes, Route instructions.",
+      "ja": "BrowserRouter、ルート、ルート命令を構成します。"
+    },
+    "syntax": "<BrowserRouter><Routes>...</Routes></BrowserRouter>",
+    "example": "<Route path=\"/\" element={<Home />} />",
+    "breakdown": [
+      {
+        "vi": "BrowserRouter: wrapper",
+        "en": "BrowserRouter: wrapper",
+        "ja": "ブラウザルーター: ラッパー"
+      },
+      {
+        "vi": "Routes: danh sách route",
+        "en": "Routes: list of routes",
+        "ja": "ルート: ルートのリスト"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai đường dẫn import.",
+        "en": "Wrong import path.",
+        "ja": "インポートパスが間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra react-router-dom version.",
+        "en": "Check react-router-dom version.",
+        "ja": "反応ルーターダムのバージョンを確認してください。"
+      }
+    ],
+    "tags": [
+      "router",
+      "spa"
+    ]
+  },
+  {
+    "id": "react-build",
+    "name": "build production",
+    "group": "ReactJS",
+    "categorySlug": "react",
+    "description": {
+      "vi": "Build dự án cho production.",
+      "en": "Build project for production.",
+      "ja": "実稼働用のプロジェクトをビルドします。"
+    },
+    "detail": {
+      "vi": "Tạo thư mục dist chứa bundle tối ưu.",
+      "en": "Create an optimal bundle dist folder.",
+      "ja": "最適なバンドル dist フォルダーを作成します。"
+    },
+    "syntax": "npm run build",
+    "example": "npm run build",
+    "breakdown": [
+      {
+        "vi": "build: tạo file optimized",
+        "en": "build: create optimized file",
+        "ja": "ビルド: 最適化されたファイルを作成する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "TypeScript error khi build.",
+        "en": "TypeScript error when building.",
+        "ja": "ビルド時に TypeScript エラーが発生しました。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Fix type errors trước.",
+        "en": "Fix type errors first.",
+        "ja": "まず型エラーを修正してください。"
+      }
+    ],
+    "tags": [
+      "build",
+      "production"
+    ]
+  },
+  {
+    "id": "vite-create-react-ts",
+    "name": "npm create vite@latest my-app -- --template react-ts",
+    "group": "Vite",
+    "categorySlug": "vite",
+    "description": {
+      "vi": "Tạo dự án Vite React TypeScript.",
+      "en": "Create a Vite React TypeScript project.",
+      "ja": "Vite React TypeScript プロジェクトを作成します。"
+    },
+    "detail": {
+      "vi": "Boilerplate React + TS nhanh chóng.",
+      "en": "Boilerplate React + TS branch chong.",
+      "ja": "ボイラープレート React + TS ブランチ チョン。"
+    },
+    "syntax": "npm create vite@latest <app> -- --template react-ts",
+    "example": "npm create vite@latest my-app -- --template react-ts",
+    "breakdown": [
+      {
+        "vi": "template react-ts: React + TypeScript",
+        "en": "template react-ts: React + TypeScript",
+        "ja": "テンプレート反応-ts: React + TypeScript"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai cú pháp dấu --.",
+        "en": "Wrong first sentence --.",
+        "ja": "最初の文が間違っています --。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đảm bảo có -- trước template.",
+        "en": "Damn there -- before template.",
+        "ja": "くそー、テンプレートの前に。"
+      }
+    ],
+    "tags": [
+      "vite",
+      "react"
+    ]
+  },
+  {
+    "id": "vite-run-dev",
+    "name": "npm run dev (Vite)",
+    "group": "Vite",
+    "categorySlug": "vite",
+    "description": {
+      "vi": "Chạy Vite dev server.",
+      "en": "Run Vite dev server.",
+      "ja": "Vite 開発サーバーを実行します。"
+    },
+    "detail": {
+      "vi": "Khởi động Vite dev và HMR.",
+      "en": "Activate Vite dev and HMR.",
+      "ja": "Vite dev と HMR をアクティブ化します。"
+    },
+    "syntax": "npm run dev",
+    "example": "npm run dev",
+    "breakdown": [
+      {
+        "vi": "dev: script của Vite",
+        "en": "dev: Vite script",
+        "ja": "開発者: Vite スクリプト"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Port bị chiếm.",
+        "en": "Port bi chiem.",
+        "ja": "ポートビチーム。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chạy npm run dev -- --port 5174",
+        "en": "Run npm run dev -- --port 5174",
+        "ja": "npm run dev -- --port 5174 を実行します。"
+      }
+    ],
+    "tags": [
+      "vite",
+      "dev"
+    ]
+  },
+  {
+    "id": "vite-build",
+    "name": "npm run build (Vite)",
+    "group": "Vite",
+    "categorySlug": "vite",
+    "description": {
+      "vi": "Build dự án Vite.",
+      "en": "Build Vite project.",
+      "ja": "Vite プロジェクトをビルドします。"
+    },
+    "detail": {
+      "vi": "Tạo output tối ưu trong dist.",
+      "en": "Generate optimal output in dist.",
+      "ja": "dist で最適な出力を生成します。"
+    },
+    "syntax": "npm run build",
+    "example": "npm run build",
+    "breakdown": [
+      {
+        "vi": "build: tạo bundle",
+        "en": "build: create bundle",
+        "ja": "ビルド: バンドルを作成する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Thiếu config.",
+        "en": "Missing config.",
+        "ja": "構成がありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra vite.config.ts.",
+        "en": "Check vite.config.ts.",
+        "ja": "vite.config.tsを確認してください。"
+      }
+    ],
+    "tags": [
+      "vite",
+      "build"
+    ]
+  },
+  {
+    "id": "vite-preview",
+    "name": "npm run preview",
+    "group": "Vite",
+    "categorySlug": "vite",
+    "description": {
+      "vi": "Preview build Vite local.",
+      "en": "Preview build Vite local.",
+      "ja": "Vite ローカルでビルドをプレビューします。"
+    },
+    "detail": {
+      "vi": "Chạy server preview từ dist.",
+      "en": "Run server preview from dist.",
+      "ja": "dist からサーバー プレビューを実行します。"
+    },
+    "syntax": "npm run preview",
+    "example": "npm run preview",
+    "breakdown": [
+      {
+        "vi": "preview: xem build",
+        "en": "preview: see build",
+        "ja": "プレビュー: ビルドを参照"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Chưa build trước.",
+        "en": "Haven't built it before.",
+        "ja": "以前に構築したことがありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chạy npm run build trước.",
+        "en": "Run npm run build first.",
+        "ja": "最初に npm run build を実行します。"
+      }
+    ],
+    "tags": [
+      "vite",
+      "preview"
+    ]
+  },
+  {
+    "id": "vite-config",
+    "name": "cau hinh vite.config.ts",
+    "group": "Vite",
+    "categorySlug": "vite",
+    "description": {
+      "vi": "Tùy chỉnh alias, plugins và server.",
+      "en": "Customize aliases, plugins and servers.",
+      "ja": "エイリアス、プラグイン、サーバーをカスタマイズします。"
+    },
+    "detail": {
+      "vi": "Chỉnh sửa vite.config.ts để thêm alias và plugins.",
+      "en": "Edit vite.config.ts to add aliases and plugins.",
+      "ja": "vite.config.ts を編集してエイリアスとプラグインを追加します。"
+    },
+    "syntax": "export default defineConfig({ ... })",
+    "example": "resolve: { alias: { '@': '/src' } }",
+    "breakdown": [
+      {
+        "vi": "defineConfig: cấu hình Vite",
+        "en": "defineConfig: Vite configuration",
+        "ja": "defineConfig: Vite 設定"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai path alias.",
+        "en": "Wrong path alias.",
+        "ja": "パスのエイリアスが間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Sử dụng path.resolve để an toàn.",
+        "en": "Use path.resolve for safety.",
+        "ja": "安全のために path.resolve を使用してください。"
+      }
+    ],
+    "tags": [
+      "config"
+    ]
+  },
+  {
+    "id": "next-create",
+    "name": "npx create-next-app@latest",
+    "group": "Next.js",
+    "categorySlug": "nextjs",
+    "description": {
+      "vi": "Khởi tạo dự án Next.js.",
+      "en": "Initialize the Next.js project.",
+      "ja": "Next.js プロジェクトを初期化します。"
+    },
+    "detail": {
+      "vi": "Tạo project Next.js mới với App Router.",
+      "en": "Create a new Next.js project with App Router.",
+      "ja": "App Router を使用して新しい Next.js プロジェクトを作成します。"
+    },
+    "syntax": "npx create-next-app@latest",
+    "example": "npx create-next-app@latest my-next-app",
+    "breakdown": [
+      {
+        "vi": "create-next-app: scaffold",
+        "en": "create-next-app: scaffold",
+        "ja": "次のアプリの作成: 足場"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Node.js không tương thích.",
+        "en": "Node.js is not compatible.",
+        "ja": "Node.js には互換性がありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Cập nhật Node.js >= 18.",
+        "en": "Most cap Node.js >= 18.",
+        "ja": "ほとんどの場合、Node.js の上限は 18 以上です。"
+      }
+    ],
+    "tags": [
+      "nextjs",
+      "setup"
+    ]
+  },
+  {
+    "id": "next-run-dev",
+    "name": "npm run dev (Next.js)",
+    "group": "Next.js",
+    "categorySlug": "nextjs",
+    "description": {
+      "vi": "Chạy Next.js dev server.",
+      "en": "Run Next.js dev server.",
+      "ja": "Next.js 開発サーバーを実行します。"
+    },
+    "detail": {
+      "vi": "Khởi động server local cho Next.js.",
+      "en": "Start the local server for Next.js.",
+      "ja": "Next.js のローカル サーバーを起動します。"
+    },
+    "syntax": "npm run dev",
+    "example": "npm run dev",
+    "breakdown": [
+      {
+        "vi": "dev: chạy dev server",
+        "en": "dev: run dev server",
+        "ja": "dev: 開発サーバーを実行します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Port bị chiếm.",
+        "en": "Port bi chiem.",
+        "ja": "ポートビチーム。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đổi port bằng -p 3001",
+        "en": "Doi port state -p 3001",
+        "ja": "Doi ポート状態 -p 3001"
+      }
+    ],
+    "tags": [
+      "nextjs",
+      "dev"
+    ]
+  },
+  {
+    "id": "next-build",
+    "name": "npm run build (Next.js)",
+    "group": "Next.js",
+    "categorySlug": "nextjs",
+    "description": {
+      "vi": "Build Next.js cho production.",
+      "en": "Build Next.js for production.",
+      "ja": "実稼働用に Next.js をビルドします。"
+    },
+    "detail": {
+      "vi": "Tạo .next/ và tối ưu hóa.",
+      "en": "Create .next/ and optimize.",
+      "ja": ".next/ を作成して最適化します。"
+    },
+    "syntax": "npm run build",
+    "example": "npm run build",
+    "breakdown": [
+      {
+        "vi": "build: tạo output",
+        "en": "build: create output",
+        "ja": "ビルド: 出力を作成する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "ESLint error.",
+        "en": "ESLint error.",
+        "ja": "ESLint エラー。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Fix lint hoặc disable lint khi build.",
+        "en": "Fix lint or disable lint on build.",
+        "ja": "lint を修正するか、ビルド時に lint を無効にします。"
+      }
+    ],
+    "tags": [
+      "nextjs",
+      "build"
+    ]
+  },
+  {
+    "id": "next-start",
+    "name": "npm start",
+    "group": "Next.js",
+    "categorySlug": "nextjs",
+    "description": {
+      "vi": "Chạy server production của Next.js.",
+      "en": "Run Next.js production server.",
+      "ja": "Next.js 運用サーバーを実行します。"
+    },
+    "detail": {
+      "vi": "Sử dụng sau khi build để serve app.",
+      "en": "Use after build de serve app.",
+      "ja": "アプリの構築後に使用します。"
+    },
+    "syntax": "npm start",
+    "example": "npm start",
+    "breakdown": [
+      {
+        "vi": "start: chạy production",
+        "en": "start: run production",
+        "ja": "開始: 本番環境を実行する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Chưa build trước.",
+        "en": "Haven't built it before.",
+        "ja": "以前に構築したことがありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chạy npm run build.",
+        "en": "Run npm run build.",
+        "ja": "npm run build を実行します。"
+      }
+    ],
+    "tags": [
+      "nextjs",
+      "start"
+    ]
+  },
+  {
+    "id": "next-app-router",
+    "name": "App Router",
+    "group": "Next.js",
+    "categorySlug": "nextjs",
+    "description": {
+      "vi": "Kiểu routing mới của Next.js.",
+      "en": "New routing style of Next.js.",
+      "ja": "Next.js の新しいルーティング スタイル。"
+    },
+    "detail": {
+      "vi": "Sử dụng thư mục app/ và route segment.",
+      "en": "Use the app/ directory and route segment.",
+      "ja": "app/ ディレクトリとルートセグメントを使用します。"
+    },
+    "syntax": "app/\n  page.tsx\n  layout.tsx",
+    "example": "app/dashboard/page.tsx",
+    "breakdown": [
+      {
+        "vi": "app/: thư mục router",
+        "en": "app/: router directory",
+        "ja": "app/:ルーターディレクトリ"
+      },
+      {
+        "vi": "page.tsx: route",
+        "en": "page.tsx: route",
+        "ja": "page.tsx: ルート"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có layout.tsx gốc.",
+        "en": "No layout.tsx goc.",
+        "ja": "レイアウト.tsx gocはありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm app/layout.tsx.",
+        "en": "Add app/layout.tsx.",
+        "ja": "app/layout.tsxを追加します。"
+      }
+    ],
+    "tags": [
+      "nextjs",
+      "router"
+    ]
+  },
+  {
+    "id": "next-page",
+    "name": "tao page",
+    "group": "Next.js",
+    "categorySlug": "nextjs",
+    "description": {
+      "vi": "Tạo route page trong app router.",
+      "en": "Create a route page in the router app.",
+      "ja": "ルーターアプリでルートページを作成します。"
+    },
+    "detail": {
+      "vi": "Thêm file page.tsx để tạo route.",
+      "en": "Add page.tsx file to create route.",
+      "ja": "page.tsx ファイルを追加してルートを作成します。"
+    },
+    "syntax": "app/<route>/page.tsx",
+    "example": "app/blog/page.tsx",
+    "breakdown": [
+      {
+        "vi": "page.tsx: file route",
+        "en": "page.tsx: route file",
+        "ja": "page.tsx:ルートファイル"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Route không hiển thị.",
+        "en": "Route is not displayed.",
+        "ja": "ルートは表示されません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra thư mục app/ và export default.",
+        "en": "Check the app/ folder and export default.",
+        "ja": "アプリ/フォルダーを確認し、デフォルトをエクスポートします。"
+      }
+    ],
+    "tags": [
+      "page",
+      "nextjs"
+    ]
+  },
+  {
+    "id": "next-layout",
+    "name": "tao layout",
+    "group": "Next.js",
+    "categorySlug": "nextjs",
+    "description": {
+      "vi": "Tạo layout cho route.",
+      "en": "Create a layout for the route.",
+      "ja": "ルートのレイアウトを作成します。"
+    },
+    "detail": {
+      "vi": "Layout dùng cho nested layout trong app router.",
+      "en": "Layout is used for nested layout in router app.",
+      "ja": "レイアウトは、ルーター アプリのネストされたレイアウトに使用されます。"
+    },
+    "syntax": "app/<route>/layout.tsx",
+    "example": "app/dashboard/layout.tsx",
+    "breakdown": [
+      {
+        "vi": "layout.tsx: wrapper",
+        "en": "layout.tsx: wrapper",
+        "ja": "レイアウト.tsx: ラッパー"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Quên children prop.",
+        "en": "Familiar children prop.",
+        "ja": "おなじみの子供用小道具。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm {children} vào component.",
+        "en": "Add {children} to the component.",
+        "ja": "{children} をコンポーネントに追加します。"
+      }
+    ],
+    "tags": [
+      "layout"
+    ]
+  },
+  {
+    "id": "next-api-route",
+    "name": "tao API route",
+    "group": "Next.js",
+    "categorySlug": "nextjs",
+    "description": {
+      "vi": "Tạo API route trong app router.",
+      "en": "Create an API route in the router app.",
+      "ja": "ルーターアプリでAPIルートを作成します。"
+    },
+    "detail": {
+      "vi": "Thêm route.ts để xử lý HTTP methods.",
+      "en": "Add route.ts to download HTTP methods.",
+      "ja": "HTTP メソッドをダウンロードするには、route.ts を追加します。"
+    },
+    "syntax": "app/api/<name>/route.ts",
+    "example": "export async function GET() { return Response.json({ ok: true }) }",
+    "breakdown": [
+      {
+        "vi": "route.ts: xử lý request",
+        "en": "route.ts: xử lý request",
+        "ja": "Route.ts: xử lý リクエスト"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Response không hợp lệ.",
+        "en": "Response is not valid.",
+        "ja": "応答が無効です。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng Response.json hoặc NextResponse.",
+        "en": "Use Response.json or NextResponse.",
+        "ja": "Response.json または NextResponse を使用します。"
+      }
+    ],
+    "tags": [
+      "api",
+      "route"
+    ]
+  },
+  {
+    "id": "php-version",
+    "name": "php -v",
+    "group": "PHP",
+    "categorySlug": "php",
+    "description": {
+      "vi": "Kiểm tra phiên bản PHP.",
+      "en": "Check your PHP version.",
+      "ja": "PHP のバージョンを確認してください。"
+    },
+    "detail": {
+      "vi": "Hiển thị phiên bản PHP đang cài.",
+      "en": "Show the currently installed PHP version.",
+      "ja": "現在インストールされている PHP のバージョンを表示します。"
+    },
+    "syntax": "php -v",
+    "example": "php -v",
+    "breakdown": [
+      {
+        "vi": "-v: version",
+        "en": "-v: version",
+        "ja": "-v: バージョン"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "PHP chưa được cài.",
+        "en": "PHP is not installed yet.",
+        "ja": "PHPはまだインストールされていません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Cài PHP bằng apt hoặc brew.",
+        "en": "Install PHP using apt or brew.",
+        "ja": "apt または brew を使用して PHP をインストールします。"
+      }
+    ],
+    "tags": [
+      "php",
+      "version"
+    ]
+  },
+  {
+    "id": "php-artisan-serve",
+    "name": "php artisan serve",
+    "group": "PHP",
+    "categorySlug": "php",
+    "description": {
+      "vi": "Chạy server Laravel local.",
+      "en": "Run the local Laravel server.",
+      "ja": "ローカルのLaravelサーバーを実行します。"
+    },
+    "detail": {
+      "vi": "Khởi động server builtin cho Laravel.",
+      "en": "Start the builtin server for Laravel.",
+      "ja": "Laravelの組み込みサーバーを起動します。"
+    },
+    "syntax": "php artisan serve",
+    "example": "php artisan serve --port=8001",
+    "breakdown": [
+      {
+        "vi": "artisan: CLI laravel",
+        "en": "artisan: CLI laravel",
+        "ja": "職人: CLI laravel"
+      },
+      {
+        "vi": "serve: chạy server",
+        "en": "serve: run the server",
+        "ja": "サーブ: サーバーを実行します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Port bị chiếm.",
+        "en": "Port bi chiem.",
+        "ja": "ポートビチーム。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đổi port trong command.",
+        "en": "Enter port in command.",
+        "ja": "コマンドにポートを入力します。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "serve"
+    ]
+  },
+  {
+    "id": "php-composer-install",
+    "name": "composer install",
+    "group": "PHP",
+    "categorySlug": "php",
+    "description": {
+      "vi": "Cài dependency từ composer.lock.",
+      "en": "Install dependencies from composer.lock.",
+      "ja": "Composer.lock から依存関係をインストールします。"
+    },
+    "detail": {
+      "vi": "Dùng khi clone project Laravel/PHP.",
+      "en": "Use when cloning Laravel/PHP project.",
+      "ja": "Laravel/PHPプロジェクトをクローンする場合に使用します。"
+    },
+    "syntax": "composer install",
+    "example": "composer install",
+    "breakdown": [
+      {
+        "vi": "install: tải dependency",
+        "en": "install: download dependency",
+        "ja": "インストール: 依存関係をダウンロード"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Memory limit.",
+        "en": "Memory limit.",
+        "ja": "メモリ制限。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Tăng memory_limit trong php.ini.",
+        "en": "Increase memory_limit in php.ini.",
+        "ja": "php.iniのmemory_limitを増やします。"
+      }
+    ],
+    "tags": [
+      "composer"
+    ]
+  },
+  {
+    "id": "php-composer-update",
+    "name": "composer update",
+    "group": "PHP",
+    "categorySlug": "php",
+    "description": {
+      "vi": "Cập nhật dependency PHP.",
+      "en": "Maximum PHP dependency.",
+      "ja": "最大の PHP 依存関係。"
+    },
+    "detail": {
+      "vi": "Cập nhật version theo composer.json.",
+      "en": "Capture the latest version according to composer.json.",
+      "ja": "Composer.json に従って最新バージョンをキャプチャします。"
+    },
+    "syntax": "composer update",
+    "example": "composer update",
+    "breakdown": [
+      {
+        "vi": "update: cập nhật dependency",
+        "en": "update: cap most dependencies",
+        "ja": "更新: ほとんどの依存関係に上限を設ける"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Conflict version.",
+        "en": "Conflict version.",
+        "ja": "衝突バージョン。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra composer.json.",
+        "en": "Check out composer.json.",
+        "ja": "作曲家.json を確認してください。"
+      }
+    ],
+    "tags": [
+      "composer",
+      "update"
+    ]
+  },
+  {
+    "id": "php-server",
+    "name": "php -S localhost:8000",
+    "group": "PHP",
+    "categorySlug": "php",
+    "description": {
+      "vi": "Chạy server PHP builtin.",
+      "en": "Run the PHP builtin server.",
+      "ja": "PHP 組み込みサーバーを実行します。"
+    },
+    "detail": {
+      "vi": "Dùng để serve project PHP đơn giản.",
+      "en": "Using to serve PHP project is easy.",
+      "ja": "PHP プロジェクトを提供するために使用するのは簡単です。"
+    },
+    "syntax": "php -S localhost:8000",
+    "example": "php -S localhost:8000 -t public",
+    "breakdown": [
+      {
+        "vi": "-S: start server",
+        "en": "-S: start server",
+        "ja": "-S: サーバーを起動します"
+      },
+      {
+        "vi": "-t: document root",
+        "en": "-t: document root",
+        "ja": "-t: ドキュメントルート"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Port bị chiếm.",
+        "en": "Port bi chiem.",
+        "ja": "ポートビチーム。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đổi port hoặc tắt tiến trình.",
+        "en": "Change the port or end the program.",
+        "ja": "ポートを変更するか、プログラムを終了してください。"
+      }
+    ],
+    "tags": [
+      "php",
+      "server"
+    ]
+  },
+  {
+    "id": "mysql-login",
+    "name": "mysql -u root -p",
+    "group": "MySQL",
+    "categorySlug": "mysql",
+    "description": {
+      "vi": "Đăng nhập MySQL CLI.",
+      "en": "Entering MySQL CLI.",
+      "ja": "MySQL CLI を入力します。"
+    },
+    "detail": {
+      "vi": "Nhập password để truy cập database.",
+      "en": "Enter the password to access the database.",
+      "ja": "データベースにアクセスするためのパスワードを入力します。"
+    },
+    "syntax": "mysql -u <user> -p",
+    "example": "mysql -u root -p",
+    "breakdown": [
+      {
+        "vi": "-u: user",
+        "en": "-u: user",
+        "ja": "-u: ユーザー"
+      },
+      {
+        "vi": "-p: password",
+        "en": "-p: password",
+        "ja": "-p: パスワード"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Access denied.",
+        "en": "Access denied.",
+        "ja": "アクセスが拒否されました。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra user/password.",
+        "en": "Check user/password.",
+        "ja": "ユーザー/パスワードを確認してください。"
+      }
+    ],
+    "tags": [
+      "mysql",
+      "login"
+    ]
+  },
+  {
+    "id": "mysql-show-databases",
+    "name": "show databases;",
+    "group": "MySQL",
+    "categorySlug": "mysql",
+    "description": {
+      "vi": "Liệt kê tất cả database.",
+      "en": "List all databases.",
+      "ja": "すべてのデータベースをリストします。"
+    },
+    "detail": {
+      "vi": "Hiển thị danh sách database có sẵn.",
+      "en": "Show the list of available databases.",
+      "ja": "利用可能なデータベースのリストを表示します。"
+    },
+    "syntax": "SHOW DATABASES;",
+    "example": "SHOW DATABASES;",
+    "breakdown": [
+      {
+        "vi": "SHOW DATABASES: list DB",
+        "en": "SHOW DATABASES: list DB",
+        "ja": "データベースの表示: DB のリスト"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có quyền.",
+        "en": "No rights.",
+        "ja": "権利はありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Grant quyền cho user.",
+        "en": "Grant permissions to users.",
+        "ja": "ユーザーに権限を付与します。"
+      }
+    ],
+    "tags": [
+      "mysql",
+      "database"
+    ]
+  },
+  {
+    "id": "mysql-create-db",
+    "name": "create database",
+    "group": "MySQL",
+    "categorySlug": "mysql",
+    "description": {
+      "vi": "Tạo database mới.",
+      "en": "Create a new database.",
+      "ja": "新しいデータベースを作成します。"
+    },
+    "detail": {
+      "vi": "Tạo DB với tên tùy chọn.",
+      "en": "Create DB with selected name.",
+      "ja": "選択した名前でDBを作成します。"
+    },
+    "syntax": "CREATE DATABASE <name>;",
+    "example": "CREATE DATABASE app_db;",
+    "breakdown": [
+      {
+        "vi": "CREATE DATABASE: tạo DB",
+        "en": "CREATE DATABASE: create DB",
+        "ja": "CREATE DATABASE: DBを作成します。"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "DB đã tồn tại.",
+        "en": "DB's skin tone.",
+        "ja": "DBの肌の色。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng CREATE DATABASE IF NOT EXISTS.",
+        "en": "Dung CREATE DATABASE IF NOT EXISTS.",
+        "ja": "データベースが存在しない場合はデータベースを作成してください。"
+      }
+    ],
+    "tags": [
+      "mysql",
+      "create"
+    ]
+  },
+  {
+    "id": "mysql-use-db",
+    "name": "use database",
+    "group": "MySQL",
+    "categorySlug": "mysql",
+    "description": {
+      "vi": "Chọn database để sử dụng.",
+      "en": "Select the database to use.",
+      "ja": "使用するデータベースを選択します。"
+    },
+    "detail": {
+      "vi": "Dùng trước khi query bảng.",
+      "en": "Use before query state.",
+      "ja": "クエリ状態の前に使用します。"
+    },
+    "syntax": "USE <name>;",
+    "example": "USE app_db;",
+    "breakdown": [
+      {
+        "vi": "USE: chọn DB",
+        "en": "USE: select DB",
+        "ja": "使用: DB を選択します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "DB không tồn tại.",
+        "en": "DB is not loud.",
+        "ja": "DBはうるさくないです。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra danh sách DB.",
+        "en": "Check DB list.",
+        "ja": "DBリストを確認してください。"
+      }
+    ],
+    "tags": [
+      "mysql",
+      "use"
+    ]
+  },
+  {
+    "id": "mysql-show-tables",
+    "name": "show tables;",
+    "group": "MySQL",
+    "categorySlug": "mysql",
+    "description": {
+      "vi": "Liệt kê tất cả bảng.",
+      "en": "Liet all states.",
+      "ja": "すべての州を嘘をつく。"
+    },
+    "detail": {
+      "vi": "Hiển thị danh sách table trong DB.",
+      "en": "Show a list of tables in the DB.",
+      "ja": "DB内のテーブルの一覧を表示します。"
+    },
+    "syntax": "SHOW TABLES;",
+    "example": "SHOW TABLES;",
+    "breakdown": [
+      {
+        "vi": "SHOW TABLES: list tables",
+        "en": "SHOW TABLES: list tables",
+        "ja": "SHOW TABLES: テーブルの一覧表示"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Chưa chọn DB.",
+        "en": "Select DB.",
+        "ja": "DBを選択します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng USE <db> trước.",
+        "en": "Use USE <db> first.",
+        "ja": "最初に USE <db> を使用してください。"
+      }
+    ],
+    "tags": [
+      "mysql",
+      "tables"
+    ]
+  },
+  {
+    "id": "mysql-select",
+    "name": "select",
+    "group": "MySQL",
+    "categorySlug": "mysql",
+    "description": {
+      "vi": "Truy vấn dữ liệu.",
+      "en": "Retrieve data.",
+      "ja": "データを取得します。"
+    },
+    "detail": {
+      "vi": "Lấy dữ liệu từ bảng theo điều kiện.",
+      "en": "Lay data from state according to condition.",
+      "ja": "状態から条件に応じてデータを配置します。"
+    },
+    "syntax": "SELECT * FROM <table> WHERE <condition>;",
+    "example": "SELECT * FROM users WHERE status = 'active';",
+    "breakdown": [
+      {
+        "vi": "SELECT: chọn cột",
+        "en": "SELECT: select column",
+        "ja": "SELECT: 列を選択します"
+      },
+      {
+        "vi": "WHERE: điều kiện",
+        "en": "WHERE: condition",
+        "ja": "どこ: 条件"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai tên bảng.",
+        "en": "Wrong state name.",
+        "ja": "州名が間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra SHOW TABLES.",
+        "en": "Check SHOW TABLES.",
+        "ja": "「テーブルを表示」にチェックを入れます。"
+      }
+    ],
+    "tags": [
+      "mysql",
+      "select"
+    ]
+  },
+  {
+    "id": "mysql-insert",
+    "name": "insert",
+    "group": "MySQL",
+    "categorySlug": "mysql",
+    "description": {
+      "vi": "Thêm dữ liệu vào bảng.",
+      "en": "Add data to state.",
+      "ja": "状態にデータを追加します。"
+    },
+    "detail": {
+      "vi": "Chèn bản ghi mới vào table.",
+      "en": "Insert a new record into the table.",
+      "ja": "新しいレコードをテーブルに挿入します。"
+    },
+    "syntax": "INSERT INTO <table> (col1, col2) VALUES (val1, val2);",
+    "example": "INSERT INTO users (name, email) VALUES ('An', 'an@mail.com');",
+    "breakdown": [
+      {
+        "vi": "INSERT INTO: chèn dữ liệu",
+        "en": "INSERT INTO: insert data",
+        "ja": "INSERT INTO: データを挿入します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai số cột.",
+        "en": "Wrong number.",
+        "ja": "番号が間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra schema.",
+        "en": "Check schema.",
+        "ja": "スキーマを確認します。"
+      }
+    ],
+    "tags": [
+      "mysql",
+      "insert"
+    ]
+  },
+  {
+    "id": "mysql-update",
+    "name": "update",
+    "group": "MySQL",
+    "categorySlug": "mysql",
+    "description": {
+      "vi": "Cập nhật dữ liệu.",
+      "en": "Maximum data capture.",
+      "ja": "最大限のデータ収集。"
+    },
+    "detail": {
+      "vi": "Cập nhật bản ghi theo điều kiện.",
+      "en": "Most of the time you write according to the conditions.",
+      "ja": "ほとんどの場合、条件に従って書きます。"
+    },
+    "syntax": "UPDATE <table> SET col=value WHERE <condition>;",
+    "example": "UPDATE users SET status='active' WHERE id=1;",
+    "breakdown": [
+      {
+        "vi": "UPDATE: cập nhật",
+        "en": "UPDATE: latest update",
+        "ja": "更新: 最新の更新"
+      },
+      {
+        "vi": "WHERE: điều kiện",
+        "en": "WHERE: condition",
+        "ja": "どこ: 条件"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Quên WHERE.",
+        "en": "Familiar with WHERE.",
+        "ja": "WHEREでおなじみ。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Luôn dùng WHERE khi update.",
+        "en": "Always use WHERE when updating.",
+        "ja": "更新するときは常に WHERE を使用してください。"
+      }
+    ],
+    "tags": [
+      "mysql",
+      "update"
+    ],
+    "danger": {
+      "vi": "Lệnh nguy hiểm nếu không có WHERE.",
+      "en": "Commands are dangerous if there is no WHERE.",
+      "ja": "WHERE がないコマンドは危険です。"
+    }
+  },
+  {
+    "id": "mysql-delete",
+    "name": "delete",
+    "group": "MySQL",
+    "categorySlug": "mysql",
+    "description": {
+      "vi": "Xóa dữ liệu trong bảng.",
+      "en": "Delete the data in the state.",
+      "ja": "状態のデータを削除します。"
+    },
+    "detail": {
+      "vi": "Xóa bản ghi theo điều kiện.",
+      "en": "Delete the record according to the conditions.",
+      "ja": "条件に従ってレコードを削除します。"
+    },
+    "syntax": "DELETE FROM <table> WHERE <condition>;",
+    "example": "DELETE FROM users WHERE id=10;",
+    "breakdown": [
+      {
+        "vi": "DELETE FROM: xóa dữ liệu",
+        "en": "DELETE FROM: delete data",
+        "ja": "から削除: データを削除します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Quên WHERE.",
+        "en": "Familiar with WHERE.",
+        "ja": "WHEREでおなじみ。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Luôn thêm WHERE để tránh xóa nhầm.",
+        "en": "Always add WHERE to avoid deletion.",
+        "ja": "削除を避けるために、常に WHERE を追加してください。"
+      }
+    ],
+    "tags": [
+      "mysql",
+      "delete"
+    ],
+    "danger": {
+      "vi": "Lệnh nguy hiểm nếu không có WHERE.",
+      "en": "Commands are dangerous if there is no WHERE.",
+      "ja": "WHERE がないコマンドは危険です。"
+    }
+  },
+  {
+    "id": "mysql-dump",
+    "name": "mysqldump",
+    "group": "MySQL",
+    "categorySlug": "mysql",
+    "description": {
+      "vi": "Backup database ra file SQL.",
+      "en": "Backup database to SQL file.",
+      "ja": "データベースを SQL ファイルにバックアップします。"
+    },
+    "detail": {
+      "vi": "Xuất toàn bộ DB ra file .sql.",
+      "en": "Export the DB to a .sql file.",
+      "ja": "DB を .sql ファイルにエクスポートします。"
+    },
+    "syntax": "mysqldump -u <user> -p <db> > backup.sql",
+    "example": "mysqldump -u root -p app_db > backup.sql",
+    "breakdown": [
+      {
+        "vi": "mysqldump: export",
+        "en": "mysqldump: export",
+        "ja": "mysqldump: エクスポート"
+      },
+      {
+        "vi": ">: redirect",
+        "en": ">: redirects",
+        "ja": ">: リダイレクト"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Access denied.",
+        "en": "Access denied.",
+        "ja": "アクセスが拒否されました。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra quyền user.",
+        "en": "Check user rights.",
+        "ja": "ユーザー権限を確認してください。"
+      }
+    ],
+    "tags": [
+      "mysql",
+      "backup"
+    ]
+  },
+  {
+    "id": "mysql-import",
+    "name": "import sql file",
+    "group": "MySQL",
+    "categorySlug": "mysql",
+    "description": {
+      "vi": "Import file SQL vào database.",
+      "en": "Import SQL file into database.",
+      "ja": "SQLファイルをデータベースにインポートします。"
+    },
+    "detail": {
+      "vi": "Chạy file .sql để restore DB.",
+      "en": "Run the .sql file to restore DB.",
+      "ja": ".sql ファイルを実行して DB を復元します。"
+    },
+    "syntax": "mysql -u <user> -p <db> < backup.sql",
+    "example": "mysql -u root -p app_db < backup.sql",
+    "breakdown": [
+      {
+        "vi": "<: redirect input",
+        "en": "<: redirect input",
+        "ja": "<: 入力をリダイレクトします"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai DB name.",
+        "en": "Wrong DB name.",
+        "ja": "DB名が間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra DB và file.",
+        "en": "Check DB and files.",
+        "ja": "DBとファイルを確認してください。"
+      }
+    ],
+    "tags": [
+      "mysql",
+      "import"
+    ]
+  },
+  {
+    "id": "laravel-create-project",
+    "name": "composer create-project laravel/laravel app-name",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Tạo dự án Laravel mới.",
+      "en": "Create a new Laravel project.",
+      "ja": "新しいLaravelプロジェクトを作成します。"
+    },
+    "detail": {
+      "vi": "Scaffold Laravel bằng Composer.",
+      "en": "Scaffold Laravel state Composer.",
+      "ja": "Scaffold Laravel 州の作曲家。"
+    },
+    "syntax": "composer create-project laravel/laravel <app>",
+    "example": "composer create-project laravel/laravel my-app",
+    "breakdown": [
+      {
+        "vi": "create-project: tạo dự án",
+        "en": "create-project: create project",
+        "ja": "プロジェクトの作成: プロジェクトの作成"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Timeout khi download.",
+        "en": "Timeout when downloading.",
+        "ja": "ダウンロード中にタイムアウトが発生しました。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra kết nối.",
+        "en": "Check connection.",
+        "ja": "接続を確認してください。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "setup"
+    ]
+  },
+  {
+    "id": "laravel-serve",
+    "name": "php artisan serve",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Chạy server Laravel local.",
+      "en": "Run the local Laravel server.",
+      "ja": "ローカルのLaravelサーバーを実行します。"
+    },
+    "detail": {
+      "vi": "Khởi động server với artisan.",
+      "en": "Start the server with artisan.",
+      "ja": "職人でサーバーを起動します。"
+    },
+    "syntax": "php artisan serve",
+    "example": "php artisan serve --port=8000",
+    "breakdown": [
+      {
+        "vi": "artisan serve: run server",
+        "en": "artisan serve: run server",
+        "ja": "職人サーブ: サーバーを実行する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Port bị chiếm.",
+        "en": "Port bi chiem.",
+        "ja": "ポートビチーム。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đổi port.",
+        "en": "Doi port.",
+        "ja": "土肥港。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "serve"
+    ]
+  },
+  {
+    "id": "laravel-migrate",
+    "name": "php artisan migrate",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Chạy migration DB.",
+      "en": "Run migration DB.",
+      "ja": "移行 DB を実行します。"
+    },
+    "detail": {
+      "vi": "Tạo bảng DB theo file migration.",
+      "en": "Create DB state according to migration file.",
+      "ja": "マイグレーションファイルに従ってDB状態を作成します。"
+    },
+    "syntax": "php artisan migrate",
+    "example": "php artisan migrate",
+    "breakdown": [
+      {
+        "vi": "migrate: chạy migration",
+        "en": "migrate: run migration",
+        "ja": "移行: 移行を実行します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Chưa config DB.",
+        "en": "Sour config DB.",
+        "ja": "サワー構成 DB。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Cập nhật .env DB settings.",
+        "en": "Capture .env DB settings.",
+        "ja": ".env DB 設定をキャプチャします。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "migration"
+    ]
+  },
+  {
+    "id": "laravel-make-model",
+    "name": "php artisan make:model",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Tạo model mới.",
+      "en": "Create a new model.",
+      "ja": "新しいモデルを作成します。"
+    },
+    "detail": {
+      "vi": "Tạo model và tùy chọn migration.",
+      "en": "Create model and select migration.",
+      "ja": "モデルを作成し、移行を選択します。"
+    },
+    "syntax": "php artisan make:model <Name>",
+    "example": "php artisan make:model Post -m",
+    "breakdown": [
+      {
+        "vi": "make:model: tạo model",
+        "en": "make:model: create model",
+        "ja": "make:model: モデルの作成"
+      },
+      {
+        "vi": "-m: tạo migration",
+        "en": "-m: create migration",
+        "ja": "-m: 移行を作成します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai naming.",
+        "en": "Wrong naming.",
+        "ja": "ネーミングが間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng PascalCase cho model.",
+        "en": "Use PascalCase for model.",
+        "ja": "モデルには PascalCase を使用します。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "model"
+    ]
+  },
+  {
+    "id": "laravel-make-controller",
+    "name": "php artisan make:controller",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Tạo controller mới.",
+      "en": "Create a new controller.",
+      "ja": "新しいコントローラーを作成します。"
+    },
+    "detail": {
+      "vi": "Sinh controller để xử lý request.",
+      "en": "Generate a controller for the request.",
+      "ja": "リクエストのコントローラーを生成します。"
+    },
+    "syntax": "php artisan make:controller <Name>",
+    "example": "php artisan make:controller PostController",
+    "breakdown": [
+      {
+        "vi": "make:controller: tạo controller",
+        "en": "make:controller: create controller",
+        "ja": "make:コントローラー: コントローラーの作成"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai namespace.",
+        "en": "Wrong namespace.",
+        "ja": "名前空間が間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra app/Http/Controllers.",
+        "en": "Check app/Http/Controllers.",
+        "ja": "アプリ/HTTP/コントローラーを確認してください。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "controller"
+    ]
+  },
+  {
+    "id": "laravel-make-migration",
+    "name": "php artisan make:migration",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Tạo migration DB.",
+      "en": "Create migration DB.",
+      "ja": "移行DBを作成します。"
+    },
+    "detail": {
+      "vi": "Tạo file migration để thay đổi schema.",
+      "en": "Create migration file to change schema.",
+      "ja": "スキーマを変更するための移行ファイルを作成します。"
+    },
+    "syntax": "php artisan make:migration <name>",
+    "example": "php artisan make:migration create_posts_table",
+    "breakdown": [
+      {
+        "vi": "make:migration: tạo migration",
+        "en": "make:migration: create migration",
+        "ja": "make:migration: 移行の作成"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai naming.",
+        "en": "Wrong naming.",
+        "ja": "ネーミングが間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đặt tên mô tả bảng.",
+        "en": "Name your name.",
+        "ja": "名前を付けてください。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "migration"
+    ]
+  },
+  {
+    "id": "laravel-make-request",
+    "name": "php artisan make:request",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Tạo form request.",
+      "en": "Create request form.",
+      "ja": "リクエストフォームを作成します。"
+    },
+    "detail": {
+      "vi": "Validate request trong class riêng.",
+      "en": "Validate request in private class.",
+      "ja": "プライベート クラスでリクエストを検証します。"
+    },
+    "syntax": "php artisan make:request <Name>",
+    "example": "php artisan make:request StorePostRequest",
+    "breakdown": [
+      {
+        "vi": "make:request: tạo request",
+        "en": "make:request: create request",
+        "ja": "make:request: リクエストの作成"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Quên bind trong controller.",
+        "en": "Get used to binding in controllers.",
+        "ja": "コントローラーでのバインドに慣れてください。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Inject request vào controller method.",
+        "en": "Inject request into controller method.",
+        "ja": "リクエストをコントローラーメソッドに挿入します。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "request"
+    ]
+  },
+  {
+    "id": "laravel-route-list",
+    "name": "php artisan route:list",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Danh sách tất cả route.",
+      "en": "List of all routes.",
+      "ja": "すべてのルートのリスト。"
+    },
+    "detail": {
+      "vi": "Hiển thị bằng route và middleware.",
+      "en": "Show route and middleware.",
+      "ja": "ルートとミドルウェアを表示します。"
+    },
+    "syntax": "php artisan route:list",
+    "example": "php artisan route:list",
+    "breakdown": [
+      {
+        "vi": "route:list: xem routes",
+        "en": "route:list: see routes",
+        "ja": "ルート:リスト: ルートを参照"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Memory limit.",
+        "en": "Memory limit.",
+        "ja": "メモリ制限。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng --compact hoặc tăng memory.",
+        "en": "Use --compact or increase memory.",
+        "ja": "--compact を使用するか、メモリを増やしてください。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "route"
+    ]
+  },
+  {
+    "id": "laravel-cache-clear",
+    "name": "php artisan cache:clear",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Xóa cache ứng dụng.",
+      "en": "Clear cache app.",
+      "ja": "アプリのキャッシュをクリアします。"
+    },
+    "detail": {
+      "vi": "Clear cache để cập nhật dữ liệu.",
+      "en": "Clear cache to update data.",
+      "ja": "キャッシュをクリアしてデータを更新します。"
+    },
+    "syntax": "php artisan cache:clear",
+    "example": "php artisan cache:clear",
+    "breakdown": [
+      {
+        "vi": "cache:clear: xóa cache",
+        "en": "cache:clear: clear cache",
+        "ja": "キャッシュ:クリア: キャッシュをクリアします"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Cache store không hỗ trợ.",
+        "en": "Cache store does not work.",
+        "ja": "キャッシュストアが機能しません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra config/cache.php.",
+        "en": "Check config/cache.php.",
+        "ja": "config/cache.php を確認してください。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "cache"
+    ]
+  },
+  {
+    "id": "laravel-config-clear",
+    "name": "php artisan config:clear",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Xóa cache config.",
+      "en": "Delete cache config.",
+      "ja": "キャッシュ構成を削除します。"
+    },
+    "detail": {
+      "vi": "Clear config cached để reload .env.",
+      "en": "Clear config cached to reload .env.",
+      "ja": ".env を再ロードするには、キャッシュされた設定をクリアします。"
+    },
+    "syntax": "php artisan config:clear",
+    "example": "php artisan config:clear",
+    "breakdown": [
+      {
+        "vi": "config:clear: xóa cache config",
+        "en": "config:clear: clear config cache",
+        "ja": "config:clear: 設定キャッシュをクリアします"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Chạy trên prod làm chậm.",
+        "en": "Run on prod hard.",
+        "ja": "プロッドをしっかりと実行します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chạy khi cần thiết.",
+        "en": "Run when needed.",
+        "ja": "必要なときに実行します。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "config"
+    ]
+  },
+  {
+    "id": "laravel-optimize-clear",
+    "name": "php artisan optimize:clear",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Clear tất cả cache.",
+      "en": "Clear all caches.",
+      "ja": "すべてのキャッシュをクリアします。"
+    },
+    "detail": {
+      "vi": "Xóa cache config, route, view, event.",
+      "en": "Delete cache config, route, view, events.",
+      "ja": "キャッシュ構成、ルート、ビュー、イベントを削除します。"
+    },
+    "syntax": "php artisan optimize:clear",
+    "example": "php artisan optimize:clear",
+    "breakdown": [
+      {
+        "vi": "optimize:clear: clear all",
+        "en": "optimize:clear: clear all",
+        "ja": "最適化:クリア: すべてクリア"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có.",
+        "en": "Do not have.",
+        "ja": "持っていません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Không cần.",
+        "en": "Cần't.",
+        "ja": "できません。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "optimize"
+    ]
+  },
+  {
+    "id": "laravel-storage-link",
+    "name": "php artisan storage:link",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Tạo symlink storage.",
+      "en": "Create symlink storage.",
+      "ja": "シンボリックリンクストレージを作成します。"
+    },
+    "detail": {
+      "vi": "Liên kết storage/public vào public/storage.",
+      "en": "Link storage/public to public/storage.",
+      "ja": "storage/public を public/storage にリンクします。"
+    },
+    "syntax": "php artisan storage:link",
+    "example": "php artisan storage:link",
+    "breakdown": [
+      {
+        "vi": "storage:link: tạo symlink",
+        "en": "storage:link: create symlink",
+        "ja": "ストレージ:リンク: シンボリックリンクの作成"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Symlink đã tồn tại.",
+        "en": "Symlink skin tone.",
+        "ja": "シンボリックリンクの肌のトーン。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Xóa link cũ nếu cần.",
+        "en": "Delete the old link if necessary.",
+        "ja": "必要に応じて古いリンクを削除します。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "storage"
+    ]
+  },
+  {
+    "id": "laravel-tinker",
+    "name": "php artisan tinker",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Chạy REPL cho Laravel.",
+      "en": "Run REPL for Laravel.",
+      "ja": "Laravel の REPL を実行します。"
+    },
+    "detail": {
+      "vi": "Thử nghiệm Eloquent và helper trong CLI.",
+      "en": "Experience Eloquent and helper in CLI.",
+      "ja": "CLI で Eloquent とヘルパーを体験してください。"
+    },
+    "syntax": "php artisan tinker",
+    "example": "php artisan tinker",
+    "breakdown": [
+      {
+        "vi": "tinker: interactive shell",
+        "en": "tinker: interactive shell",
+        "ja": "ティンカー: インタラクティブ シェル"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Class not found.",
+        "en": "Class not found.",
+        "ja": "クラスが見つかりません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chạy composer dump-autoload.",
+        "en": "Run composer dump-autoload.",
+        "ja": "Composer dump-autoload を実行します。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "tinker"
+    ]
+  },
+  {
+    "id": "tailwind-install",
+    "name": "cai Tailwind cho Vite React",
+    "group": "TailwindCSS",
+    "categorySlug": "tailwind",
+    "description": {
+      "vi": "Cài Tailwind trong dự án Vite React.",
+      "en": "Install Tailwind in Vite React project.",
+      "ja": "Vite React プロジェクトに Tailwind をインストールします。"
+    },
+    "detail": {
+      "vi": "Thêm tailwind, postcss và config.",
+      "en": "Add tailwind, postcss and config.",
+      "ja": "tailwind、postcss、config を追加します。"
+    },
+    "syntax": "npm install -D tailwindcss postcss autoprefixer",
+    "example": "npx tailwindcss init -p",
+    "breakdown": [
+      {
+        "vi": "tailwindcss: core",
+        "en": "tailwindcss: core",
+        "ja": "追い風CS:コア"
+      },
+      {
+        "vi": "postcss: xử lý CSS",
+        "en": "postcss: common CSS",
+        "ja": "postcss: 共通CSS"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Chưa thêm content path.",
+        "en": "Add content path.",
+        "ja": "コンテンツパスを追加します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Cập nhật tailwind.config.js.",
+        "en": "Capture tailwind.config.js.",
+        "ja": "tailwind.config.js をキャプチャします。"
+      }
+    ],
+    "tags": [
+      "tailwind",
+      "setup"
+    ]
+  },
+  {
+    "id": "tailwind-config",
+    "name": "cau hinh tailwind.config.js",
+    "group": "TailwindCSS",
+    "categorySlug": "tailwind",
+    "description": {
+      "vi": "Thêm content và theme.",
+      "en": "Add content and themes.",
+      "ja": "コンテンツとテーマを追加します。"
+    },
+    "detail": {
+      "vi": "Cấu hình để Tailwind quét class trong src.",
+      "en": "Configure de Tailwind quet class in src.",
+      "ja": "src で Tailwind quet クラスを構成します。"
+    },
+    "syntax": "content: ['./index.html', './src/**/*.{ts,tsx}']",
+    "example": "darkMode: ['class']",
+    "breakdown": [
+      {
+        "vi": "content: đường dẫn quét class",
+        "en": "content: quet class path",
+        "ja": "内容: クエリのクラスパス"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Class không áp dụng.",
+        "en": "Class is not applicable.",
+        "ja": "クラスは適用されません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra content path.",
+        "en": "Check the content path.",
+        "ja": "コンテンツのパスを確認してください。"
+      }
+    ],
+    "tags": [
+      "tailwind",
+      "config"
+    ]
+  },
+  {
+    "id": "tailwind-import",
+    "name": "import index.css",
+    "group": "TailwindCSS",
+    "categorySlug": "tailwind",
+    "description": {
+      "vi": "Import Tailwind directives.",
+      "en": "Import Tailwind directives.",
+      "ja": "Tailwind ディレクティブをインポートします。"
+    },
+    "detail": {
+      "vi": "Thêm @tailwind base/components/utilities.",
+      "en": "Add @tailwind base/components/utilities.",
+      "ja": "@tailwind ベース/コンポーネント/ユーティリティを追加します。"
+    },
+    "syntax": "@tailwind base;\n@tailwind components;\n@tailwind utilities;",
+    "example": "@tailwind base;",
+    "breakdown": [
+      {
+        "vi": "@tailwind: directive",
+        "en": "@tailwind: directive",
+        "ja": "@tailwind: ディレクティブ"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "File CSS chưa được import.",
+        "en": "The CSS file has not been imported.",
+        "ja": "CSS ファイルがインポートされていません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Import index.css trong main.tsx.",
+        "en": "Import index.css in main.tsx.",
+        "ja": "main.tsxにindex.cssをインポートします。"
+      }
+    ],
+    "tags": [
+      "tailwind",
+      "css"
+    ]
+  },
+  {
+    "id": "tailwind-classes",
+    "name": "cac class pho bien",
+    "group": "TailwindCSS",
+    "categorySlug": "tailwind",
+    "description": {
+      "vi": "Flex, grid, spacing, color, responsive, dark.",
+      "en": "Flex, grid, spacing, color, responsive, dark.",
+      "ja": "フレックス、グリッド、間隔、カラー、レスポンシブ、ダーク。"
+    },
+    "detail": {
+      "vi": "Các class thông dụng để tạo layout và style.",
+      "en": "Common classes are used to create layouts and styles.",
+      "ja": "共通クラスは、レイアウトとスタイルの作成に使用されます。"
+    },
+    "syntax": "flex items-center justify-between gap-4",
+    "example": "dark:bg-slate-900 md:grid-cols-3",
+    "breakdown": [
+      {
+        "vi": "flex: layout",
+        "en": "flex: layout",
+        "ja": "フレックス: レイアウト"
+      },
+      {
+        "vi": "dark: variant",
+        "en": "dark: variant",
+        "ja": "ダーク: バリアント"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Dùng sai breakpoint.",
+        "en": "Breakpoint tolerance.",
+        "ja": "ブレークポイント許容値。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đọc docs về md/lg/xl.",
+        "en": "Doc docs about md/lg/xl.",
+        "ja": "md/lg/xl に関するドキュメントドキュメント。"
+      }
+    ],
+    "tags": [
+      "tailwind",
+      "utility"
+    ]
+  },
+  {
+    "id": "node-npm-install",
+    "name": "npm install (Node.js)",
+    "group": "Node.js / NPM",
+    "categorySlug": "node",
+    "description": {
+      "vi": "Cài dependency dự án Node.js.",
+      "en": "Install Node.js project dependencies.",
+      "ja": "Node.js プロジェクトの依存関係をインストールします。"
+    },
+    "detail": {
+      "vi": "Tải về package và tạo node_modules.",
+      "en": "Gõ to package and create node_modules.",
+      "ja": "パッケージに移動し、node_modules を作成します。"
+    },
+    "syntax": "npm install",
+    "example": "npm install",
+    "breakdown": [
+      {
+        "vi": "install: tải dependency",
+        "en": "install: download dependency",
+        "ja": "インストール: 依存関係をダウンロード"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Lockfile conflict.",
+        "en": "Lockfile conflict.",
+        "ja": "ロックファイルの競合。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Xóa lockfile cũ nếu cần.",
+        "en": "Delete the old lockfile if necessary.",
+        "ja": "必要に応じて、古いロックファイルを削除します。"
+      }
+    ],
+    "tags": [
+      "node",
+      "npm"
+    ]
+  },
+  {
+    "id": "node-npm-run",
+    "name": "npm run <script>",
+    "group": "Node.js / NPM",
+    "categorySlug": "node",
+    "description": {
+      "vi": "Chạy script từ package.json.",
+      "en": "Run script from package.json.",
+      "ja": "package.json からスクリプトを実行します。"
+    },
+    "detail": {
+      "vi": "Chạy script như dev, build, lint.",
+      "en": "Run scripts like dev, build, lint.",
+      "ja": "dev、build、lint などのスクリプトを実行します。"
+    },
+    "syntax": "npm run dev",
+    "example": "npm run lint",
+    "breakdown": [
+      {
+        "vi": "run: chạy script",
+        "en": "run: run script",
+        "ja": "実行: スクリプトを実行します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Script không tồn tại.",
+        "en": "The script is not tonal.",
+        "ja": "脚本は調性ではありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra package.json.",
+        "en": "Check package.json.",
+        "ja": "package.jsonを確認してください。"
+      }
+    ],
+    "tags": [
+      "node",
+      "script"
+    ]
+  },
+  {
+    "id": "linux-update",
+    "name": "sudo apt update",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Cập nhật danh sách package.",
+      "en": "Capture the package list.",
+      "ja": "パッケージリストをキャプチャします。"
+    },
+    "detail": {
+      "vi": "Lấy thông tin mới nhất từ repository.",
+      "en": "Lay out the latest information from the repository.",
+      "ja": "リポジトリから最新の情報をレイアウトします。"
+    },
+    "syntax": "sudo apt update",
+    "example": "sudo apt update",
+    "breakdown": [
+      {
+        "vi": "apt: package manager",
+        "en": "apt: package manager",
+        "ja": "apt: パッケージマネージャー"
+      },
+      {
+        "vi": "update: refresh",
+        "en": "update: refresh",
+        "ja": "更新: 更新"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "No internet.",
+        "en": "No internet.",
+        "ja": "インターネットはありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra kết nối.",
+        "en": "Check connection.",
+        "ja": "接続を確認してください。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "apt"
+    ]
+  },
+  {
+    "id": "linux-upgrade",
+    "name": "sudo apt upgrade",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Cập nhật package đã cài.",
+      "en": "The fastest package to install.",
+      "ja": "インストールするのに最も速いパッケージ。"
+    },
+    "detail": {
+      "vi": "Nâng cấp các package lên version mới.",
+      "en": "How to upgrade packages to new versions.",
+      "ja": "パッケージを新しいバージョンにアップグレードする方法。"
+    },
+    "syntax": "sudo apt upgrade",
+    "example": "sudo apt upgrade",
+    "breakdown": [
+      {
+        "vi": "upgrade: update package",
+        "en": "upgrade: update package",
+        "ja": "アップグレード: アップデートパッケージ"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Dependency broken.",
+        "en": "Dependency broken.",
+        "ja": "依存関係が壊れました。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chạy sudo apt --fix-broken install.",
+        "en": "Run sudo apt --fix-broken install.",
+        "ja": "sudo apt --fix-broken install を実行します。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "upgrade"
+    ]
+  },
+  {
+    "id": "linux-ls",
+    "name": "ls -la",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Liệt kê file chi tiết.",
+      "en": "Detailed file layout.",
+      "ja": "詳細なファイル レイアウト。"
+    },
+    "detail": {
+      "vi": "Hiển thị file ẩn và quyền.",
+      "en": "Show file security and permissions.",
+      "ja": "ファイルのセキュリティと権限を表示します。"
+    },
+    "syntax": "ls -la",
+    "example": "ls -la",
+    "breakdown": [
+      {
+        "vi": "-l: chi tiết",
+        "en": "-l: details",
+        "ja": "-l: 詳細"
+      },
+      {
+        "vi": "-a: file ẩn",
+        "en": "-a: file security",
+        "ja": "-a: ファイルのセキュリティ"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai thư mục.",
+        "en": "Wrong directory.",
+        "ja": "ディレクトリが間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra pwd.",
+        "en": "Check pwd.",
+        "ja": "パスワードを確認してください。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "files"
+    ]
+  },
+  {
+    "id": "linux-cp",
+    "name": "cp -r",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Copy folder.",
+      "en": "Copy folder.",
+      "ja": "フォルダーをコピーします。"
+    },
+    "detail": {
+      "vi": "Copy đệ quy thư mục.",
+      "en": "Copy the folder.",
+      "ja": "フォルダーをコピーします。"
+    },
+    "syntax": "cp -r <src> <dest>",
+    "example": "cp -r src backup",
+    "breakdown": [
+      {
+        "vi": "-r: recursive",
+        "en": "-r: recursive",
+        "ja": "-r: 再帰的"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Permission denied.",
+        "en": "Permission denied.",
+        "ja": "許可が拒否されました。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng sudo nếu cần.",
+        "en": "Use sudo if necessary.",
+        "ja": "必要に応じて sudo を使用します。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "copy"
+    ]
+  },
+  {
+    "id": "linux-rm",
+    "name": "rm -rf",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Xóa file/folder nhanh.",
+      "en": "Delete branch files/folders.",
+      "ja": "ブランチファイル/フォルダーを削除します。"
+    },
+    "detail": {
+      "vi": "Xóa đệ quy và không hỏi lại.",
+      "en": "Delete the rules and do not ask again.",
+      "ja": "ルールを削除し、再度質問しないでください。"
+    },
+    "syntax": "rm -rf <path>",
+    "example": "rm -rf node_modules",
+    "breakdown": [
+      {
+        "vi": "-r: đệ quy",
+        "en": "-r: de rules",
+        "ja": "-r: ルール"
+      },
+      {
+        "vi": "-f: force",
+        "en": "-f: force",
+        "ja": "-f: 強制"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Xóa nhầm file.",
+        "en": "Delete the file.",
+        "ja": "ファイルを削除します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra đường dẫn trước khi xóa.",
+        "en": "Check the path before deleting.",
+        "ja": "削除する前にパスを確認してください。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "danger"
+    ],
+    "danger": {
+      "vi": "Lệnh nguy hiểm: xóa vĩnh viễn.",
+      "en": "Dangerous command: permanently delete.",
+      "ja": "危険なコマンド: 完全に削除します。"
+    }
+  },
+  {
+    "id": "docker-build",
+    "name": "docker build",
+    "group": "Docker",
+    "categorySlug": "docker",
+    "description": {
+      "vi": "Build Docker image.",
+      "en": "Build Docker image.",
+      "ja": "Dockerイメージをビルドします。"
+    },
+    "detail": {
+      "vi": "Tạo image từ Dockerfile.",
+      "en": "Create image from Dockerfile.",
+      "ja": "Dockerfileからイメージを作成します。"
+    },
+    "syntax": "docker build -t <name> .",
+    "example": "docker build -t my-app .",
+    "breakdown": [
+      {
+        "vi": "-t: tag image",
+        "en": "-t: image tag",
+        "ja": "-t: イメージタグ"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Dockerfile không tồn tại.",
+        "en": "Dockerfile is not sound.",
+        "ja": "Dockerfile が正常ではありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra Dockerfile.",
+        "en": "Check Dockerfile.",
+        "ja": "Dockerfileを確認してください。"
+      }
+    ],
+    "tags": [
+      "docker",
+      "image"
+    ]
+  },
+  {
+    "id": "docker-run",
+    "name": "docker run",
+    "group": "Docker",
+    "categorySlug": "docker",
+    "description": {
+      "vi": "Chạy container từ image.",
+      "en": "Run containers from image.",
+      "ja": "イメージからコンテナを実行します。"
+    },
+    "detail": {
+      "vi": "Tạo container và map port.",
+      "en": "Create containers and port maps.",
+      "ja": "コンテナとポートマップを作成します。"
+    },
+    "syntax": "docker run -p 3000:3000 <image>",
+    "example": "docker run -p 3000:3000 my-app",
+    "breakdown": [
+      {
+        "vi": "-p: map port",
+        "en": "-p: map port",
+        "ja": "-p: マップポート"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Port conflict.",
+        "en": "Port conflict.",
+        "ja": "ポートの競合。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đổi port.",
+        "en": "Doi port.",
+        "ja": "土肥港。"
+      }
+    ],
+    "tags": [
+      "docker",
+      "container"
+    ]
+  },
+  {
+    "id": "docker-ps",
+    "name": "docker ps",
+    "group": "Docker",
+    "categorySlug": "docker",
+    "description": {
+      "vi": "Xem container đang chạy.",
+      "en": "View running containers.",
+      "ja": "実行中のコンテナを表示します。"
+    },
+    "detail": {
+      "vi": "Hiển thị danh sách container.",
+      "en": "Show container list.",
+      "ja": "コンテナリストを表示します。"
+    },
+    "syntax": "docker ps",
+    "example": "docker ps",
+    "breakdown": [
+      {
+        "vi": "ps: process container",
+        "en": "ps: process container",
+        "ja": "ps: プロセスコンテナ"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có container.",
+        "en": "No containers.",
+        "ja": "コンテナはありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chạy docker run trước.",
+        "en": "Run docker run first.",
+        "ja": "まず docker run を実行します。"
+      }
+    ],
+    "tags": [
+      "docker",
+      "status"
+    ]
+  },
+  {
+    "id": "composer-install",
+    "name": "composer install",
+    "group": "Composer",
+    "categorySlug": "composer",
+    "description": {
+      "vi": "Cài dependency PHP.",
+      "en": "Install PHP dependencies.",
+      "ja": "PHP の依存関係をインストールします。"
+    },
+    "detail": {
+      "vi": "Cài theo composer.lock.",
+      "en": "Install using composer.lock.",
+      "ja": "Composer.lock を使用してインストールします。"
+    },
+    "syntax": "composer install",
+    "example": "composer install",
+    "breakdown": [
+      {
+        "vi": "install: cài dependency",
+        "en": "install: install dependencies",
+        "ja": "インストール: 依存関係をインストールします"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Memory limit.",
+        "en": "Memory limit.",
+        "ja": "メモリ制限。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Tăng memory_limit.",
+        "en": "Tang memory_limit.",
+        "ja": "タンのメモリ制限。"
+      }
+    ],
+    "tags": [
+      "composer"
+    ]
+  },
+  {
+    "id": "composer-update",
+    "name": "composer update",
+    "group": "Composer",
+    "categorySlug": "composer",
+    "description": {
+      "vi": "Cập nhật dependency.",
+      "en": "Maximum dependency.",
+      "ja": "最大の依存関係。"
+    },
+    "detail": {
+      "vi": "Update theo composer.json.",
+      "en": "Update according to composer.json.",
+      "ja": "combos.json に従って更新します。"
+    },
+    "syntax": "composer update",
+    "example": "composer update",
+    "breakdown": [
+      {
+        "vi": "update: cập nhật",
+        "en": "update: latest update",
+        "ja": "更新: 最新の更新"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Conflict version.",
+        "en": "Conflict version.",
+        "ja": "衝突バージョン。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra constraint.",
+        "en": "Check constraints.",
+        "ja": "制約を確認します。"
+      }
+    ],
+    "tags": [
+      "composer"
+    ]
+  },
+  {
+    "id": "artisan-make-controller",
+    "name": "php artisan make:controller",
+    "group": "Artisan Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Tạo controller nhanh.",
+      "en": "Create a branch controller.",
+      "ja": "ブランチコントローラーを作成します。"
+    },
+    "detail": {
+      "vi": "Sinh controller trong Laravel.",
+      "en": "Generate controller in Laravel.",
+      "ja": "Laravelでコントローラーを生成します。"
+    },
+    "syntax": "php artisan make:controller <Name>",
+    "example": "php artisan make:controller UserController",
+    "breakdown": [
+      {
+        "vi": "make:controller: tạo file",
+        "en": "make:controller: create file",
+        "ja": "make:controller: ファイルを作成する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai tên.",
+        "en": "Wrong name.",
+        "ja": "名前が間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng PascalCase.",
+        "en": "Dung PascalCase.",
+        "ja": "ダン・パスカルケース。"
+      }
+    ],
+    "tags": [
+      "artisan",
+      "controller"
+    ]
+  },
+  {
+    "id": "artisan-migrate",
+    "name": "php artisan migrate",
+    "group": "Artisan Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Chạy migration DB.",
+      "en": "Run migration DB.",
+      "ja": "移行 DB を実行します。"
+    },
+    "detail": {
+      "vi": "Tạo schema theo migration.",
+      "en": "Create schema according to migration.",
+      "ja": "移行に応じてスキーマを作成します。"
+    },
+    "syntax": "php artisan migrate",
+    "example": "php artisan migrate",
+    "breakdown": [
+      {
+        "vi": "migrate: chạy migration",
+        "en": "migrate: run migration",
+        "ja": "移行: 移行を実行します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Chưa config DB.",
+        "en": "Sour config DB.",
+        "ja": "サワー構成 DB。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Cập nhật .env",
+        "en": "Capture .env",
+        "ja": ".env をキャプチャする"
+      }
+    ],
+    "tags": [
+      "artisan",
+      "migration"
+    ]
+  },
+  {
+    "id": "artisan-cache-clear",
+    "name": "php artisan cache:clear",
+    "group": "Artisan Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Clear cache.",
+      "en": "Clear cache.",
+      "ja": "キャッシュをクリアします。"
+    },
+    "detail": {
+      "vi": "Xóa cache app.",
+      "en": "Delete app cache.",
+      "ja": "アプリのキャッシュを削除します。"
+    },
+    "syntax": "php artisan cache:clear",
+    "example": "php artisan cache:clear",
+    "breakdown": [
+      {
+        "vi": "cache:clear: clear",
+        "en": "cache:clear: clear",
+        "ja": "キャッシュ:クリア: クリア"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Cache store error.",
+        "en": "Cache store error.",
+        "ja": "キャッシュストアエラー。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra config/cache.php",
+        "en": "Check config/cache.php",
+        "ja": "config/cache.php を確認してください"
+      }
+    ],
+    "tags": [
+      "artisan",
+      "cache"
+    ]
+  },
+  {
+    "id": "api-curl-get",
+    "name": "curl GET",
+    "group": "API / Curl",
+    "categorySlug": "api",
+    "description": {
+      "vi": "Gọi API GET nhanh.",
+      "en": "Call API GET branch.",
+      "ja": "API GET ブランチを呼び出します。"
+    },
+    "detail": {
+      "vi": "Kiểm tra response GET từ terminal.",
+      "en": "Check the GET response from the terminal.",
+      "ja": "端末からのGETレスポンスを確認します。"
+    },
+    "syntax": "curl https://api.example.com/users",
+    "example": "curl https://api.example.com/users",
+    "breakdown": [
+      {
+        "vi": "curl: HTTP client",
+        "en": "curl: HTTP client",
+        "ja": "カール: HTTP クライアント"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "SSL error.",
+        "en": "SSL error.",
+        "ja": "SSLエラーです。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng --insecure hoặc fix cert.",
+        "en": "Use --insecure or fix cert.",
+        "ja": "--insecure を使用するか、証明書を修正します。"
+      }
+    ],
+    "tags": [
+      "api",
+      "curl",
+      "get"
+    ]
+  },
+  {
+    "id": "api-curl-post",
+    "name": "curl POST",
+    "group": "API / Curl",
+    "categorySlug": "api",
+    "description": {
+      "vi": "Gửi POST với JSON.",
+      "en": "Gui POST with JSON.",
+      "ja": "JSON を使用した Gui POST。"
+    },
+    "detail": {
+      "vi": "POST data đến API.",
+      "en": "POST data to API.",
+      "ja": "データを API に POST します。"
+    },
+    "syntax": "curl -X POST -H 'Content-Type: application/json' -d '{\"name\":\"An\"}' https://api.example.com/users",
+    "example": "curl -X POST -H 'Content-Type: application/json' -d '{\"name\":\"An\"}' https://api.example.com/users",
+    "breakdown": [
+      {
+        "vi": "-X POST: method",
+        "en": "-X POST: method",
+        "ja": "-X POST: メソッド"
+      },
+      {
+        "vi": "-d: payload",
+        "en": "-d: payload",
+        "ja": "-d: ペイロード"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai JSON format.",
+        "en": "Wrong JSON format.",
+        "ja": "JSON形式が間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra quote và escape.",
+        "en": "Check quote and escape.",
+        "ja": "見積もりを確認して逃げます。"
+      }
+    ],
+    "tags": [
+      "api",
+      "curl",
+      "post"
+    ]
+  },
+  {
+    "id": "git-fetch",
+    "name": "git fetch",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Lấy dữ liệu mới từ remote mà chưa merge.",
+      "en": "Lay new data from remote ma sour merge.",
+      "ja": "リモート マスター マージから新しいデータを配置します。"
+    },
+    "detail": {
+      "vi": "Fetch đồng bộ refs và commits mới nhất từ remote nhưng không tác động vào working tree hiện tại.",
+      "en": "Dynamically fetches the latest refs and commits from the remote without affecting the current working tree.",
+      "ja": "現在の作業ツリーに影響を与えることなく、リモートから最新の参照とコミットを動的に取得します。"
+    },
+    "syntax": "git fetch origin",
+    "example": "git fetch origin",
+    "breakdown": [
+      {
+        "vi": "fetch: tải dữ liệu remote",
+        "en": "fetch: fetch remote data",
+        "ja": "fetch: リモートデータを取得します"
+      },
+      {
+        "vi": "origin: tên remote",
+        "en": "origin: remote name",
+        "ja": "送信元: リモート名"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Remote không tồn tại.",
+        "en": "Remote doesn't sound good.",
+        "ja": "リモコンの音が良くありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra git remote -v.",
+        "en": "Check git remote -v.",
+        "ja": "git Remote -v を確認してください。"
+      }
+    ],
+    "tags": [
+      "git",
+      "fetch",
+      "remote"
+    ]
+  },
+  {
+    "id": "git-merge",
+    "name": "git merge",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Gộp một nhánh vào nhánh hiện tại.",
+      "en": "Merge a branch into the current branch.",
+      "ja": "ブランチを現在のブランチにマージします。"
+    },
+    "detail": {
+      "vi": "Merge dùng để kết hợp lịch sử giữa 2 nhánh, có thể tạo merge commit nếu cần.",
+      "en": "Merge is used to combine history between 2 branches, you cần create merge commit if necessary.",
+      "ja": "マージは 2 つのブランチ間の履歴を結合するために使用され、必要に応じてマージ コミットを作成できます。"
+    },
+    "syntax": "git merge <branch>",
+    "example": "git merge feature/login",
+    "breakdown": [
+      {
+        "vi": "merge: gộp nhánh",
+        "en": "merge: merge branch",
+        "ja": "マージ: ブランチをマージします"
+      },
+      {
+        "vi": "branch: nhánh cần gộp",
+        "en": "branch: branch cần be merged",
+        "ja": "ブランチ: ブランチはマージ可能"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Conflict khi gộp code.",
+        "en": "Conflict when merging code.",
+        "ja": "コードをマージするときに競合が発生します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Resolve conflict rồi commit merge.",
+        "en": "Resolve conflicts and commit merge.",
+        "ja": "競合を解決し、マージをコミットします。"
+      }
+    ],
+    "tags": [
+      "git",
+      "merge",
+      "branch"
+    ]
+  },
+  {
+    "id": "git-rebase",
+    "name": "git rebase",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Đặt lại lịch sử commit lên trên nhánh khác.",
+      "en": "Restore commit history to another branch.",
+      "ja": "コミット履歴を別のブランチに復元します。"
+    },
+    "detail": {
+      "vi": "Rebase giúp lịch sử commit sạch hơn nhưng cần cẩn thận nếu branch đã push cho team.",
+      "en": "Rebase helps keep your commit history cleaner, but if you push a branch to the team, you need to know more.",
+      "ja": "リベースはコミット履歴をクリーンに保つのに役立ちますが、ブランチをチームにプッシュする場合は、さらに詳しく知る必要があります。"
+    },
+    "syntax": "git rebase <branch>",
+    "example": "git rebase main",
+    "breakdown": [
+      {
+        "vi": "rebase: đặt commit lên base mới",
+        "en": "rebase: đặt commit to new base",
+        "ja": "rebase: 新しいベースにコミットします"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Conflict trong quá trình rebase.",
+        "en": "Conflict during rebase process.",
+        "ja": "リベースプロセス中の競合。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng git rebase --continue sau khi resolve.",
+        "en": "Use git rebase --continue after resolving.",
+        "ja": "解決後に git rebase --Continue を使用します。"
+      }
+    ],
+    "tags": [
+      "git",
+      "rebase",
+      "history"
+    ],
+    "danger": {
+      "vi": "Cẩn thận khi rebase branch đã share với người khác.",
+      "en": "Be careful when rebasing branches that are shared with others.",
+      "ja": "他の人と共有するためにブランチをリベースする場合は注意してください。"
+    }
+  },
+  {
+    "id": "git-cherry-pick",
+    "name": "git cherry-pick",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Lấy một commit cụ thể sang nhánh hiện tại.",
+      "en": "Move a final commit to the current branch.",
+      "ja": "最終コミットを現在のブランチに移動します。"
+    },
+    "detail": {
+      "vi": "Cherry-pick hữu ích khi muốn lấy nhanh một fix mà không merge toàn bộ branch.",
+      "en": "Cherry-pick is useful when you want to change a branch without merging the whole branch.",
+      "ja": "チェリーピックは、ブランチを完全にマージしない問題を修正するためにブランチを作成する場合に便利です。"
+    },
+    "syntax": "git cherry-pick <commit>",
+    "example": "git cherry-pick abc1234",
+    "breakdown": [
+      {
+        "vi": "cherry-pick: áp 1 commit vào branch hiện tại",
+        "en": "cherry-pick: apply 1 commit to the current branch",
+        "ja": "チェリーピック: 現在のブランチに 1 つのコミットを適用します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Conflict khi áp commit.",
+        "en": "Conflict when app commit.",
+        "ja": "アプリのコミット時に競合が発生します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Resolve conflict và chạy git cherry-pick --continue.",
+        "en": "Resolve the conflict and run git cherry-pick --continue.",
+        "ja": "競合を解決し、 git Cherry-pick --Continue を実行します。"
+      }
+    ],
+    "tags": [
+      "git",
+      "commit",
+      "cherry-pick"
+    ]
+  },
+  {
+    "id": "git-tag",
+    "name": "git tag",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Tạo hoặc xem tag version.",
+      "en": "Create or view version tags.",
+      "ja": "バージョンタグを作成または表示します。"
+    },
+    "detail": {
+      "vi": "Tag thường được dùng để đánh dấu release như v1.0.0.",
+      "en": "Tags are often used to name releases as of v1.0.0.",
+      "ja": "タグは、v1.0.0 以降のリリースに名前を付けるためによく使用されます。"
+    },
+    "syntax": "git tag <name>",
+    "example": "git tag v1.0.0",
+    "breakdown": [
+      {
+        "vi": "tag: đánh dấu commit",
+        "en": "tag: commit name",
+        "ja": "タグ: コミット名"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Tag đã tồn tại.",
+        "en": "Tag skin tones.",
+        "ja": "肌のトーンにタグを付けます。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng tên tag mới hoặc xóa tag cũ.",
+        "en": "Use the new tag name or delete the old tag.",
+        "ja": "新しいタグ名を使用するか、古いタグを削除してください。"
+      }
+    ],
+    "tags": [
+      "git",
+      "tag",
+      "release"
+    ]
+  },
+  {
+    "id": "git-remote-v",
+    "name": "git remote -v",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Xem danh sách remote đang cấu hình.",
+      "en": "View the list of remotes currently configured.",
+      "ja": "現在構成されているリモートのリストを表示します。"
+    },
+    "detail": {
+      "vi": "Cho biết tên remote và URL fetch/push hiện tại.",
+      "en": "Specify the remote name and current fetch/push URL.",
+      "ja": "リモート名と現在のフェッチ/プッシュ URL を指定します。"
+    },
+    "syntax": "git remote -v",
+    "example": "git remote -v",
+    "breakdown": [
+      {
+        "vi": "remote: quản lý kết nối remote",
+        "en": "remote: manages remote connections",
+        "ja": "リモート: リモート接続を管理します"
+      },
+      {
+        "vi": "-v: hiển thị chi tiết",
+        "en": "-v: show details",
+        "ja": "-v: 詳細を表示"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có remote nào.",
+        "en": "There is no remote.",
+        "ja": "リモコンはありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm remote bằng git remote add origin <url>.",
+        "en": "Add remote bằng git remote add origin <url>.",
+        "ja": "リモート bằng git リモート追加オリジン <url> を追加します。"
+      }
+    ],
+    "tags": [
+      "git",
+      "remote"
+    ]
+  },
+  {
+    "id": "git-diff",
+    "name": "git diff",
+    "group": "Git",
+    "categorySlug": "git",
+    "description": {
+      "vi": "Xem nội dung thay đổi chưa commit.",
+      "en": "See the changes that have not been committed.",
+      "ja": "コミット内の変更を確認してください。"
+    },
+    "detail": {
+      "vi": "Diff giúp bạn kiểm tra chính xác dòng nào đã thay đổi trước khi stage hoặc commit.",
+      "en": "Diff helps you check exactly what changes have been made before staging or committing.",
+      "ja": "Diff は、ステージングまたはコミットする前に、どのような変更が加えられたかを正確に確認するのに役立ちます。"
+    },
+    "syntax": "git diff",
+    "example": "git diff",
+    "breakdown": [
+      {
+        "vi": "diff: so sánh thay đổi",
+        "en": "diff: compare changes",
+        "ja": "diff: 変更の比較"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có thay đổi hiển thị.",
+        "en": "There are no visible changes.",
+        "ja": "目に見える変化はありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra git diff --staged nếu đã stage.",
+        "en": "Check git diff --staged if stage.",
+        "ja": "ステージの場合は git diff --staged を確認してください。"
+      }
+    ],
+    "tags": [
+      "git",
+      "diff",
+      "review"
+    ]
+  },
+  {
+    "id": "react-useref",
+    "name": "useRef",
+    "group": "ReactJS",
+    "categorySlug": "react",
+    "description": {
+      "vi": "Lưu giá trị không gây render lại hoặc tham chiếu DOM.",
+      "en": "Saving values ​​does not cause re-rendering or DOM references.",
+      "ja": "値を保存しても、再レンダリングや DOM 参照は発生しません。"
+    },
+    "detail": {
+      "vi": "useRef thường dùng để focus input, giữ instance, hoặc tránh re-render không cần thiết.",
+      "en": "useRef is used to focus input, hold instances, or avoid unnecessary re-rendering.",
+      "ja": "useRef は、入力に焦点を当てたり、インスタンスを保持したり、不必要な再レンダリングを回避したりするために使用されます。"
+    },
+    "syntax": "const ref = useRef(initialValue)",
+    "example": "const inputRef = useRef<HTMLInputElement | null>(null)",
+    "breakdown": [
+      {
+        "vi": "useRef: tạo object có current",
+        "en": "useRef: create a current object",
+        "ja": "useRef: 現在のオブジェクトを作成する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Truy cập current khi null.",
+        "en": "Access current cap when null.",
+        "ja": "null の場合、現在の上限にアクセスします。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra ref.current trước khi dùng.",
+        "en": "Check ref.current before using.",
+        "ja": "使用前に参照電流を確認してください。"
+      }
+    ],
+    "tags": [
+      "react",
+      "hooks",
+      "ref"
+    ]
+  },
+  {
+    "id": "react-usecontext",
+    "name": "useContext",
+    "group": "ReactJS",
+    "categorySlug": "react",
+    "description": {
+      "vi": "Đọc dữ liệu từ React Context.",
+      "en": "Doc data from React Context.",
+      "ja": "React Context からのドキュメント データ。"
+    },
+    "detail": {
+      "vi": "useContext giúp truyền state xuyên component tree mà không cần prop drilling.",
+      "en": "useContext helps transfer state to the component tree without prop drilling.",
+      "ja": "useContext は、プロパティをドリルすることなく状態をコンポーネント ツリーに転送するのに役立ちます。"
+    },
+    "syntax": "const value = useContext(MyContext)",
+    "example": "const theme = useContext(ThemeContext)",
+    "breakdown": [
+      {
+        "vi": "useContext: đọc giá trị context",
+        "en": "useContext: read context value",
+        "ja": "useContext: コンテキスト値の読み取り"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Dùng ngoài provider.",
+        "en": "External provider capacity.",
+        "ja": "外部プロバイダーの容量。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đảm bảo component nằm trong Context.Provider.",
+        "en": "Damn the male component in Context.Provider.",
+        "ja": "Context.Provider の男性コンポーネントがクソだ。"
+      }
+    ],
+    "tags": [
+      "react",
+      "context",
+      "hooks"
+    ]
+  },
+  {
+    "id": "react-custom-hook",
+    "name": "custom hook",
+    "group": "ReactJS",
+    "categorySlug": "react",
+    "description": {
+      "vi": "Tách logic tái sử dụng bằng custom hook.",
+      "en": "Tach the logic using custom hooks.",
+      "ja": "カスタムフックを使用してロジックを追加します。"
+    },
+    "detail": {
+      "vi": "Custom hook bắt đầu bằng use và cho phép chia sẻ stateful logic giữa nhiều component.",
+      "en": "Custom hooks start with use and allow stateful logic to be shared between multiple components.",
+      "ja": "カスタム フックは使用から始まり、複数のコンポーネント間でステートフル ロジックを共有できるようになります。"
+    },
+    "syntax": "function useSomething() { ... }",
+    "example": "function useDebounce(value, delay) { ... }",
+    "breakdown": [
+      {
+        "vi": "useX: quy ước đặt tên custom hook",
+        "en": "useX: custom hook name setting rule",
+        "ja": "useX: カスタムフック名の設定ルール"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Gọi hook bên trong if.",
+        "en": "Call hook inside if.",
+        "ja": "if 内でフックを呼び出します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Giữ quy tắc hooks ở top level.",
+        "en": "Keep hooks at top level.",
+        "ja": "フックをトップレベルに保ちます。"
+      }
+    ],
+    "tags": [
+      "react",
+      "hooks",
+      "custom"
+    ]
+  },
+  {
+    "id": "react-lazy-suspense",
+    "name": "React.lazy + Suspense",
+    "group": "ReactJS",
+    "categorySlug": "react",
+    "description": {
+      "vi": "Lazy load component.",
+      "en": "Lazy loading components.",
+      "ja": "コンポーネントの遅延読み込み。"
+    },
+    "detail": {
+      "vi": "Dùng để tách bundle và giảm kích thước chunk đầu tiên.",
+      "en": "Use to separate bundles and reduce the size of the first chunk.",
+      "ja": "バンドルを分割し、最初のチャンクのサイズを減らすために使用します。"
+    },
+    "syntax": "const Page = React.lazy(() => import('./Page'))",
+    "example": "<Suspense fallback={<div>Loading...</div>}><Page /></Suspense>",
+    "breakdown": [
+      {
+        "vi": "React.lazy: import động",
+        "en": "React.lazy: dynamic import",
+        "ja": "React.lazy: 動的インポート"
+      },
+      {
+        "vi": "Suspense: fallback UI",
+        "en": "Suspense: fallback UI",
+        "ja": "サスペンス: フォールバック UI"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Quên bọc bằng Suspense.",
+        "en": "Get acquainted with Suspense.",
+        "ja": "サスペンスの現状を知りましょう。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm Suspense quanh component lazy.",
+        "en": "Add Suspense around the lazy component.",
+        "ja": "遅延コンポーネントの周囲にサスペンスを追加します。"
+      }
+    ],
+    "tags": [
+      "react",
+      "lazy",
+      "performance"
+    ]
+  },
+  {
+    "id": "react-create-context",
+    "name": "createContext",
+    "group": "ReactJS",
+    "categorySlug": "react",
+    "description": {
+      "vi": "Tạo context dùng chung.",
+      "en": "Create a common content context.",
+      "ja": "共通のコンテンツ コンテキストを作成します。"
+    },
+    "detail": {
+      "vi": "Context thường được dùng cho theme, auth, locale, settings toàn app.",
+      "en": "Context is usually used for theme, auth, locale, and overall app settings.",
+      "ja": "コンテキストは通常​​、テーマ、認証、ロケール、およびアプリ全体の設定に使用されます。"
+    },
+    "syntax": "const MyContext = createContext(defaultValue)",
+    "example": "const ThemeContext = createContext<'light' | 'dark'>('light')",
+    "breakdown": [
+      {
+        "vi": "createContext: tạo context object",
+        "en": "createContext: create context object",
+        "ja": "createContext: コンテキストオブジェクトを作成します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Default value không đúng type.",
+        "en": "Default value does not use type.",
+        "ja": "デフォルト値ではタイプを使用しません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Khai báo rõ type của context.",
+        "en": "Declare the type of the context.",
+        "ja": "コンテキストのタイプを宣言します。"
+      }
+    ],
+    "tags": [
+      "react",
+      "context",
+      "state"
+    ]
+  },
+  {
+    "id": "vite-env",
+    "name": "import.meta.env",
+    "group": "Vite",
+    "categorySlug": "vite",
+    "description": {
+      "vi": "Đọc biến môi trường trong Vite.",
+      "en": "Doc environment variables in Vite.",
+      "ja": "Vite のドキュメント環境変数。"
+    },
+    "detail": {
+      "vi": "Chỉ các biến bắt đầu bằng VITE_ mới được expose ra client.",
+      "en": "Only variables starting with VITE_ are exposed to the client.",
+      "ja": "VITE_ で始まる変数のみがクライアントに公開されます。"
+    },
+    "syntax": "import.meta.env.VITE_API_URL",
+    "example": "const apiUrl = import.meta.env.VITE_API_URL",
+    "breakdown": [
+      {
+        "vi": "import.meta.env: object chứa env",
+        "en": "import.meta.env: object contains env",
+        "ja": "import.meta.env: オブジェクトには環境変数が含まれています"
+      },
+      {
+        "vi": "VITE_: prefix bắt buộc",
+        "en": "VITE_: initial prefix",
+        "ja": "VITE_: 最初のプレフィックス"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Env không hiển thị trên client.",
+        "en": "Env is not visible on the client.",
+        "ja": "Env はクライアントでは表示されません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm prefix VITE_ cho biến môi trường.",
+        "en": "Add prefix VITE_ for environment variable.",
+        "ja": "環境変数に接頭辞 VITE_ を追加します。"
+      }
+    ],
+    "tags": [
+      "vite",
+      "env",
+      "config"
+    ]
+  },
+  {
+    "id": "vite-alias",
+    "name": "alias @/src",
+    "group": "Vite",
+    "categorySlug": "vite",
+    "description": {
+      "vi": "Tạo alias import cho src.",
+      "en": "Create import alias for src.",
+      "ja": "src のインポート エイリアスを作成します。"
+    },
+    "detail": {
+      "vi": "Alias như @ giúp import gọn hơn và dễ refactor.",
+      "en": "Alias ​​like @ help make import easier and de refactor.",
+      "ja": "@ のようなエイリアスはインポートを容易にし、リファクタリングを解除するのに役立ちます。"
+    },
+    "syntax": "resolve: { alias: { '@': path.resolve(__dirname, './src') } }",
+    "example": "import Button from '@/components/ui/button'",
+    "breakdown": [
+      {
+        "vi": "resolve.alias: map đường dẫn import",
+        "en": "resolve.alias: map import path",
+        "ja": "solve.alias: マップのインポート パス"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "TypeScript không nhận alias.",
+        "en": "TypeScript does not accept aliases.",
+        "ja": "TypeScript はエイリアスを受け入れません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đồng bộ paths trong tsconfig.",
+        "en": "Đồng bộ paths in tsconfig.",
+        "ja": "tsconfig の Đồng bộ パス。"
+      }
+    ],
+    "tags": [
+      "vite",
+      "alias",
+      "typescript"
+    ]
+  },
+  {
+    "id": "vite-base",
+    "name": "base trong vite.config.ts",
+    "group": "Vite",
+    "categorySlug": "vite",
+    "description": {
+      "vi": "Cấu hình base path cho deploy subfolder.",
+      "en": "Configure base path for deploy subfolder.",
+      "ja": "デプロイサブフォルダーのベースパスを構成します。"
+    },
+    "detail": {
+      "vi": "Cần thiết khi deploy lên GitHub Pages hoặc subdirectory khác root.",
+      "en": "Caution when deploying to GitHub Pages or other root subdirectories.",
+      "ja": "ルートを使用せずに GitHub Pages または別のサブディレクトリにデプロイする場合は注意してください。"
+    },
+    "syntax": "export default defineConfig({ base: '/my-app/' })",
+    "example": "base: '/developer-command-handbook/'",
+    "breakdown": [
+      {
+        "vi": "base: prefix cho asset và route",
+        "en": "base: prefix for assets and routes",
+        "ja": "Base: アセットとルートのプレフィックス"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Asset 404 sau deploy.",
+        "en": "Asset 404 after deploy.",
+        "ja": "デプロイ後のアセット 404。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đặt đúng giá trị base khi build.",
+        "en": "Use base value when building.",
+        "ja": "構築時に基本値を使用します。"
+      }
+    ],
+    "tags": [
+      "vite",
+      "deploy",
+      "base"
+    ]
+  },
+  {
+    "id": "next-dynamic-route",
+    "name": "dynamic route",
+    "group": "Next.js",
+    "categorySlug": "nextjs",
+    "description": {
+      "vi": "Tạo route động theo param.",
+      "en": "Create dynamic route according to param.",
+      "ja": "パラメータに従って動的ルートを作成します。"
+    },
+    "detail": {
+      "vi": "Route động trong App Router dùng tên folder bọc trong dấu ngoặc vuông.",
+      "en": "The dynamic route in App Router uses the folder name inside and outside the area.",
+      "ja": "App Routerの動的ルートはエリア内外のフォルダー名を使用します。"
+    },
+    "syntax": "app/blog/[slug]/page.tsx",
+    "example": "export default function Page({ params }) { return <div>{params.slug}</div> }",
+    "breakdown": [
+      {
+        "vi": "[slug]: segment động",
+        "en": "[slug]: dynamic segment",
+        "ja": "[スラッグ]: 動的セグメント"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không đọc được params.",
+        "en": "Cannot read params.",
+        "ja": "パラメータを読み取れません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra tên segment và props params.",
+        "en": "Check segment name and props params.",
+        "ja": "セグメント名とプロパティパラメータを確認してください。"
+      }
+    ],
+    "tags": [
+      "nextjs",
+      "route",
+      "dynamic"
+    ]
+  },
+  {
+    "id": "next-middleware",
+    "name": "middleware.ts",
+    "group": "Next.js",
+    "categorySlug": "nextjs",
+    "description": {
+      "vi": "Can thiệp request trước khi vào route.",
+      "en": "Cần execute request before entering route.",
+      "ja": "ルートに入る前にリクエストを実行できます。"
+    },
+    "detail": {
+      "vi": "Middleware dùng cho auth, redirect, rewrite, locale, logging.",
+      "en": "Middleware used for auth, redirect, rewrite, locale, logging.",
+      "ja": "認証、リダイレクト、リライト、ロケール、ロギングに使用されるミドルウェア。"
+    },
+    "syntax": "export function middleware(request) { return NextResponse.next() }",
+    "example": "export const config = { matcher: ['/dashboard/:path*'] }",
+    "breakdown": [
+      {
+        "vi": "middleware: xử lý request sớm",
+        "en": "middleware: xử lý request som",
+        "ja": "ミドルウェア: xử lý request som"
+      },
+      {
+        "vi": "matcher: route áp dụng",
+        "en": "matcher: route application",
+        "ja": "マッチャー: ルート アプリケーション"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Middleware chạy sai route.",
+        "en": "Middleware runs on the wrong route.",
+        "ja": "ミドルウェアが間違ったルートで実行されます。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra matcher.",
+        "en": "Check matcher.",
+        "ja": "マッチャーをチェックしてください。"
+      }
+    ],
+    "tags": [
+      "nextjs",
+      "middleware",
+      "auth"
+    ]
+  },
+  {
+    "id": "next-generate-metadata",
+    "name": "generateMetadata",
+    "group": "Next.js",
+    "categorySlug": "nextjs",
+    "description": {
+      "vi": "Sinh metadata động cho page.",
+      "en": "Generate dynamic metadata for pages.",
+      "ja": "ページの動的メタデータを生成します。"
+    },
+    "detail": {
+      "vi": "Cho phép set title, description, Open Graph dựa trên dữ liệu route.",
+      "en": "Allows setting title, description, Open Graph on route data.",
+      "ja": "ルートデータにタイトル、説明、Open Graph を設定できます。"
+    },
+    "syntax": "export async function generateMetadata() { return { title: 'Page' } }",
+    "example": "return { title: post.title, description: post.excerpt }",
+    "breakdown": [
+      {
+        "vi": "generateMetadata: hàm metadata động",
+        "en": "generateMetadata: dynamic metadata function",
+        "ja": "generateMetadata: 動的メタデータ関数"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Metadata không cập nhật.",
+        "en": "Metadata is not up to date.",
+        "ja": "メタデータが最新ではありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đảm bảo export đúng tên hàm.",
+        "en": "Damn how to export using ham name.",
+        "ja": "ハム名を使用してエクスポートする方法がわかりません。"
+      }
+    ],
+    "tags": [
+      "nextjs",
+      "seo",
+      "metadata"
+    ]
+  },
+  {
+    "id": "next-server-action",
+    "name": "server action",
+    "group": "Next.js",
+    "categorySlug": "nextjs",
+    "description": {
+      "vi": "Xử lý submit trên server bằng action.",
+      "en": "Try to submit on the server using action.",
+      "ja": "アクションを使用してサーバー上で送信してみます。"
+    },
+    "detail": {
+      "vi": "Server Action giúp gọi hàm server trực tiếp từ form hoặc component trong App Router.",
+      "en": "Server Action helps call server directly from form or component in App Router.",
+      "ja": "サーバー アクションは、App Router のフォームまたはコンポーネントからサーバーを直接呼び出すのに役立ちます。"
+    },
+    "syntax": "'use server'",
+    "example": "export async function createPost(formData: FormData) { 'use server'; }",
+    "breakdown": [
+      {
+        "vi": "use server: đánh dấu hàm chạy trên server",
+        "en": "use server: list of files running on the server",
+        "ja": "サーバーを使用: サーバー上で実行されているファイルのリスト"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Action bị gọi ở client sai cách.",
+        "en": "The action was called to the client incorrectly.",
+        "ja": "アクションがクライアントに対して誤って呼び出されました。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đặt action trong file server hoặc server component hợp lệ.",
+        "en": "Put the action in the server file or server component accordingly.",
+        "ja": "それに応じて、サーバー ファイルまたはサーバー コンポーネントにアクションを記述します。"
+      }
+    ],
+    "tags": [
+      "nextjs",
+      "server",
+      "action"
+    ]
+  },
+  {
+    "id": "php-composer-dump-autoload",
+    "name": "composer dump-autoload",
+    "group": "PHP",
+    "categorySlug": "php",
+    "description": {
+      "vi": "Tạo lại autoload map của Composer.",
+      "en": "Create Composer autoload map.",
+      "ja": "Composer 自動ロード マップを作成します。"
+    },
+    "detail": {
+      "vi": "Thường dùng sau khi thêm class mới mà autoload chưa nhận ra.",
+      "en": "Normally, after adding a new class, autoload does not appear.",
+      "ja": "通常、新しいクラスを追加した後、自動ロードは表示されません。"
+    },
+    "syntax": "composer dump-autoload",
+    "example": "composer dump-autoload",
+    "breakdown": [
+      {
+        "vi": "dump-autoload: rebuild autoload files",
+        "en": "dump-autoload: rebuild autoload files",
+        "ja": "dump-autoload: 自動ロード ファイルを再構築する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Class vẫn không được nhận.",
+        "en": "The valve class is not recognized.",
+        "ja": "バルブのクラスが認識されません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra namespace và composer.json.",
+        "en": "Check namespace and composer.json.",
+        "ja": "名前空間とcomposer.jsonを確認してください。"
+      }
+    ],
+    "tags": [
+      "php",
+      "composer",
+      "autoload"
+    ]
+  },
+  {
+    "id": "php-unit-test",
+    "name": "php artisan test",
+    "group": "PHP",
+    "categorySlug": "php",
+    "description": {
+      "vi": "Chạy test trong Laravel.",
+      "en": "Run tests in Laravel.",
+      "ja": "Laravel でテストを実行します。"
+    },
+    "detail": {
+      "vi": "Lệnh này là wrapper thân thiện cho PHPUnit/Pest trong ứng dụng Laravel.",
+      "en": "This command is a nice wrapper for PHPUnit/Pest in the Laravel application.",
+      "ja": "このコマンドは、Laravel アプリケーションの PHPUnit/Pest の優れたラッパーです。"
+    },
+    "syntax": "php artisan test",
+    "example": "php artisan test --filter=UserTest",
+    "breakdown": [
+      {
+        "vi": "artisan test: chạy test suite",
+        "en": "artisan test: run test suite",
+        "ja": "職人テスト: テストスイートを実行する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "ENV test chưa cấu hình.",
+        "en": "ENV test is not configured.",
+        "ja": "ENV テストが設定されていません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra phpunit.xml và database test.",
+        "en": "Check phpunit.xml and database test.",
+        "ja": "phpunit.xml とデータベースのテストを確認します。"
+      }
+    ],
+    "tags": [
+      "php",
+      "laravel",
+      "test"
+    ]
+  },
+  {
+    "id": "mysql-describe-table",
+    "name": "describe table",
+    "group": "MySQL",
+    "categorySlug": "mysql",
+    "description": {
+      "vi": "Xem schema của bảng.",
+      "en": "See the state's schema.",
+      "ja": "州のスキーマを参照してください。"
+    },
+    "detail": {
+      "vi": "Describe cho biết cột, type, null, key, default, extra.",
+      "en": "Describe for details, type, null, key, default, extra.",
+      "ja": "詳細、タイプ、null、key、default、extraを記述します。"
+    },
+    "syntax": "DESCRIBE <table>;",
+    "example": "DESCRIBE users;",
+    "breakdown": [
+      {
+        "vi": "DESCRIBE: xem cấu trúc bảng",
+        "en": "DESCRIBE: see state structure",
+        "ja": "DESCRIBE: 状態構造を参照"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Bảng không tồn tại.",
+        "en": "Bằng is not loud.",
+        "ja": "バタンという音は大きくありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra tên bảng bằng SHOW TABLES.",
+        "en": "Check the name in the SHOW TABLES state.",
+        "ja": "SHOW TABLES 状態で名前を確認してください。"
+      }
+    ],
+    "tags": [
+      "mysql",
+      "schema",
+      "table"
+    ]
+  },
+  {
+    "id": "mysql-alter-table",
+    "name": "alter table",
+    "group": "MySQL",
+    "categorySlug": "mysql",
+    "description": {
+      "vi": "Sửa schema của bảng.",
+      "en": "Edit your state's schema.",
+      "ja": "州のスキーマを編集します。"
+    },
+    "detail": {
+      "vi": "ALTER TABLE được dùng để thêm, sửa, xóa cột hoặc index.",
+      "en": "ALTER TABLE is used to add, edit, delete columns or indexes.",
+      "ja": "ALTER TABLE は、列またはインデックスを追加、編集、削除するために使用されます。"
+    },
+    "syntax": "ALTER TABLE <table> ADD COLUMN <name> <type>;",
+    "example": "ALTER TABLE users ADD COLUMN phone VARCHAR(20);",
+    "breakdown": [
+      {
+        "vi": "ALTER TABLE: thay đổi schema",
+        "en": "ALTER TABLE: change schema",
+        "ja": "ALTER TABLE: スキーマの変更"
+      },
+      {
+        "vi": "ADD COLUMN: thêm cột",
+        "en": "ADD COLUMN: add cot",
+        "ja": "列を追加: ベビーベッドを追加します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai kiểu dữ liệu hoặc tên cột.",
+        "en": "Wrong data type or name.",
+        "ja": "データ型または名前が間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra schema hiện tại trước khi thay đổi.",
+        "en": "Check the current schema before making changes.",
+        "ja": "変更を加える前に、現在のスキーマを確認してください。"
+      }
+    ],
+    "tags": [
+      "mysql",
+      "alter",
+      "schema"
+    ],
+    "danger": {
+      "vi": "Cẩn thận khi sửa bảng trên production.",
+      "en": "Be careful when editing on production.",
+      "ja": "本番環境で編集する場合は注意してください。"
+    }
+  },
+  {
+    "id": "mysql-join",
+    "name": "join",
+    "group": "MySQL",
+    "categorySlug": "mysql",
+    "description": {
+      "vi": "Kết hợp dữ liệu từ nhiều bảng.",
+      "en": "Combine data from multiple states.",
+      "ja": "複数の状態からのデータを結合します。"
+    },
+    "detail": {
+      "vi": "JOIN thường dùng để lấy dữ liệu liên quan giữa các bảng có khóa.",
+      "en": "JOIN is commonly used to create related data between scientific states.",
+      "ja": "JOIN は、科学的状態間で関連するデータを作成するためによく使用されます。"
+    },
+    "syntax": "SELECT * FROM a JOIN b ON a.id = b.a_id;",
+    "example": "SELECT users.name, posts.title FROM users JOIN posts ON users.id = posts.user_id;",
+    "breakdown": [
+      {
+        "vi": "JOIN: nối bảng",
+        "en": "JOIN: state",
+        "ja": "結合: 状態"
+      },
+      {
+        "vi": "ON: điều kiện kết nối",
+        "en": "ON: connection condition",
+        "ja": "ON：接続状態"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai tên cột trong ON.",
+        "en": "Wrong cot name in ON.",
+        "ja": "ON のベビーベッドの名前が間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra tên cột và alias bảng.",
+        "en": "Check the cot name and state alias.",
+        "ja": "ベビーベッドの名前と州の別名を確認してください。"
+      }
+    ],
+    "tags": [
+      "mysql",
+      "join",
+      "query"
+    ]
+  },
+  {
+    "id": "mysql-truncate",
+    "name": "truncate table",
+    "group": "MySQL",
+    "categorySlug": "mysql",
+    "description": {
+      "vi": "Xóa toàn bộ dữ liệu của bảng nhanh hơn DELETE.",
+      "en": "Delete the data of the branch using DELETE.",
+      "ja": "DELETEを使用してブランチのデータを削除します。"
+    },
+    "detail": {
+      "vi": "TRUNCATE thường reset auto increment và xóa tất cả row trong bảng.",
+      "en": "TRUNCATE normally resets auto increment and deletes all rows in the state.",
+      "ja": "TRUNCATE は通常、自動インクリメントをリセットし、状態内のすべての行を削除します。"
+    },
+    "syntax": "TRUNCATE TABLE <table>;",
+    "example": "TRUNCATE TABLE logs;",
+    "breakdown": [
+      {
+        "vi": "TRUNCATE TABLE: xóa toàn bộ row",
+        "en": "TRUNCATE TABLE: delete all rows",
+        "ja": "TRUNCATE TABLE: すべての行を削除します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có quyền hoặc bị ràng buộc khóa ngoại.",
+        "en": "There are no permissions or foreign key constraints.",
+        "ja": "権限や外部キーの制約はありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra quyền và foreign key constraints.",
+        "en": "Check permissions and foreign key constraints.",
+        "ja": "権限と外部キー制約を確認してください。"
+      }
+    ],
+    "tags": [
+      "mysql",
+      "truncate",
+      "danger"
+    ],
+    "danger": {
+      "vi": "Lệnh nguy hiểm: xóa toàn bộ dữ liệu trong bảng.",
+      "en": "Dangerous command: completely delete all data in the state.",
+      "ja": "危険なコマンド: 状態内のすべてのデータを完全に削除します。"
+    }
+  },
+  {
+    "id": "laravel-db-seed",
+    "name": "php artisan db:seed",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Chạy seeder cho database.",
+      "en": "Run seeder for database.",
+      "ja": "データベースのシーダーを実行します。"
+    },
+    "detail": {
+      "vi": "Seeder dùng để đổ dữ liệu mẫu hoặc dữ liệu khởi tạo cho hệ thống.",
+      "en": "Seeder is used for sample data or initialization data for the system.",
+      "ja": "Seeder は、サンプル データまたはシステムの初期化データに使用されます。"
+    },
+    "syntax": "php artisan db:seed",
+    "example": "php artisan db:seed --class=UserSeeder",
+    "breakdown": [
+      {
+        "vi": "db:seed: chạy seeder",
+        "en": "db:seed: run seeder",
+        "ja": "db:seed: シーダーを実行する"
+      },
+      {
+        "vi": "--class: chọn seeder cụ thể",
+        "en": "--class: select the seeder",
+        "ja": "--class: シーダーを選択します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Seeder class không tồn tại.",
+        "en": "Seeder class is not loud.",
+        "ja": "Seeder クラスはうるさくありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Tạo seeder bằng artisan make:seeder.",
+        "en": "Create seeder using artisan make:seeder.",
+        "ja": "アーティザン make:seeder を使用してシーダーを作成します。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "seed",
+      "database"
+    ],
+    "variations": [
+      {
+        "syntax": "php artisan db:seed --class=UserSeeder",
+        "description": {
+          "vi": "Chạy một Seeder class cụ thể thay vì chạy tất cả.",
+          "en": "Run a specific Seeder class instead of all of them.",
+          "ja": "すべて実行する代わりに、特定のシーダークラスを実行します。"
+        }
+      },
+      {
+        "syntax": "php artisan db:seed --force",
+        "description": {
+          "vi": "Ép buộc chạy seeder trong môi trường production (bỏ qua cảnh báo).",
+          "en": "Force run seeders in a production environment (bypass warning prompts).",
+          "ja": "本番環境でシーダーを強制実行します（警告プロンプトをバイパスします）。"
+        }
+      },
+      {
+        "syntax": "php artisan db:seed --database=sqlite",
+        "description": {
+          "vi": "Chạy seeder trên một database connection cụ thể.",
+          "en": "Run seeders on a specific database connection.",
+          "ja": "特定のデータベース接続でシーダーを実行します。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "laravel-make-middleware",
+    "name": "php artisan make:middleware",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Tạo middleware mới.",
+      "en": "Create new middleware.",
+      "ja": "新しいミドルウェアを作成します。"
+    },
+    "detail": {
+      "vi": "Middleware được dùng để chặn route, auth, log, hoặc tiền xử lý request.",
+      "en": "Middleware is used to change routes, auth, log, or handle requests.",
+      "ja": "ミドルウェアは、ルートの変更、認証、ログ、またはリクエストの処理に使用されます。"
+    },
+    "syntax": "php artisan make:middleware <Name>",
+    "example": "php artisan make:middleware EnsureAdmin",
+    "breakdown": [
+      {
+        "vi": "make:middleware: tạo middleware",
+        "en": "make:middleware: create middleware",
+        "ja": "make:ミドルウェア: ミドルウェアを作成する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Chưa đăng ký middleware.",
+        "en": "Not yet registered middleware.",
+        "ja": "まだ登録されていないミドルウェアです。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm vào kernel hoặc route middleware.",
+        "en": "Add kernel or route middleware.",
+        "ja": "カーネルまたはルートミドルウェアを追加します。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "middleware"
+    ]
+  },
+  {
+    "id": "laravel-make-factory",
+    "name": "php artisan make:factory",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Tạo factory cho model.",
+      "en": "Create factory for model.",
+      "ja": "モデルのファクトリーを作成します。"
+    },
+    "detail": {
+      "vi": "Factory giúp sinh dữ liệu giả cho test và seed nhanh hơn.",
+      "en": "Factory helps generate data for testing and seeding better branches.",
+      "ja": "Factory は、より良いブランチのテストとシードのためのデータの生成に役立ちます。"
+    },
+    "syntax": "php artisan make:factory <Name>Factory",
+    "example": "php artisan make:factory PostFactory --model=Post",
+    "breakdown": [
+      {
+        "vi": "make:factory: tạo factory",
+        "en": "make:factory: create factory",
+        "ja": "make:factory: ファクトリーの作成"
+      },
+      {
+        "vi": "--model: liên kết model",
+        "en": "--model: link model",
+        "ja": "--モデル: リンクモデル"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai tên model.",
+        "en": "Wrong model name.",
+        "ja": "モデル名が間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra class model tồn tại.",
+        "en": "Check the tonal model class.",
+        "ja": "階調モデルクラスを確認してください。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "factory",
+      "test"
+    ]
+  },
+  {
+    "id": "laravel-queue-work",
+    "name": "php artisan queue:work",
+    "group": "Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Chạy worker xử lý queue.",
+      "en": "Run worker to process queue.",
+      "ja": "ワーカーを実行してキューを処理します。"
+    },
+    "detail": {
+      "vi": "Queue worker xử lý các job bất đồng bộ như email, notify, import.",
+      "en": "Queue worker processes active jobs such as email, notification, import.",
+      "ja": "キュー ワーカーは、電子メール、通知、インポートなどのアクティブなジョブを処理します。"
+    },
+    "syntax": "php artisan queue:work",
+    "example": "php artisan queue:work --tries=3",
+    "breakdown": [
+      {
+        "vi": "queue:work: chạy worker",
+        "en": "queue:work: run worker",
+        "ja": "キュー:作業: ワーカーを実行"
+      },
+      {
+        "vi": "--tries: số lần thử lại",
+        "en": "--tries: number of lan collected again",
+        "ja": "--tries: 再度収集された LAN の数"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không nhận job nào.",
+        "en": "No job accepted.",
+        "ja": "仕事は受け付けられませんでした。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra QUEUE_CONNECTION và bảng jobs.",
+        "en": "Check QUEUE_CONNECTION and jobs state.",
+        "ja": "QUEUE_CONNECTION とジョブの状態を確認します。"
+      }
+    ],
+    "tags": [
+      "laravel",
+      "queue",
+      "worker"
+    ]
+  },
+  {
+    "id": "tailwind-container",
+    "name": "container",
+    "group": "TailwindCSS",
+    "categorySlug": "tailwind",
+    "description": {
+      "vi": "Căn giữa nội dung theo breakpoint.",
+      "en": "Cần keep content according to breakpoint.",
+      "ja": "ブレークポイントに従ってコンテンツを保持できます。"
+    },
+    "detail": {
+      "vi": "Class container cung cấp max-width mặc định theo từng breakpoint.",
+      "en": "The container class provides max-width macs based on breakpoints.",
+      "ja": "コンテナ クラスは、ブレークポイントに基づいて最大幅の Mac を提供します。"
+    },
+    "syntax": "container mx-auto px-4",
+    "example": "<div className=\"container mx-auto px-4\">...</div>",
+    "breakdown": [
+      {
+        "vi": "container: max-width responsive",
+        "en": "container: max-width responsive",
+        "ja": "コンテナ: 最大幅レスポンシブ"
+      },
+      {
+        "vi": "mx-auto: căn giữa",
+        "en": "mx-auto: support",
+        "ja": "mx-auto: サポート"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Nội dung vẫn sát màn hình.",
+        "en": "Please fill in the screen.",
+        "ja": "画面に入力してください。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm px-4 hoặc gap phù hợp.",
+        "en": "Add px-4 or other gaps.",
+        "ja": "px-4 またはその他のギャップを追加します。"
+      }
+    ],
+    "tags": [
+      "tailwind",
+      "layout",
+      "container"
+    ]
+  },
+  {
+    "id": "tailwind-dark-class",
+    "name": "dark mode class",
+    "group": "TailwindCSS",
+    "categorySlug": "tailwind",
+    "description": {
+      "vi": "Áp dụng style theo dark mode.",
+      "en": "Apply style in dark mode.",
+      "ja": "ダークモードでスタイルを適用します。"
+    },
+    "detail": {
+      "vi": "Khi darkMode dùng class, các class có prefix dark: sẽ kích hoạt khi html có class dark.",
+      "en": "When darkMode uses a class, classes with the prefix dark: will be activated when the html has the class dark.",
+      "ja": "darkMode がクラスを使用する場合、html に dark クラスがある場合、接頭辞 dark: を持つクラスがアクティブ化されます。"
+    },
+    "syntax": "dark:bg-slate-900 dark:text-white",
+    "example": "<div className=\"bg-white dark:bg-slate-900\">...</div>",
+    "breakdown": [
+      {
+        "vi": "dark:: variant cho dark mode",
+        "en": "dark:: variant for dark mode",
+        "ja": "dark:: ダークモードのバリアント"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Dark mode không đổi giao diện.",
+        "en": "Dark mode does not support communication.",
+        "ja": "ダークモードは通信をサポートしません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Bật darkMode class trong tailwind.config.js và thêm class dark vào html.",
+        "en": "Bat darkMode class in tailwind.config.js and add the dark class to the html.",
+        "ja": "tailwind.config.js の darkMode クラスをバットし、その dark クラスを html に追加します。"
+      }
+    ],
+    "tags": [
+      "tailwind",
+      "dark-mode"
+    ]
+  },
+  {
+    "id": "tailwind-hover-focus",
+    "name": "hover / focus state",
+    "group": "TailwindCSS",
+    "categorySlug": "tailwind",
+    "description": {
+      "vi": "Trạng thái tương tác cho UI.",
+      "en": "Equipped with UI behavior.",
+      "ja": "UI の同等のページ。"
+    },
+    "detail": {
+      "vi": "Hover và focus dùng để tạo phản hồi rõ ràng cho button, input, card.",
+      "en": "Hover and focus are used to create dynamic images for buttons, inputs, and cards.",
+      "ja": "ホバーとフォーカスは、ボタン、入力、カードの動的なイメージを作成するために使用されます。"
+    },
+    "syntax": "hover:bg-sky-500 focus:ring-2",
+    "example": "className=\"hover:bg-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500\"",
+    "breakdown": [
+      {
+        "vi": "hover:: style khi hover",
+        "en": "hover::style on hover",
+        "ja": "hover::ホバー時のスタイル"
+      },
+      {
+        "vi": "focus:: style khi focus",
+        "en": "focus:: style when focusing",
+        "ja": "focus:: フォーカス時のスタイル"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có focus state cho keyboard.",
+        "en": "There is no focus state for the keyboard.",
+        "ja": "キーボードにはフォーカス状態がありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm focus-visible hoặc focus ring.",
+        "en": "Add focus-visible or focus ring.",
+        "ja": "フォーカス可視またはフォーカスリングを追加します。"
+      }
+    ],
+    "tags": [
+      "tailwind",
+      "hover",
+      "focus",
+      "a11y"
+    ]
+  },
+  {
+    "id": "node-npx",
+    "name": "npx <package>",
+    "group": "Node.js / NPM",
+    "categorySlug": "node",
+    "description": {
+      "vi": "Chạy package CLI mà không cần cài global.",
+      "en": "Running the CLI package cannot be installed globally.",
+      "ja": "CLI パッケージを実行すると、グローバルにインストールできません。"
+    },
+    "detail": {
+      "vi": "npx phù hợp cho scaffold tools và command dùng một lần.",
+      "en": "npx support for scaffold tools and one-time commands.",
+      "ja": "npx によるスキャフォールド ツールとワンタイム コマンドのサポート。"
+    },
+    "syntax": "npx <package>",
+    "example": "npx shadcn@latest init",
+    "breakdown": [
+      {
+        "vi": "npx: thực thi package tạm thời",
+        "en": "npx: execute the package temporarily",
+        "ja": "npx: パッケージを一時的に実行します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Package version không đúng.",
+        "en": "Package version is not used.",
+        "ja": "パッケージ版は使用しません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chỉ rõ package@version nếu cần.",
+        "en": "Only package@version if needed.",
+        "ja": "必要な場合のみ package@version を指定します。"
+      }
+    ],
+    "tags": [
+      "node",
+      "npm",
+      "npx"
+    ]
+  },
+  {
+    "id": "node-npm-outdated",
+    "name": "npm outdated",
+    "group": "Node.js / NPM",
+    "categorySlug": "node",
+    "description": {
+      "vi": "Xem dependency đã cũ.",
+      "en": "See dependency.",
+      "ja": "依存関係を参照してください。"
+    },
+    "detail": {
+      "vi": "Cho biết current, wanted và latest version của package.",
+      "en": "Please tell us the current, wanted and latest version of the package.",
+      "ja": "パッケージの現在のバージョン、必要なバージョン、および最新のバージョンを教えてください。"
+    },
+    "syntax": "npm outdated",
+    "example": "npm outdated",
+    "breakdown": [
+      {
+        "vi": "outdated: kiểm tra package cũ",
+        "en": "outdated: check package cu",
+        "ja": "古い: パッケージ cu を確認してください"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không hiển thị gì.",
+        "en": "No display.",
+        "ja": "表示はありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Điều này có nghĩa là dependency đang mới hoặc chưa cài.",
+        "en": "This means that the dependency is new or not yet installed.",
+        "ja": "これは、依存関係が新しいか、まだインストールされていないことを意味します。"
+      }
+    ],
+    "tags": [
+      "node",
+      "npm",
+      "dependencies"
+    ]
+  },
+  {
+    "id": "node-npm-uninstall",
+    "name": "npm uninstall",
+    "group": "Node.js / NPM",
+    "categorySlug": "node",
+    "description": {
+      "vi": "Gỡ package khỏi dự án.",
+      "en": "Gõ package from project.",
+      "ja": "プロジェクトからパッケージに移動します。"
+    },
+    "detail": {
+      "vi": "Xóa package khỏi package.json và node_modules.",
+      "en": "Delete the package from package.json and node_modules.",
+      "ja": "package.jsonとnode_modulesからパッケージを削除します。"
+    },
+    "syntax": "npm uninstall <package>",
+    "example": "npm uninstall axios",
+    "breakdown": [
+      {
+        "vi": "uninstall: gỡ package",
+        "en": "uninstall: gõ package",
+        "ja": "アンインストール: gõ パッケージ"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Package không tồn tại.",
+        "en": "Package is not sound.",
+        "ja": "パッケージは健全ではありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra tên package trong package.json.",
+        "en": "Check the package name in package.json.",
+        "ja": "package.json内のパッケージ名を確認してください。"
+      }
+    ],
+    "tags": [
+      "node",
+      "npm",
+      "remove"
+    ]
+  },
+  {
+    "id": "linux-pwd",
+    "name": "pwd",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Xem thư mục hiện tại.",
+      "en": "View current directory.",
+      "ja": "現在のディレクトリを表示します。"
+    },
+    "detail": {
+      "vi": "pwd hữu ích để xác nhận bạn đang ở đúng đường dẫn trước khi chạy lệnh nguy hiểm.",
+      "en": "pwd is useful to detect that you are using a path before running a dangerous command.",
+      "ja": "pwd は、危険なコマンドを実行する前に、パスが使用されていることを検出するのに役立ちます。"
+    },
+    "syntax": "pwd",
+    "example": "pwd",
+    "breakdown": [
+      {
+        "vi": "pwd: print working directory",
+        "en": "pwd: print working directory",
+        "ja": "pwd: 作業ディレクトリを出力します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không có.",
+        "en": "Do not have.",
+        "ja": "持っていません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Không cần.",
+        "en": "Cần't.",
+        "ja": "できません。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "path"
+    ]
+  },
+  {
+    "id": "linux-chmod",
+    "name": "chmod +x",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Cấp quyền thực thi cho file.",
+      "en": "Give execution permission to the file.",
+      "ja": "ファイルに実行権限を与えます。"
+    },
+    "detail": {
+      "vi": "Thường dùng với script shell, binary, hoặc file deploy.",
+      "en": "Compatible with shell scripts, binaries, or deploy files.",
+      "ja": "シェル スクリプト、バイナリ、またはデプロイ ファイルと互換性があります。"
+    },
+    "syntax": "chmod +x <file>",
+    "example": "chmod +x deploy.sh",
+    "breakdown": [
+      {
+        "vi": "chmod: đổi permission",
+        "en": "chmod: request permission",
+        "ja": "chmod: 許可を要求する"
+      },
+      {
+        "vi": "+x: thêm quyền execute",
+        "en": "+x: add execute permission",
+        "ja": "+x: 実行権限を追加します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Permission denied vẫn xuất hiện.",
+        "en": "Permission denied and issued.",
+        "ja": "許可が拒否され、発行されました。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra owner và shebang của script.",
+        "en": "Check the owner and shebang of the script.",
+        "ja": "スクリプトの所有者とシバンを確認してください。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "permission",
+      "chmod"
+    ]
+  },
+  {
+    "id": "linux-grep-r",
+    "name": "grep -R",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Tìm chuỗi trong nhiều file.",
+      "en": "Search in many files.",
+      "ja": "多くのファイルを検索します。"
+    },
+    "detail": {
+      "vi": "grep đệ quy rất hữu ích khi cần tìm config, log, hoặc key trong source code.",
+      "en": "grep is very useful when looking for config, log, or keys in source code.",
+      "ja": "grep は、ソース コード内の設定、ログ、またはキーを検索する場合に非常に便利です。"
+    },
+    "syntax": "grep -R 'keyword' <path>",
+    "example": "grep -R 'DB_HOST' .",
+    "breakdown": [
+      {
+        "vi": "grep: tìm text",
+        "en": "grep: find text",
+        "ja": "grep: テキストを検索する"
+      },
+      {
+        "vi": "-R: đệ quy",
+        "en": "-R: de rules",
+        "ja": "-R: ルールなし"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Tìm quá chậm trên folder lớn.",
+        "en": "Search through the cần folder.",
+        "ja": "缶フォルダーを検索します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Giới hạn path hoặc dùng rg nếu có sẵn.",
+        "en": "Limit path or use rg if available.",
+        "ja": "パスを制限するか、可能な場合は rg を使用します。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "search",
+      "grep"
+    ]
+  },
+  {
+    "id": "linux-systemctl-status",
+    "name": "systemctl status",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Kiểm tra trạng thái service.",
+      "en": "Check service status.",
+      "ja": "サービスのステータスを確認します。"
+    },
+    "detail": {
+      "vi": "Dùng trên Ubuntu server để xem service đang chạy, lỗi hay dừng.",
+      "en": "Use on Ubuntu server to see if the service is running, error or unused.",
+      "ja": "Ubuntu サーバーで使用して、サービスが実行中か、エラーか、未使用かを確認します。"
+    },
+    "syntax": "systemctl status <service>",
+    "example": "systemctl status nginx",
+    "breakdown": [
+      {
+        "vi": "systemctl: quản lý service",
+        "en": "systemctl: service management",
+        "ja": "systemctl: サービス管理"
+      },
+      {
+        "vi": "status: xem trạng thái",
+        "en": "status: view status",
+        "ja": "ステータス: ステータスを表示"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Service không tồn tại.",
+        "en": "Service is not good.",
+        "ja": "サービスは良くありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra đúng tên service.",
+        "en": "Check the service name content.",
+        "ja": "サービス名の内容を確認してください。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "service",
+      "systemctl"
+    ]
+  },
+  {
+    "id": "linux-ssh",
+    "name": "ssh user@host",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Kết nối server qua SSH.",
+      "en": "Connect to the server via SSH.",
+      "ja": "SSH経由でサーバーに接続します。"
+    },
+    "detail": {
+      "vi": "Lệnh cơ bản để đăng nhập máy chủ từ xa, deploy và quản trị hệ thống.",
+      "en": "Basic command to access remote machines, deploy and manage the system.",
+      "ja": "リモート マシンにアクセスし、システムを展開および管理するための基本コマンド。"
+    },
+    "syntax": "ssh <user>@<host>",
+    "example": "ssh ubuntu@192.168.1.10",
+    "breakdown": [
+      {
+        "vi": "ssh: secure shell",
+        "en": "ssh: secure shell",
+        "ja": "ssh: セキュアシェル"
+      },
+      {
+        "vi": "user@host: tài khoản và máy chủ",
+        "en": "user@host: account and server",
+        "ja": "user@host: アカウントとサーバー"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Permission denied (publickey).",
+        "en": "Permission denied (publickey).",
+        "ja": "許可が拒否されました (公開鍵)。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra SSH key và authorized_keys.",
+        "en": "Check SSH key and authorized_keys.",
+        "ja": "SSHキーとauthorized_keysを確認してください。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "ssh",
+      "server"
+    ]
+  },
+  {
+    "id": "docker-compose-up",
+    "name": "docker compose up -d",
+    "group": "Docker",
+    "categorySlug": "docker",
+    "description": {
+      "vi": "Chạy service bằng Docker Compose.",
+      "en": "Run the service in Docker Compose state.",
+      "ja": "Docker Compose 状態でサービスを実行します。"
+    },
+    "detail": {
+      "vi": "Compose giúp khởi động nhiều service như app, db, redis bằng một lệnh.",
+      "en": "Compose helps start multiple services like app, db, redis with one command.",
+      "ja": "Compose は、app、db、redis などの複数のサービスを 1 つのコマンドで開始するのに役立ちます。"
+    },
+    "syntax": "docker compose up -d",
+    "example": "docker compose up -d",
+    "breakdown": [
+      {
+        "vi": "compose up: tạo và chạy service",
+        "en": "compose up: create and run service",
+        "ja": "構成: サービスを作成して実行する"
+      },
+      {
+        "vi": "-d: detached mode",
+        "en": "-d: detached mode",
+        "ja": "-d: 分離モード"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "File compose không tồn tại.",
+        "en": "The compose file is not tonal.",
+        "ja": "作成ファイルは調性ではありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra docker-compose.yml hoặc compose.yaml.",
+        "en": "Check out docker-compose.yml or compose.yaml.",
+        "ja": "docker-compose.yml または compose.yaml を確認してください。"
+      }
+    ],
+    "tags": [
+      "docker",
+      "compose",
+      "services"
+    ]
+  },
+  {
+    "id": "docker-compose-down",
+    "name": "docker compose down",
+    "group": "Docker",
+    "categorySlug": "docker",
+    "description": {
+      "vi": "Dừng và gỡ các service compose.",
+      "en": "Save and remove compose services.",
+      "ja": "作成サービスを保存して削除します。"
+    },
+    "detail": {
+      "vi": "Lệnh này stop container và remove network tạo bởi compose.",
+      "en": "This command stops the container and removes the network to create a compose boi.",
+      "ja": "このコマンドは、コンテナを停止し、ネットワークを削除して、構成ボーイを作成します。"
+    },
+    "syntax": "docker compose down",
+    "example": "docker compose down",
+    "breakdown": [
+      {
+        "vi": "compose down: stop và remove resources",
+        "en": "compose down: stop and remove resources",
+        "ja": "構成ダウン: リソースを停止して削除します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Vẫn còn volume data.",
+        "en": "Valve volume data.",
+        "ja": "バルブ容積データ。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm -v nếu muốn xóa cả volumes.",
+        "en": "Add -v if you want to delete volumes.",
+        "ja": "ボリュームを削除する場合は、-v を追加します。"
+      }
+    ],
+    "tags": [
+      "docker",
+      "compose",
+      "cleanup"
+    ],
+    "danger": {
+      "vi": "Cẩn thận với docker compose down -v vì có thể xóa dữ liệu volume.",
+      "en": "Be careful with docker compose down -v vi which cần delete volume data.",
+      "ja": "docker compose down -v vi はボリューム データを削除する可能性があるので注意してください。"
+    }
+  },
+  {
+    "id": "docker-logs",
+    "name": "docker logs -f",
+    "group": "Docker",
+    "categorySlug": "docker",
+    "description": {
+      "vi": "Xem log container theo thời gian thực.",
+      "en": "View container logs in real time.",
+      "ja": "コンテナーのログをリアルタイムで表示します。"
+    },
+    "detail": {
+      "vi": "Logs hữu ích để debug app bị crash, lỗi config, hoặc lỗi startup.",
+      "en": "Logs are useful for debugging app crashes, configuration errors, or startup errors.",
+      "ja": "ログは、アプリのクラッシュ、構成エラー、起動エラーのデバッグに役立ちます。"
+    },
+    "syntax": "docker logs -f <container>",
+    "example": "docker logs -f my-app",
+    "breakdown": [
+      {
+        "vi": "logs: xem output container",
+        "en": "logs: view output container",
+        "ja": "ログ: 出力コンテナの表示"
+      },
+      {
+        "vi": "-f: follow",
+        "en": "-f: follow",
+        "ja": "-f: フォローする"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai tên container.",
+        "en": "Wrong container name.",
+        "ja": "コンテナ名が間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra docker ps.",
+        "en": "Check docker ps.",
+        "ja": "docker ps を確認してください。"
+      }
+    ],
+    "tags": [
+      "docker",
+      "logs",
+      "debug"
+    ]
+  },
+  {
+    "id": "docker-exec",
+    "name": "docker exec -it",
+    "group": "Docker",
+    "categorySlug": "docker",
+    "description": {
+      "vi": "Vào shell bên trong container.",
+      "en": "Put the shell in the container.",
+      "ja": "殻を容器に入れます。"
+    },
+    "detail": {
+      "vi": "Exec phù hợp để debug nhanh, kiểm tra file, chạy command trong container.",
+      "en": "Execute steps to debug branches, check files, run commands in the container.",
+      "ja": "ブランチのデバッグ、ファイルの確認、コンテナー内のコマンドの実行の手順を実行します。"
+    },
+    "syntax": "docker exec -it <container> sh",
+    "example": "docker exec -it app-container bash",
+    "breakdown": [
+      {
+        "vi": "exec: chạy lệnh trong container",
+        "en": "exec: run commands in the container",
+        "ja": "exec: コンテナ内でコマンドを実行します。"
+      },
+      {
+        "vi": "-it: interactive terminal",
+        "en": "-it: interactive terminal",
+        "ja": "-it: 対話型ターミナル"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "bash không tồn tại trong image nhỏ.",
+        "en": "bash does not sound in the image.",
+        "ja": "画像ではbashは鳴りません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thử dùng sh thay cho bash.",
+        "en": "Use sh instead of bash.",
+        "ja": "bash の代わりに sh を使用してください。"
+      }
+    ],
+    "tags": [
+      "docker",
+      "exec",
+      "shell"
+    ]
+  },
+  {
+    "id": "composer-require",
+    "name": "composer require",
+    "group": "Composer",
+    "categorySlug": "composer",
+    "description": {
+      "vi": "Thêm package mới vào dự án PHP.",
+      "en": "Add new package to PHP project.",
+      "ja": "新しいパッケージを PHP プロジェクトに追加します。"
+    },
+    "detail": {
+      "vi": "Require sẽ cập nhật composer.json và cài package ngay lập tức.",
+      "en": "Require to update composer.json and install the package immediately.",
+      "ja": "すぐにcomposer.jsonを更新し、パッケージをインストールする必要があります。"
+    },
+    "syntax": "composer require <package>",
+    "example": "composer require spatie/laravel-permission",
+    "breakdown": [
+      {
+        "vi": "require: thêm dependency",
+        "en": "require: add dependency",
+        "ja": "require: 依存関係を追加します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Version constraint conflict.",
+        "en": "Version constraint conflict.",
+        "ja": "バージョン制約の競合。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Chỉ rõ phiên bản phù hợp hoặc kiểm tra package requirements.",
+        "en": "Pay for the required version or check the package requirements.",
+        "ja": "必要なバージョンの料金を支払うか、パッケージ要件を確認してください。"
+      }
+    ],
+    "tags": [
+      "composer",
+      "package",
+      "install"
+    ]
+  },
+  {
+    "id": "composer-remove",
+    "name": "composer remove",
+    "group": "Composer",
+    "categorySlug": "composer",
+    "description": {
+      "vi": "Gỡ package khỏi dự án.",
+      "en": "Gõ package from project.",
+      "ja": "プロジェクトからパッケージに移動します。"
+    },
+    "detail": {
+      "vi": "Remove xóa package khỏi composer.json và cập nhật lock file.",
+      "en": "Remove delete the package from composer.json and cap the lock file.",
+      "ja": "パッケージをcomposer.jsonから削除し、ロックファイルにキャップを付けます。"
+    },
+    "syntax": "composer remove <package>",
+    "example": "composer remove fakerphp/faker",
+    "breakdown": [
+      {
+        "vi": "remove: gỡ dependency",
+        "en": "remove: gõ dependency",
+        "ja": "削除: gõ 依存関係"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Package không có trong project.",
+        "en": "Package is not in the project.",
+        "ja": "パッケージがプロジェクトにありません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra composer.json trước.",
+        "en": "Check composer.json first.",
+        "ja": "まずcomposer.jsonを確認してください。"
+      }
+    ],
+    "tags": [
+      "composer",
+      "remove"
+    ]
+  },
+  {
+    "id": "composer-dump-autoload",
+    "name": "composer dump-autoload",
+    "group": "Composer",
+    "categorySlug": "composer",
+    "description": {
+      "vi": "Rebuild autoload files.",
+      "en": "Rebuild autoload files.",
+      "ja": "自動ロード ファイルを再構築します。"
+    },
+    "detail": {
+      "vi": "Hữu ích khi thêm class, namespace, helper mà Composer chưa scan ra.",
+      "en": "It's great to add class, namespace, and helper because Composer hasn't scanned it yet.",
+      "ja": "Composer がまだスキャンしていないため、クラス、名前空間、ヘルパーを追加すると便利です。"
+    },
+    "syntax": "composer dump-autoload",
+    "example": "composer dump-autoload",
+    "breakdown": [
+      {
+        "vi": "dump-autoload: tạo lại map autoload",
+        "en": "dump-autoload: recreate autoload map",
+        "ja": "dump-autoload: オートロード マップを再作成する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Namespace sai vẫn không được nhận.",
+        "en": "The wrong namespace cannot be recognized.",
+        "ja": "間違った名前空間を認識できません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Sửa PSR-4 mapping và tên file/class.",
+        "en": "Edit PSR-4 mapping and file/class names.",
+        "ja": "PSR-4 マッピングとファイル/クラス名を編集します。"
+      }
+    ],
+    "tags": [
+      "composer",
+      "autoload"
+    ]
+  },
+  {
+    "id": "artisan-key-generate",
+    "name": "php artisan key:generate",
+    "group": "Artisan Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Tạo APP_KEY cho Laravel.",
+      "en": "Create APP_KEY for Laravel.",
+      "ja": "Laravel用のAPP_KEYを作成します。"
+    },
+    "detail": {
+      "vi": "APP_KEY được dùng cho encrypt, session và một số thành phần bảo mật của app.",
+      "en": "APP_KEY is used for encryption, session and some encryption keys of the app.",
+      "ja": "APP_KEY は、アプリの暗号化、セッション、および一部の暗号化キーに使用されます。"
+    },
+    "syntax": "php artisan key:generate",
+    "example": "php artisan key:generate",
+    "breakdown": [
+      {
+        "vi": "key:generate: tạo app key",
+        "en": "key:generate: generate app key",
+        "ja": "key:generate: アプリキーを生成します"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Không ghi được vào .env.",
+        "en": "Cannot write to .env.",
+        "ja": ".env に書き込めません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra quyền ghi file .env.",
+        "en": "Check permissions to write the .env file.",
+        "ja": ".env ファイルを書き込む権限を確認してください。"
+      }
+    ],
+    "tags": [
+      "artisan",
+      "key",
+      "setup"
+    ],
+    "danger": {
+      "vi": "Cẩn thận khi đổi APP_KEY trên hệ thống đã có dữ liệu mã hóa.",
+      "en": "Be careful when running APP_KEY on a system that has encrypted data.",
+      "ja": "データが暗号化されているシステムで APP_KEY を実行する場合は注意してください。"
+    }
+  },
+  {
+    "id": "artisan-db-seed",
+    "name": "php artisan db:seed",
+    "group": "Artisan Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Đổ dữ liệu mẫu vào database.",
+      "en": "Due to sample data entering the database.",
+      "ja": "サンプル データがデータベースに入力されるため。"
+    },
+    "detail": {
+      "vi": "Seeder dùng để khởi tạo roles, permissions, user admin, dữ liệu demo.",
+      "en": "Seeder is used to initialize roles, permissions, user admin, demo data.",
+      "ja": "Seeder は、ロール、権限、ユーザー管理者、デモ データを初期化するために使用されます。"
+    },
+    "syntax": "php artisan db:seed",
+    "example": "php artisan db:seed --class=DatabaseSeeder",
+    "breakdown": [
+      {
+        "vi": "db:seed: chạy seeder",
+        "en": "db:seed: run seeder",
+        "ja": "db:seed: シーダーを実行する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Seeder class lỗi namespace.",
+        "en": "Seeder class lỗi namespace.",
+        "ja": "Seeder クラスの lỗi 名前空間。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra tên class và autoload.",
+        "en": "Check class name and autoload.",
+        "ja": "クラス名と自動ロードを確認してください。"
+      }
+    ],
+    "tags": [
+      "artisan",
+      "seed",
+      "database"
+    ]
+  },
+  {
+    "id": "artisan-make-middleware",
+    "name": "php artisan make:middleware",
+    "group": "Artisan Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Sinh middleware mới.",
+      "en": "Generate new middleware.",
+      "ja": "新しいミドルウェアを生成します。"
+    },
+    "detail": {
+      "vi": "Dùng khi cần thêm lớp kiểm tra auth, role, locale, logging cho request.",
+      "en": "Use when adding auth, role, locale, logging checks to the request.",
+      "ja": "認証、ロール、ロケール、ログチェックをリクエストに追加する場合に使用します。"
+    },
+    "syntax": "php artisan make:middleware <Name>",
+    "example": "php artisan make:middleware EnsureProfileCompleted",
+    "breakdown": [
+      {
+        "vi": "make:middleware: tạo file middleware",
+        "en": "make:middleware: create middleware file",
+        "ja": "make:middleware: ミドルウェア ファイルを作成する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Middleware không chạy.",
+        "en": "Middleware is not running.",
+        "ja": "ミドルウェアが実行されていません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Đăng ký middleware vào kernel hoặc route.",
+        "en": "Signing middleware into the kernel or route.",
+        "ja": "ミドルウェアをカーネルまたはルートに署名します。"
+      }
+    ],
+    "tags": [
+      "artisan",
+      "middleware"
+    ]
+  },
+  {
+    "id": "artisan-queue-work",
+    "name": "php artisan queue:work",
+    "group": "Artisan Laravel",
+    "categorySlug": "laravel",
+    "description": {
+      "vi": "Chạy queue worker.",
+      "en": "Run queue workers.",
+      "ja": "キューワーカーを実行します。"
+    },
+    "detail": {
+      "vi": "Xử lý các job nền như email, import, notification, webhooks.",
+      "en": "Process tasks such as emails, imports, notifications, webhooks.",
+      "ja": "電子メール、インポート、通知、Webhook などのタスクを処理します。"
+    },
+    "syntax": "php artisan queue:work",
+    "example": "php artisan queue:work --queue=default",
+    "breakdown": [
+      {
+        "vi": "queue:work: bật worker queue",
+        "en": "queue:work: bat worker queue",
+        "ja": "キュー:ワーク:バットワーカーキュー"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Worker không lấy job.",
+        "en": "Workers do not lay jobs.",
+        "ja": "労働者は仕事を提供しません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra queue connection và supervisor.",
+        "en": "Check queue connection and supervisor.",
+        "ja": "キューの接続とスーパーバイザを確認してください。"
+      }
+    ],
+    "tags": [
+      "artisan",
+      "queue"
+    ]
+  },
+  {
+    "id": "api-curl-put",
+    "name": "curl PUT",
+    "group": "API / Curl",
+    "categorySlug": "api",
+    "description": {
+      "vi": "Gửi request PUT cập nhật tài nguyên.",
+      "en": "Gui request PUT to maximize resources.",
+      "ja": "GUI はリソースを最大化するために PUT を要求します。"
+    },
+    "detail": {
+      "vi": "PUT thường dùng để cập nhật toàn bộ resource trên REST API.",
+      "en": "PUT is commonly used to fully capture resources on REST APIs.",
+      "ja": "PUT は一般に、REST API 上のリソースを完全にキャプチャするために使用されます。"
+    },
+    "syntax": "curl -X PUT -H 'Content-Type: application/json' -d '{\"name\":\"New Name\"}' https://api.example.com/users/1",
+    "example": "curl -X PUT -H 'Content-Type: application/json' -d '{\"name\":\"An Nguyen\"}' https://api.example.com/users/1",
+    "breakdown": [
+      {
+        "vi": "-X PUT: method",
+        "en": "-X PUT: method",
+        "ja": "-X PUT:メソッド"
+      },
+      {
+        "vi": "-d: payload JSON",
+        "en": "-d: JSON payload",
+        "ja": "-d: JSON ペイロード"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "415 Unsupported Media Type.",
+        "en": "415 Unsupported Media Type.",
+        "ja": "415 サポートされていないメディア タイプです。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm header Content-Type đúng.",
+        "en": "Add Content-Type content header.",
+        "ja": "Content-Type コンテンツ ヘッダーを追加します。"
+      }
+    ],
+    "tags": [
+      "api",
+      "curl",
+      "put"
+    ]
+  },
+  {
+    "id": "api-curl-delete",
+    "name": "curl DELETE",
+    "group": "API / Curl",
+    "categorySlug": "api",
+    "description": {
+      "vi": "Gửi request DELETE.",
+      "en": "Gui request DELETE.",
+      "ja": "Gui は DELETE を要求します。"
+    },
+    "detail": {
+      "vi": "DELETE dùng để xóa resource trên API REST.",
+      "en": "DELETE is used to delete resources on the REST API.",
+      "ja": "DELETE は、REST API 上のリソースを削除するために使用されます。"
+    },
+    "syntax": "curl -X DELETE https://api.example.com/users/1",
+    "example": "curl -X DELETE https://api.example.com/users/1",
+    "breakdown": [
+      {
+        "vi": "-X DELETE: method xóa",
+        "en": "-X DELETE: delete method",
+        "ja": "-X DELETE: 削除メソッド"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "401 Unauthorized.",
+        "en": "401 Unauthorized.",
+        "ja": "401 不正です。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Thêm token auth nếu endpoint được bảo vệ.",
+        "en": "Add an auth token if the endpoint is reported.",
+        "ja": "エンドポイントが報告されている場合は、認証トークンを追加します。"
+      }
+    ],
+    "tags": [
+      "api",
+      "curl",
+      "delete"
+    ],
+    "danger": {
+      "vi": "Lệnh nguy hiểm nếu endpoint xóa dữ liệu thật.",
+      "en": "Dangerous command if endpoint deletes real data.",
+      "ja": "エンドポイントが実際のデータを削除する場合は危険なコマンドです。"
+    }
+  },
+  {
+    "id": "api-curl-auth-bearer",
+    "name": "curl Bearer token",
+    "group": "API / Curl",
+    "categorySlug": "api",
+    "description": {
+      "vi": "Gửi request kèm Bearer token.",
+      "en": "Gui request ice cream Bearer token.",
+      "ja": "Gui はアイスクリームベアラートークンをリクエストします。"
+    },
+    "detail": {
+      "vi": "Rất phổ biến khi test API cần JWT hoặc access token.",
+      "en": "It's very common when testing APIs that require JWT or access tokens.",
+      "ja": "これは、JWT またはアクセス トークンを必要とする API をテストするときに非常に一般的です。"
+    },
+    "syntax": "curl -H 'Authorization: Bearer <token>' https://api.example.com/me",
+    "example": "curl -H 'Authorization: Bearer eyJ...' https://api.example.com/me",
+    "breakdown": [
+      {
+        "vi": "Authorization header: gửi token Bearer",
+        "en": "Authorization header: gui token Bearer",
+        "ja": "認可ヘッダー: gui トークンベアラー"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Token hết hạn hoặc sai format.",
+        "en": "Token is incomplete or in wrong format.",
+        "ja": "トークンが不完全か、形式が間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra token và prefix Bearer.",
+        "en": "Check the Bearer token and prefix.",
+        "ja": "Bearer トークンとプレフィックスを確認します。"
+      }
+    ],
+    "tags": [
+      "api",
+      "curl",
+      "auth",
+      "bearer"
+    ],
+    "danger": {
+      "vi": "Không paste token thật vào nơi công khai.",
+      "en": "Do not paste the real token into the public address.",
+      "ja": "実際のトークンをパブリック アドレスに貼り付けないでください。"
+    }
+  },
+  {
+    "id": "api-curl-upload-file",
+    "name": "curl upload file",
+    "group": "API / Curl",
+    "categorySlug": "api",
+    "description": {
+      "vi": "Upload file bằng multipart form.",
+      "en": "Upload files in multipart form.",
+      "ja": "マルチパート形式でファイルをアップロードします。"
+    },
+    "detail": {
+      "vi": "Dùng để test endpoint upload image, document hoặc media.",
+      "en": "Used to test the endpoint for uploading images, documents or media.",
+      "ja": "画像、ドキュメント、またはメディアをアップロードするためのエンドポイントをテストするために使用されます。"
+    },
+    "syntax": "curl -F 'file=@/path/to/file.jpg' https://api.example.com/upload",
+    "example": "curl -F 'file=@avatar.png' -F 'user_id=1' https://api.example.com/upload",
+    "breakdown": [
+      {
+        "vi": "-F: multipart form field",
+        "en": "-F: multipart form field",
+        "ja": "-F: マルチパートフォームフィールド"
+      },
+      {
+        "vi": "@file: gửi file từ máy local",
+        "en": "@file: gui file from local sewing machine",
+        "ja": "@file: ローカルミシンからの gui ファイル"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Sai tên field upload.",
+        "en": "Wrong upload field name.",
+        "ja": "アップロードフィールド名が間違っています。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Kiểm tra backend yêu cầu field nào.",
+        "en": "Check which fields the backend requires.",
+        "ja": "バックエンドがどのフィールドを必要とするかを確認してください。"
+      }
+    ],
+    "tags": [
+      "api",
+      "curl",
+      "upload",
+      "multipart"
+    ]
+  }
+]

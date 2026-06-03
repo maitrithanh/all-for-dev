@@ -1,0 +1,236 @@
+[
+  {
+    "id": "git",
+    "name": {
+      "vi": "Git",
+      "en": "Git",
+      "ja": "Git"
+    },
+    "slug": "git",
+    "description": {
+      "vi": "Quy trình version control, nhanh gọn và an toàn.",
+      "en": "Version control workflows for safe day-to-day development.",
+      "ja": "安全に開発を進めるためのバージョン管理ワークフロー。"
+    },
+    "accent": "from-emerald-500/20 via-emerald-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/git/F05032",
+    "docsUrl": "https://git-scm.com/doc",
+    "group": "tools"
+  },
+  {
+    "id": "react",
+    "name": {
+      "vi": "ReactJS",
+      "en": "ReactJS",
+      "ja": "ReactJS"
+    },
+    "slug": "react",
+    "description": {
+      "vi": "Component, hooks và routing cho frontend hiện đại.",
+      "en": "Components, hooks, and routing for modern frontends.",
+      "ja": "モダンなフロントエンド向けのコンポーネント、フック、ルーティング。"
+    },
+    "accent": "from-sky-500/20 via-sky-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/react/61DAFB",
+    "docsUrl": "https://react.dev/",
+    "group": "frameworks"
+  },
+  {
+    "id": "vite",
+    "name": {
+      "vi": "Vite",
+      "en": "Vite",
+      "ja": "Vite"
+    },
+    "slug": "vite",
+    "description": {
+      "vi": "Khởi tạo dự án nhanh, build tối ưu.",
+      "en": "Fast project scaffolding and optimized builds.",
+      "ja": "高速なプロジェクト作成と最適化されたビルド。"
+    },
+    "accent": "from-amber-500/20 via-amber-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/vite/646CFF",
+    "docsUrl": "https://vite.dev/guide/",
+    "group": "tools"
+  },
+  {
+    "id": "nextjs",
+    "name": {
+      "vi": "Next.js",
+      "en": "Next.js",
+      "ja": "Next.js"
+    },
+    "slug": "nextjs",
+    "description": {
+      "vi": "Fullstack React với App Router và SSR.",
+      "en": "Fullstack React with App Router and SSR.",
+      "ja": "App Router と SSR を備えたフルスタック React。"
+    },
+    "accent": "from-zinc-500/20 via-zinc-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/nextdotjs/111111",
+    "docsUrl": "https://nextjs.org/docs",
+    "group": "frameworks"
+  },
+  {
+    "id": "php",
+    "name": {
+      "vi": "PHP",
+      "en": "PHP",
+      "ja": "PHP"
+    },
+    "slug": "php",
+    "description": {
+      "vi": "Lệnh hệ thống và phát triển backend PHP.",
+      "en": "Common PHP commands for backend work and local servers.",
+      "ja": "バックエンド開発とローカルサーバー用の PHP コマンド。"
+    },
+    "accent": "from-indigo-500/20 via-indigo-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/php/777BB4",
+    "docsUrl": "https://www.php.net/docs.php",
+    "group": "languages"
+  },
+  {
+    "id": "mysql",
+    "name": {
+      "vi": "MySQL",
+      "en": "MySQL",
+      "ja": "MySQL"
+    },
+    "slug": "mysql",
+    "description": {
+      "vi": "Quản lý CSDL và truy vấn nhanh.",
+      "en": "Database management and everyday SQL queries.",
+      "ja": "データベース管理と日常的な SQL クエリ。"
+    },
+    "accent": "from-cyan-500/20 via-cyan-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/mysql/4479A1",
+    "docsUrl": "https://dev.mysql.com/doc/",
+    "group": "tools"
+  },
+  {
+    "id": "laravel",
+    "name": {
+      "vi": "Laravel",
+      "en": "Laravel",
+      "ja": "Laravel"
+    },
+    "slug": "laravel",
+    "description": {
+      "vi": "Framework PHP với artisan đầy đủ.",
+      "en": "Laravel framework commands and app workflows.",
+      "ja": "Laravel フレームワークのコマンド và 開発フロー。"
+    },
+    "accent": "from-rose-500/20 via-rose-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/laravel/FF2D20",
+    "docsUrl": "https://laravel.com/docs",
+    "group": "frameworks"
+  },
+  {
+    "id": "tailwind",
+    "name": {
+      "vi": "TailwindCSS",
+      "en": "TailwindCSS",
+      "ja": "TailwindCSS"
+    },
+    "slug": "tailwind",
+    "description": {
+      "vi": "Utility-first CSS cho UI nhanh gọn.",
+      "en": "Utility-first CSS for fast interface building.",
+      "ja": "素早く UI を構築するためのユーティリティファースト CSS。"
+    },
+    "accent": "from-teal-500/20 via-teal-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/tailwindcss/06B6D4",
+    "docsUrl": "https://tailwindcss.com/docs",
+    "group": "frameworks"
+  },
+  {
+    "id": "node",
+    "name": {
+      "vi": "Node.js / NPM",
+      "en": "Node.js / NPM",
+      "ja": "Node.js / NPM"
+    },
+    "slug": "node",
+    "description": {
+      "vi": "Quản lý package và script cho JS runtime.",
+      "en": "Package management and scripts for the JavaScript runtime.",
+      "ja": "JavaScript ランタイム向けのパッケージ管理とスクリプト。"
+    },
+    "accent": "from-lime-500/20 via-lime-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/nodedotjs/5FA04E",
+    "docsUrl": "https://nodejs.org/en/docs",
+    "group": "languages"
+  },
+  {
+    "id": "linux",
+    "name": {
+      "vi": "Linux / Ubuntu / WSL",
+      "en": "Linux / Ubuntu / WSL",
+      "ja": "Linux / Ubuntu / WSL"
+    },
+    "slug": "linux",
+    "description": {
+      "vi": "Lệnh hệ thống và quản trị cơ bản.",
+      "en": "Core shell and system administration commands.",
+      "ja": "基本的なシェル操作とシステム管理コマンド。"
+    },
+    "accent": "from-orange-500/20 via-orange-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/linux/FCC624",
+    "docsUrl": "https://ubuntu.com/tutorials/command-line-for-beginners",
+    "group": "systems"
+  },
+  {
+    "id": "docker",
+    "name": {
+      "vi": "Docker",
+      "en": "Docker",
+      "ja": "Docker"
+    },
+    "slug": "docker",
+    "description": {
+      "vi": "Container, image và workflow devops.",
+      "en": "Containers, images, and practical devops workflows.",
+      "ja": "コンテナ、イメージ、実用的な DevOps ワークフロー。"
+    },
+    "accent": "from-blue-500/20 via-blue-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/docker/2496ED",
+    "docsUrl": "https://docs.docker.com/",
+    "group": "systems"
+  },
+  {
+    "id": "composer",
+    "name": {
+      "vi": "Composer",
+      "en": "Composer",
+      "ja": "Composer"
+    },
+    "slug": "composer",
+    "description": {
+      "vi": "Quản lý dependency PHP nhanh chóng.",
+      "en": "Dependency management for PHP projects.",
+      "ja": "PHP プロジェクトの依存管理。"
+    },
+    "accent": "from-yellow-500/20 via-yellow-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/composer/885630",
+    "docsUrl": "https://getcomposer.org/doc/",
+    "group": "tools"
+  },
+  {
+    "id": "api",
+    "name": {
+      "vi": "API / Curl",
+      "en": "API / Curl",
+      "ja": "API / Curl"
+    },
+    "slug": "api",
+    "description": {
+      "vi": "Test API, HTTP method và header.",
+      "en": "API testing with HTTP methods, headers, and payloads.",
+      "ja": "HTTP メソッド、ヘッダー、ペイロードを使った API テスト。"
+    },
+    "accent": "from-fuchsia-500/20 via-fuchsia-400/10 to-transparent",
+    "image": "https://cdn.simpleicons.org/postman/FF6C37",
+    "docsUrl": "https://curl.se/docs/",
+    "group": "tools"
+  }
+]
