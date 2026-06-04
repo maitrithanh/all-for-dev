@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useI18n } from "@/i18n/I18nProvider";
 import { getCategoryIcon } from "@/lib/category-icons";
 import { resolveText } from "@/lib/i18n";
+import { masterGuides } from "@/data/master-guides";
 
 type CategoryCardProps = {
   category: Category;
@@ -14,6 +15,7 @@ type CategoryCardProps = {
 const CategoryCard = ({ category }: CategoryCardProps) => {
   const { locale, t } = useI18n();
   const Icon = getCategoryIcon(category.slug);
+  const hasMaster = masterGuides.some(g => g.categorySlug === category.slug);
 
   return (
     <Card className="border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-none flex flex-col justify-between">
@@ -51,7 +53,14 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
               {t("command")}
             </Link>
           </Button>
-          <Button asChild variant="ghost" size="sm" className="rounded-lg h-8 px-3 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 gap-1.5">
+          {hasMaster && (
+            <Button asChild variant="outline" size="sm" className="rounded-lg h-8 px-3 border-zinc-950 bg-zinc-950 text-white hover:bg-zinc-900 dark:border-zinc-50 dark:bg-zinc-50 dark:text-zinc-950 dark:hover:bg-zinc-200">
+              <Link to={`/master/${category.slug}`} className="text-xs font-semibold">
+                {t("masterGuideButton")}
+              </Link>
+            </Button>
+          )}
+          <Button asChild variant="ghost" size="sm" className="rounded-lg h-8 px-3 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 gap-1.5 ml-auto">
             <a href={category.docsUrl} target="_blank" rel="noreferrer" className="text-xs font-semibold">
               {t("officialDocs")}
               <ArrowUpRight className="h-3.5 w-3.5" />
