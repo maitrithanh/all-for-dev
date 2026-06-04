@@ -5658,6 +5658,420 @@
     ]
   },
   {
+    "id": "linux-mkdir",
+    "name": "mkdir",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Tạo một thư mục mới.",
+      "en": "Create a new directory.",
+      "ja": "新しいディレクトリを作成します。"
+    },
+    "detail": {
+      "vi": "Tạo thư mục trống tại đường dẫn chỉ định.",
+      "en": "Create an empty folder at the specified path.",
+      "ja": "指定したパスに空のフォルダーを作成します。"
+    },
+    "syntax": "mkdir <dir_name>",
+    "example": "mkdir projects",
+    "breakdown": [
+      {
+        "vi": "mkdir: make directory",
+        "en": "mkdir: make directory",
+        "ja": "mkdir: ディレクトリ作成"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Thư mục cha chưa tồn tại dẫn đến lỗi.",
+        "en": "Parent directory does not exist.",
+        "ja": "親ディレクトリが存在しません。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Dùng cờ -p để tự động tạo tất cả thư mục cha nếu chưa có.",
+        "en": "Use the -p flag to automatically create parent directories recursively.",
+        "ja": "-p フラグを使用して、親ディレクトリを再帰的に自動作成します。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "dir",
+      "create"
+    ],
+    "variations": [
+      {
+        "syntax": "mkdir -p path/to/nested/folder",
+        "description": {
+          "vi": "Tạo cấu trúc thư mục lồng nhau sâu (tự động tạo các thư mục cha bị thiếu).",
+          "en": "Create deeply nested subdirectories, scaffolding missing parent folders recursively.",
+          "ja": "欠落している親フォルダーを再帰的にスキャフォールディングして、深くネストされたサブディレクトリを作成します。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "linux-mv",
+    "name": "mv",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Di chuyển hoặc đổi tên file/thư mục.",
+      "en": "Move or rename files or directories.",
+      "ja": "ファイルやディレクトリを移動または名前変更します。"
+    },
+    "detail": {
+      "vi": "Di chuyển vị trí file hoặc đổi tên của chúng nếu đích đến cùng một thư mục.",
+      "en": "Move files to a different path, or rename them if the destination is in the same directory.",
+      "ja": "ファイルを別のパスに移動します。宛先が同じディレクトリ内にある場合は名前を変更します。"
+    },
+    "syntax": "mv <source> <destination>",
+    "example": "mv app.log logs/app.log",
+    "breakdown": [
+      {
+        "vi": "mv: move",
+        "en": "mv: move",
+        "ja": "mv: 移動"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Ghi đè nhầm file quan trọng ở đích đến mà không có cảnh báo.",
+        "en": "Accidentally overwriting an important file at destination without warning.",
+        "ja": "警告なしに宛先の重要なファイルを誤って上書きしてしまう。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Sử dụng cờ -i để hỏi xác nhận trước khi ghi đè.",
+        "en": "Use the -i flag to prompt for confirmation before overwriting.",
+        "ja": "上書きする前に確認を促すには、-i フラグを使用します。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "file",
+      "move",
+      "rename"
+    ],
+    "variations": [
+      {
+        "syntax": "mv -i oldname.txt newname.txt",
+        "description": {
+          "vi": "Đổi tên file an toàn (hỏi trước khi ghi đè nếu file mới đã tồn tại).",
+          "en": "Safe renaming (prompt before overwriting if the target file already exists).",
+          "ja": "安全な名前変更（ターゲットファイルが既に存在する場合は上書きする前にプロンプトを表示）。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "linux-find",
+    "name": "find",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Tìm kiếm file hoặc thư mục trên hệ thống.",
+      "en": "Search for files or directories on the system.",
+      "ja": "システム上のファイルまたはディレクトリを検索します。"
+    },
+    "detail": {
+      "vi": "Tìm kiếm mạnh mẽ dựa trên tên, kích thước, thời gian sửa đổi, loại tệp, v.v.",
+      "en": "Powerful filesystem search based on names, sizes, modify time, file types, etc.",
+      "ja": "名前、サイズ、更新時間、ファイルタイプなどに基づく強力なファイルシステム検索。"
+    },
+    "syntax": "find <path> -name '<pattern>'",
+    "example": "find . -name '*.log'",
+    "breakdown": [
+      {
+        "vi": "find: lệnh tìm kiếm",
+        "en": "find: search command",
+        "ja": "find: 検索コマンド"
+      },
+      {
+        "vi": "-name: tìm kiếm khớp theo tên",
+        "en": "-name: match target name pattern",
+        "ja": "-name: ターゲット名パターンに一致"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Tìm kiếm quá rộng dẫn đến quét toàn bộ ổ đĩa, tốn tài nguyên.",
+        "en": "Searching from root level scanning the whole disk, consuming heavy resources.",
+        "ja": "ルートレベルから検索してディスク全体をスキャンし、大量のリソースを消費する。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Giới hạn phạm vi tìm kiếm (như thư mục hiện tại `.`) hoặc giới hạn độ sâu thư mục.",
+        "en": "Limit search scope (e.g. current folder `.`) or limit search depth.",
+        "ja": "検索範囲を制限するか（現在のフォルダー `.` など）、検索の depth を制限します。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "search",
+      "find",
+      "file"
+    ],
+    "variations": [
+      {
+        "syntax": "find /var/log -type f -mtime -7",
+        "description": {
+          "vi": "Tìm các file thường (-type f) trong thư mục /var/log đã sửa đổi trong vòng 7 ngày qua.",
+          "en": "Search for regular files (-type f) inside /var/log modified within the last 7 days.",
+          "ja": "/var/log 内で過去 7 日間に変更された通常のファイル (-type f) を検索します。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "linux-tar",
+    "name": "tar",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Nén hoặc giải nén tệp lưu trữ (.tar, .tar.gz).",
+      "en": "Compress or extract archive files (.tar, .tar.gz).",
+      "ja": "アーカイブファイル（.tar、.tar.gz）を圧縮 hoặc 展開します。"
+    },
+    "detail": {
+      "vi": "Dùng để đóng gói và nén nhiều file/thư mục thành một tệp duy nhất để lưu trữ hoặc chuyển đi.",
+      "en": "Used to package and compress multiple files/directories into a single archive file for storage or transfer.",
+      "ja": "ストレージまたは転送のために、複数のファイル/ディレクトリを単一のアーカイブファイルにパッケージ化して圧縮するために使用されます。"
+    },
+    "syntax": "tar <options> <archive_file> <target>",
+    "example": "tar -czvf backup.tar.gz /var/www",
+    "breakdown": [
+      {
+        "vi": "tar: tape archiver",
+        "en": "tar: tape archiver",
+        "ja": "tar: テープアーカイブ"
+      },
+      {
+        "vi": "-c: tạo file lưu trữ mới (create)",
+        "en": "-c: create new archive file",
+        "ja": "-c: 新しいアーカイブファイルを作成する"
+      },
+      {
+        "vi": "-x: giải nén file lưu trữ (extract)",
+        "en": "-x: extract archive file",
+        "ja": "-x: アーカイブファイルを展開する"
+      },
+      {
+        "vi": "-z: nén/giải nén qua gzip",
+        "en": "-z: compress/decompress via gzip",
+        "ja": "-z: gzipで圧縮/展開する"
+      },
+      {
+        "vi": "-v: hiển thị danh sách file đang xử lý (verbose)",
+        "en": "-v: show file list in progress (verbose)",
+        "ja": "-v: 進行中のファイルリストを表示する（詳細）"
+      },
+      {
+        "vi": "-f: chỉ định tên tệp lưu trữ (file)",
+        "en": "-f: specify archive filename",
+        "ja": "-f: アーカイブファイル名を指定する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Nhầm lẫn giữa cờ tạo (-c) và giải nén (-x), ghi đè nhầm làm mất dữ liệu.",
+        "en": "Confusing compile/create (-c) and extract (-x) options, causing data loss.",
+        "ja": "作成 (-c) オプションと展開 (-x) オプションを混同し、データが失われる。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Hãy kiểm tra kỹ cờ trước khi chạy. -c để nén, -x để giải nén.",
+        "en": "Double check flags before running: -c is for archiving, -x is for extracting.",
+        "ja": "実行前にフラグを再確認してください。-c はアーカイブ用、-x は展開用です。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "compress",
+      "extract",
+      "tar"
+    ],
+    "variations": [
+      {
+        "syntax": "tar -xzvf backup.tar.gz",
+        "description": {
+          "vi": "Giải nén tệp backup.tar.gz ra thư mục hiện tại.",
+          "en": "Extract the backup.tar.gz file into the current directory.",
+          "ja": "backup.tar.gz ファイルを現在のディレクトリに展開します。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "linux-chown",
+    "name": "chown",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Thay đổi quyền sở hữu (owner) và nhóm sở hữu (group) của file/thư mục.",
+      "en": "Change file owner and group ownership settings.",
+      "ja": "ファイルの所有者とグループの所有権設定を変更します。"
+    },
+    "detail": {
+      "vi": "Lệnh quản trị để cấu hình bảo mật tệp tin, cấp quyền truy cập chính xác cho các service (như Nginx, Apache).",
+      "en": "Administrative command to configure file security permission setups for running services (like Nginx, Apache).",
+      "ja": "実行中のサービス（Nginx、Apacheなど）のファイルセキュリティ権限設定を構成するための管理コマンド。"
+    },
+    "syntax": "chown <owner>:<group> <file>",
+    "example": "chown www-data:www-data /var/www/html",
+    "breakdown": [
+      {
+        "vi": "chown: change owner",
+        "en": "chown: change owner",
+        "ja": "chown: 所有者の変更"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Thay đổi sở hữu nhưng không áp dụng xuống thư mục con.",
+        "en": "Changing ownership but not applying recursively down to files below.",
+        "ja": "所有権を変更したが、再帰的に下位のファイルに適用されない。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Sử dụng cờ -R để thay đổi sở hữu đệ quy cho toàn bộ thư mục con.",
+        "en": "Use the -R flag to apply ownership recursively to all sub-folders and files.",
+        "ja": "すべてのサブフォルダーとファイルに所有権を再帰的に適用するには、-R フラグを使用します。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "permission",
+      "owner",
+      "group"
+    ],
+    "variations": [
+      {
+        "syntax": "chown -R www-data:www-data /var/www/html",
+        "description": {
+          "vi": "Thay đổi đệ quy chủ sở hữu và nhóm sở hữu của thư mục web sang user www-data.",
+          "en": "Recursively change the owner and group of the web directory to user www-data.",
+          "ja": "Web ディレクトリの所有者とグループを再帰的にユーザー www-data に変更します。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "linux-tail",
+    "name": "tail",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Xem phần cuối của file (thường dùng xem logs).",
+      "en": "Output the last part of files (commonly used for logs checking).",
+      "ja": "ファイルの最後の部分を出力します（ログの確認によく使用されます）。"
+    },
+    "detail": {
+      "vi": "In ra 10 dòng cuối mặc định của file, hỗ trợ theo dõi cập nhật file thời gian thực.",
+      "en": "Print default last 10 lines of a file, supporting real-time follow updates.",
+      "ja": "ファイルのデフォルトの最後の10行を出力し、リアルタイムのフォロー更新をサポートします。"
+    },
+    "syntax": "tail <flags> <file>",
+    "example": "tail -n 50 app.log",
+    "breakdown": [
+      {
+        "vi": "tail: phần đuôi tệp",
+        "en": "tail: tail end of a file",
+        "ja": "tail: ファイルの末尾"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "File log quá lớn, mở bằng cat hoặc vi gây treo đơ hệ thống.",
+        "en": "Large log files crash system when opened via cat or vi editors.",
+        "ja": "cat または vi エディターで開くと、大きなログファイルがシステムをクラッシュさせる。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Luôn dùng tail để chỉ đọc vài dòng cuối, tránh mở toàn bộ file logs lớn.",
+        "en": "Always use tail to check last lines, avoiding load heavy log files into RAM.",
+        "ja": "重いログファイルをRAMにロードしないように、常に tail を使用して最後の数行を確認してください。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "log",
+      "view",
+      "tail"
+    ],
+    "variations": [
+      {
+        "syntax": "tail -f /var/log/nginx/access.log",
+        "description": {
+          "vi": "Theo dõi trực tiếp (real-time follow) các dòng log mới khi chúng xuất hiện.",
+          "en": "Actively watch (real-time follow) new log lines as they get appended.",
+          "ja": "新しいログ行が追加されるときに、それをリアルタイムで監視（フォロー）します。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "linux-df",
+    "name": "df",
+    "group": "Linux / Ubuntu / WSL",
+    "categorySlug": "linux",
+    "description": {
+      "vi": "Xem dung lượng và không gian trống ổ đĩa.",
+      "en": "Report file system disk space usage.",
+      "ja": "ファイルシステムのディスク容量の使用状況をレポートします。"
+    },
+    "detail": {
+      "vi": "Hiển thị dung lượng đã dùng và còn trống trên các phân vùng đĩa cứng.",
+      "en": "Display total size, used space and available space on mounted disk partitions.",
+      "ja": "マウントされたディスクパーティション上の合計サイズ、使用スペース、および空きスペースを表示します。"
+    },
+    "syntax": "df <flags>",
+    "example": "df -h",
+    "breakdown": [
+      {
+        "vi": "df: disk free",
+        "en": "df: disk free",
+        "ja": "df: ディスクフリー"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Đọc dung lượng mặc định bằng blocks rất khó hiểu.",
+        "en": "Reading raw default block units is confusing.",
+        "ja": "生のデフォルトブロック単位を読み取るのは混乱します。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Sử dụng cờ -h để hiển thị ở định dạng dễ đọc (Human-readable: GB, MB).",
+        "en": "Use the -h flag to show sizes in human-friendly readable formats (GB, MB).",
+        "ja": "人間が読める形式（GB、MB）でサイズを表示するには、-h フラグを使用します。"
+      }
+    ],
+    "tags": [
+      "linux",
+      "disk",
+      "usage",
+      "free"
+    ],
+    "variations": [
+      {
+        "syntax": "du -sh *",
+        "description": {
+          "vi": "Xem tổng dung lượng tóm tắt (summary -s) ở định dạng dễ đọc (-h) của tất cả tệp/thư mục hiện tại.",
+          "en": "Show sum sizes summary (-s) in human-friendly format (-h) of current items.",
+          "ja": "現在のアイテムを人間が読める形式（-h）で要約したサイズ合計（-s）を表示します。"
+        }
+      }
+    ]
+  },
+  {
     "id": "docker-compose-up",
     "name": "docker compose up -d",
     "group": "Docker",
@@ -7672,6 +8086,128 @@
       "vite",
       "config",
       "plugin"
+    ]
+  },
+  {
+    "id": "vue-slots",
+    "name": "<slot>",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Sử dụng slots để truyền nội dung vào component con.",
+      "en": "Use slots to distribute content into child components.",
+      "ja": "スロットを使用して、子コンポーネントにコンテンツを配布します。"
+    },
+    "detail": {
+      "vi": "Slots giúp tạo ra các component có khả năng tái sử dụng cao bằng cách cho phép truyền HTML/Component từ cha vào con.",
+      "en": "Slots help create highly reusable components by allowing parent to pass custom HTML/Component structures to child.",
+      "ja": "スロットを使用すると、親がカスタム HTML/コンポーネント構造を子に渡せるようになり、再利用性の高いコンポーネントを作成できます。"
+    },
+    "syntax": "<!-- Child.vue -->\n<template>\n  <div>\n    <slot></slot>\n  </div>\n</template>",
+    "example": "<!-- Parent.vue -->\n<Child>\n  <p>This goes into the slot</p>\n</Child>",
+    "breakdown": [
+      {
+        "vi": "<slot>: phần giữ chỗ sẽ được thay thế bằng nội dung từ component cha",
+        "en": "<slot>: placeholder that will be replaced by the parent's content",
+        "ja": "<slot>: 親のコンテンツに置き換えられるプレースホルダー"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Truy cập dữ liệu của con từ slot của cha trực tiếp mà không dùng scoped slot.",
+        "en": "Directly accessing child scope data from parent slot without using scoped slots.",
+        "ja": "スコープ付きスロットを使用せずに、親スロットから子スコープのデータに直接アクセスする。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Sử dụng Scoped Slots để truyền dữ liệu từ con ngược lên cha qua slot props.",
+        "en": "Use Scoped Slots to pass data from child back to parent via slot props.",
+        "ja": "スコープ付きスロットを使用して、スロットプロパティを介して子から親にデータを渡します。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "slot",
+      "component"
+    ],
+    "variations": [
+      {
+        "syntax": "<slot name=\"header\"></slot>\n<!-- Usage: -->\n<template #header>\n  <h1>Header Content</h1>\n</template>",
+        "description": {
+          "vi": "Named Slots: Đặt tên cho slot để truyền nội dung vào nhiều vị trí khác nhau.",
+          "en": "Named Slots: Assign a name to a slot to distribute content to specific positions.",
+          "ja": "名前付きスロット: 特定の位置にコンテンツを配布するために、スロットに名前を割り当てます。"
+        }
+      },
+      {
+        "syntax": "<!-- Child -->\n<slot :item=\"data\"></slot>\n<!-- Parent -->\n<template #default=\"slotProps\">\n  <p>{{ slotProps.item }}</p>\n</template>",
+        "description": {
+          "vi": "Scoped Slots: Truyền dữ liệu ngược từ component con lên component cha qua slot props.",
+          "en": "Scoped Slots: Pass child scope data back to parent template via slot attributes.",
+          "ja": "スコープ付きスロット: スロット属性を介して、子のスコープデータを親テンプレートに戻します。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "vue-provide-inject",
+    "name": "provide / inject",
+    "group": "Vue.js",
+    "categorySlug": "vuejs",
+    "description": {
+      "vi": "Truyền dữ liệu xuống các component con ở cấp sâu (Dependency Injection).",
+      "en": "Pass data down to deeply nested child components (Dependency Injection).",
+      "ja": "深くネストされた子コンポーネントにデータを渡します（依存関係の注入）。"
+    },
+    "detail": {
+      "vi": "Giải quyết vấn đề 'prop drilling' bằng cách cung cấp (provide) dữ liệu từ component tổ tiên và tiêm (inject) ở bất kỳ component con nào phía dưới.",
+      "en": "Solves 'prop drilling' by allowing ancestor components to provide values that can be injected by any descendant component below.",
+      "ja": "先祖コンポーネントが、以下のすべての子孫コンポーネ hợp によって注入できる値を提供できるようにすることで、「プロップのドリル」を解決します。"
+    },
+    "syntax": "/* Ancestor.vue */\nprovide('theme', 'dark')\n\n/* Descendant.vue */\nconst theme = inject('theme')",
+    "example": "/* Ancestor.vue */\nconst config = reactive({ api: '/v1' })\nprovide('appConfig', config)\n\n/* DeepChild.vue */\nconst config = inject('appConfig')",
+    "breakdown": [
+      {
+        "vi": "provide: cung cấp dữ liệu với một khóa định danh",
+        "en": "provide: make data available with an identifier key",
+        "ja": "provide: 識別子キーを使用してデータを利用可能にする"
+      },
+      {
+        "vi": "inject: tiêm dữ liệu vào component con từ khóa đã cung cấp",
+        "en": "inject: consume the provided value using the identifier key",
+        "ja": "inject: 識別子キーを使用して提供された値を使用する"
+      }
+    ],
+    "commonErrors": [
+      {
+        "vi": "Mất reactivity của dữ liệu được provide khi truyền giá trị nguyên bản (primitive) không reactive.",
+        "en": "Losing reactivity when providing primitive values that are not ref/computed.",
+        "ja": "ref/computed ではないプリミティブ値を提供するとリアクティビティが失われます。"
+      }
+    ],
+    "fixes": [
+      {
+        "vi": "Hãy provide một ref(), reactive() hoặc computed() để giữ nguyên tính reactive.",
+        "en": "Always provide a ref(), reactive(), or computed() value to maintain reactivity.",
+        "ja": "リアクティビティを維持するために、常に ref()、reactive()、または computed() の値を提供します。"
+      }
+    ],
+    "tags": [
+      "vue",
+      "provide",
+      "inject",
+      "dependency-injection"
+    ],
+    "variations": [
+      {
+        "syntax": "const theme = inject('theme', 'light')",
+        "description": {
+          "vi": "Thiết lập giá trị mặc định (default value) đề phòng trường hợp component cha không cung cấp dữ liệu.",
+          "en": "Specify a default value if the key is not provided by any ancestor components.",
+          "ja": "先祖コンポーネントからキーが提供されない場合のデフォルト値を指定します。"
+        }
+      }
     ]
   },
   {
