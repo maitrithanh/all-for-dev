@@ -5463,51 +5463,182 @@
   },
   {
     "id": "linux-chmod",
-    "name": "chmod +x",
+    "name": "chmod",
     "group": "Linux / Ubuntu / WSL",
     "categorySlug": "linux",
     "description": {
-      "vi": "Cấp quyền thực thi cho file.",
-      "en": "Give execution permission to the file.",
-      "ja": "ファイルに実行権限を与えます。"
+      "vi": "Thay đổi quyền truy cập (permissions) của file hoặc thư mục.",
+      "en": "Change access permissions of a file or directory.",
+      "ja": "ファイルまたはディレクトリのアクセス権限を変更します。"
     },
     "detail": {
-      "vi": "Thường dùng với script shell, binary, hoặc file deploy.",
-      "en": "Compatible with shell scripts, binaries, or deploy files.",
-      "ja": "シェル スクリプト、バイナリ、またはデプロイ ファイルと互換性があります。"
+      "vi": "Quản lý quyền Đọc (r=4), Ghi (w=2), và Thực thi (x=1) dành cho ba đối tượng: Chủ sở hữu (User), Nhóm (Group), và Người khác (Others). Quyền có thể được thiết lập bằng ký tự (u, g, o, a và +, -, =) hoặc số hệ bát phân (octal như 755, 644).",
+      "en": "Manage Read (r=4), Write (w=2), and Execute (x=1) permissions for three targets: Owner (User), Group, and Others. Permissions can be set using symbolic modes (u, g, o, a with +, -, =) or octal numeric modes (e.g. 755, 644).",
+      "ja": "所有者 (User)、グループ (Group)、およびその他 (Others) の 3 つの ターゲットに対して、読み取り (r=4)、書き込み (w=2)、および実行 (x=1) の権限を管理します。権限は、記号モード (u, g, o, a と +, -, =) または 8 進数モード (例: 755, 644) を使用して設定できます。"
     },
-    "syntax": "chmod +x <file>",
+    "syntax": "chmod <permissions> <file_or_dir>",
     "example": "chmod +x deploy.sh",
     "breakdown": [
       {
-        "vi": "chmod: đổi permission",
-        "en": "chmod: request permission",
-        "ja": "chmod: 許可を要求する"
+        "vi": "chmod: change mode (lệnh thay đổi thuộc tính/quyền tệp)",
+        "en": "chmod: change mode (change file attributes/permissions)",
+        "ja": "chmod: change mode (ファイル属性/アクセス権限を変更する)"
       },
       {
-        "vi": "+x: thêm quyền execute",
-        "en": "+x: add execute permission",
-        "ja": "+x: 実行権限を追加します"
+        "vi": "+x: cấp thêm quyền thực thi (execute) cho tất cả đối tượng (owner, group, others)",
+        "en": "+x: grant execute permission to all targets (owner, group, others)",
+        "ja": "+x: すべての対象（所有者、グループ、その他）に実行権限を付与する"
+      },
+      {
+        "vi": "Các quyền cơ bản: r (Read, đọc = 4), w (Write, ghi = 2), x (Execute, thực thi = 1)",
+        "en": "Core permissions: r (Read = 4), w (Write = 2), x (Execute = 1)",
+        "ja": "基本権限: r (Read = 4)、w (Write = 2)、x (Execute = 1)"
+      },
+      {
+        "vi": "Nhóm đối tượng: u (User/chủ sở hữu), g (Group/nhóm), o (Others/người khác), a (All/tất cả)",
+        "en": "Target groups: u (User/owner), g (Group), o (Others), a (All)",
+        "ja": "対象グループ: u (User/所有者)、g (Group/グループ)、o (Others/その他)、a (All/全員)"
       }
     ],
     "commonErrors": [
       {
-        "vi": "Permission denied vẫn xuất hiện.",
-        "en": "Permission denied and issued.",
-        "ja": "許可が拒否され、発行されました。"
+        "vi": "Lỗi 'Permission denied' do người dùng hiện tại không có quyền thay đổi file (không phải owner).",
+        "en": "'Permission denied' error because current user is not the owner of the target file.",
+        "ja": "現在のユーザーが対象ファイルの所有者ではないため、「Permission denied」エラーが発生します。"
       }
     ],
     "fixes": [
       {
-        "vi": "Kiểm tra owner và shebang của script.",
-        "en": "Check the owner and shebang of the script.",
-        "ja": "スクリプトの所有者とシバンを確認してください。"
+        "vi": "Thêm sudo trước lệnh để thực thi với quyền quản trị cao nhất (ví dụ: sudo chmod +x script.sh).",
+        "en": "Prepend sudo to execute the command with superuser privileges (e.g. sudo chmod +x script.sh).",
+        "ja": "コマンドをスーパーユーザー権限で実行するには、先頭に sudo を付けます（例: sudo chmod +x script.sh）。"
       }
     ],
     "tags": [
       "linux",
       "permission",
-      "chmod"
+      "chmod",
+      "security",
+      "chmod+x",
+      "chmod-x",
+      "chmod+r",
+      "chmod+w",
+      "chmod-r",
+      "chmod-w"
+    ],
+    "variations": [
+      {
+        "syntax": "chmod +x <file>",
+        "description": {
+          "vi": "Thêm quyền thực thi (execute) cho tất cả các đối tượng (chủ sở hữu, nhóm, người khác).",
+          "en": "Add execute (execute) permission for all targets (owner, group, others).",
+          "ja": "すべての対象（所有者、グループ、その他）に実行（execute）権限を追加します。"
+        }
+      },
+      {
+        "syntax": "chmod -x <file>",
+        "description": {
+          "vi": "Gỡ bỏ quyền thực thi (execute) của tất cả các đối tượng.",
+          "en": "Remove execute (execute) permission for all targets.",
+          "ja": "すべての対象の実行（execute）権限を削除します。"
+        }
+      },
+      {
+        "syntax": "chmod +r <file>",
+        "description": {
+          "vi": "Thêm quyền đọc (read) cho tất cả các đối tượng.",
+          "en": "Add read (read) permission for all targets.",
+          "ja": "すべての対象に読み取り（read）権限を追加します。"
+        }
+      },
+      {
+        "syntax": "chmod -r <file>",
+        "description": {
+          "vi": "Gỡ bỏ quyền đọc (read) của tất cả các đối tượng.",
+          "en": "Remove read (read) permission for all targets.",
+          "ja": "すべての対象の読み取り（read）権限を削除します。"
+        }
+      },
+      {
+        "syntax": "chmod +w <file>",
+        "description": {
+          "vi": "Thêm quyền ghi (write) cho tất cả các đối tượng.",
+          "en": "Add write (write) permission for all targets.",
+          "ja": "すべての対象に書き込み（write）権限を追加します。"
+        }
+      },
+      {
+        "syntax": "chmod -w <file>",
+        "description": {
+          "vi": "Gỡ bỏ quyền ghi (write) của tất cả các đối tượng.",
+          "en": "Remove write (write) permission for all targets.",
+          "ja": "すべての対象の書き込み（write）権限を削除します。"
+        }
+      },
+      {
+        "syntax": "chmod u+x <file>",
+        "description": {
+          "vi": "Chỉ cấp quyền thực thi (execute) cho chủ sở hữu (User).",
+          "en": "Grant execute (execute) permission only to the owner (User).",
+          "ja": "所有者（User）のみに実行（execute）権限を付与します。"
+        }
+      },
+      {
+        "syntax": "chmod g+w <file>",
+        "description": {
+          "vi": "Chỉ cấp quyền ghi (write) cho nhóm (Group).",
+          "en": "Grant write (write) permission only to the group (Group).",
+          "ja": "グループ（Group）のみに書き込み（write）権限を付与します。"
+        }
+      },
+      {
+        "syntax": "chmod o-rwx <file>",
+        "description": {
+          "vi": "Gỡ bỏ toàn bộ quyền đọc, ghi, thực thi (rwx) của người khác (Others).",
+          "en": "Remove all read, write, and execute permissions (rwx) for others (Others).",
+          "ja": "その他（Others）の読み取り、書き込み、実行（rwx）のすべての権限を削除します。"
+        }
+      },
+      {
+        "syntax": "chmod 755 <file_or_dir>",
+        "description": {
+          "vi": "Quyền đầy đủ cho chủ sở hữu (rwx = 7), quyền đọc & thực thi cho nhóm và người khác (rx = 5). Thường dùng cho file chạy công khai hoặc thư mục.",
+          "en": "Full permissions for owner (rwx = 7), read & execute permissions for group and others (rx = 5). Common for scripts and directories.",
+          "ja": "所有者にはフル権限 (rwx = 7)、グループとその他には読み取りおよび実行権限 (rx = 5)。スクリプトやディレクトリで一般的です。"
+        }
+      },
+      {
+        "syntax": "chmod 644 <file>",
+        "description": {
+          "vi": "Chủ sở hữu có quyền đọc & ghi (rw = 6), nhóm và người khác chỉ có quyền đọc (r = 4). Quyền tiêu chuẩn, an toàn nhất cho file mã nguồn, file cấu hình.",
+          "en": "Owner has read & write (rw = 6), group and others have read-only (r = 4). Standard and secure permission for source code and config files.",
+          "ja": "所有者には読み取りおよび書き込み権限 (rw = 6)、グループとその他には読み取り専用権限 (r = 4)。ソースコードや設定ファイルの標準的で安全な権限です。"
+        }
+      },
+      {
+        "syntax": "chmod 600 <file>",
+        "description": {
+          "vi": "Chỉ duy nhất chủ sở hữu có quyền đọc & ghi (rw = 6), các nhóm và người ngoài hoàn toàn không có quyền truy cập. Bắt buộc đối với các tệp nhạy cảm (như private key id_rsa, tệp chứa pass).",
+          "en": "Only the owner has read & write permissions (rw = 6), group and others have no access at all. Required for sensitive private keys (e.g. id_rsa).",
+          "ja": "所有者のみに読み取りおよび書き込み権限 (rw = 6) を付与し、グループやその他にはアクセスさせません。機密の秘密鍵（例: id_rsa）に必要です。"
+        }
+      },
+      {
+        "syntax": "chmod 700 <dir>",
+        "description": {
+          "vi": "Chỉ duy nhất chủ sở hữu có toàn quyền đọc, ghi, truy cập thư mục (rwx = 7). Nhóm và những người khác không thể xem hay mở thư mục (như thư mục cấu hình cá nhân .ssh).",
+          "en": "Only the owner has full read, write, and access permissions (rwx = 7). Groups and others have no access. Used for private folders like .ssh.",
+          "ja": "所有者のみがフォルダへの読み取り、書き込み、アクセスの全権限 (rwx = 7) を持ちます。グループやその他はアクセスできません。.ssh などのプライベートフォルダに使用されます。"
+        }
+      },
+      {
+        "syntax": "chmod 777 <file_or_dir>",
+        "description": {
+          "vi": "Cấp toàn quyền đọc, ghi, thực thi (rwx = 7) cho tất cả mọi người. RẤT KHÔNG AN TOÀN trên server thực tế, chỉ nên dùng tạm thời để test quyền ghi file.",
+          "en": "Grant full read, write, and execute permissions (rwx = 7) to everyone. VERY INSECURE, only use temporarily to debug file permission issues.",
+          "ja": "全員に完全な読み取り、書き込み、および実行権限 (rwx = 7) を付与します。非常に危険であるため、ファイル権限問題のデバッグ時の一時的な使用に限定してください。"
+        }
+      }
     ]
   },
   {

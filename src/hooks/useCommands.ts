@@ -22,6 +22,9 @@ export const useCommands = (keyword: string, category?: string) => {
         command.group,
         command.tags.join(" "),
         resolveText(command.detail, locale),
+        command.syntax,
+        command.example,
+        command.variations ? command.variations.map(v => v.syntax + " " + resolveText(v.description, locale)).join(" ") : "",
       ]
         .join(" ")
         .toLowerCase();
