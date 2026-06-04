@@ -31,23 +31,21 @@ const CategorySidebar = ({ isCollapsed, onToggle }: CategorySidebarProps) => {
       {/* Brand Header */}
       {!isCollapsed ? (
         <div className="mb-6 px-3 animate-in fade-in duration-200">
-          <div className="flex items-center gap-2.5 mb-1">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-zinc-900 to-zinc-700 text-[10px] font-black text-white shadow-sm dark:from-zinc-100 dark:to-zinc-300 dark:text-zinc-950">
-              A
-            </div>
+          <Link to="/" className="flex items-center gap-2.5 mb-1 hover:opacity-80 transition-opacity">
+            <img src="/favicon.svg" alt="Logo" className="h-7 w-7 object-contain" />
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500">
               All For Developer
             </p>
-          </div>
+          </Link>
           <h2 className="text-lg font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50">
             {t("commandCategories")}
           </h2>
         </div>
       ) : (
         <div className="mb-6 flex justify-center py-2.5 select-none animate-in fade-in duration-200">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-zinc-900 to-zinc-700 text-[10px] font-black text-white shadow-sm dark:from-zinc-100 dark:to-zinc-300 dark:text-zinc-950">
-            A
-          </div>
+          <Link to="/" className="hover:opacity-80 transition-opacity">
+            <img src="/favicon.svg" alt="Logo" className="h-7 w-7 object-contain" />
+          </Link>
         </div>
       )}
 
